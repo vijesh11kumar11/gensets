@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="500+ generator spare parts and industrial components — controllers, AVRs, actuators, sensors, engine parts, cooling systems. GENSETS, Coimbatore.">
+  <title>Generator Spare Parts &amp; Components | GENSETS, Coimbatore</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjM0Q0BFN3n6+3xyNLKpDXwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* =============================================
+       PRODUCTS PAGE — INLINE SUPPLEMENT
+       (core variables and components live in styles.css)
+    ============================================= */
+
+    /* --- Page Hero --- */
+    .page-hero {
+      background: linear-gradient(135deg, #0a0f1e 0%, #0d1a33 60%, #0a0f1e 100%);
+      padding: 120px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(26,111,255,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 30%, rgba(255,107,26,0.08) 0%, transparent 70%);
+    }
+    .page-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: #1A6FFF; }
+    .breadcrumb .sep { color: rgba(255,255,255,0.25); }
+    .breadcrumb .current { color: rgba(255,255,255,0.75); }
+    .page-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .page-hero h1 span { color: #1A6FFF; }
+    .page-hero .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 620px;
+      line-height: 1.6;
+    }
+
+    /* --- Filter Bar --- */
+    .filter-section {
+      background: #07090f;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      position: sticky;
+      top: 70px;
+      z-index: 90;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: #1A6FFF;
+      color: #1A6FFF;
+      background: rgba(26,111,255,0.08);
+    }
+    .filter-btn.active {
+      background: #1A6FFF;
+      border-color: #1A6FFF;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(26,111,255,0.35);
+    }
+
+    /* --- Products Section --- */
+    .products-section {
+      background: #07090f;
+      padding: 60px 0 80px;
+    }
+    .section-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .section-header-row h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0;
+    }
+    .product-count {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .product-count strong {
+      color: #1A6FFF;
+      font-weight: 600;
+    }
+
+    /* --- Grid --- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1100px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .grid-3 { grid-template-columns: 1fr; } }
+
+    /* --- Product Card --- */
+    .product-card {
+      background: #0d1424;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(26,111,255,0.4);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(26,111,255,0.15);
+    }
+    .product-card.hidden {
+      display: none;
+    }
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(26,111,255,0.9);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+    }
+    .img-wrapper.product-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      position: relative;
+    }
+    .img-wrapper.product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .img-wrapper.product-img img {
+      transform: scale(1.05);
+    }
+    .product-card > .product-name,
+    .product-card > h3.product-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 18px 18px 8px;
+      line-height: 1.25;
+    }
+    .product-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin: 0 18px 14px;
+      flex: 1;
+    }
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 18px 16px;
+    }
+    .tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+    .product-cta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 14px 18px 18px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: auto;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 7px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+    .btn-sm {
+      font-size: 0.75rem;
+      padding: 7px 13px;
+    }
+    .btn-primary {
+      background: #1A6FFF;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #0f5ce8;
+      box-shadow: 0 4px 14px rgba(26,111,255,0.4);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #ffffff;
+    }
+    .btn-whatsapp:hover {
+      background: #1db954;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .btn-outline:hover {
+      border-color: #FF6B1A;
+      color: #FF6B1A;
+      background: rgba(255,107,26,0.08);
+    }
+
+    /* --- No Part Banner --- */
+    .no-part-section {
+      background: #07090f;
+      padding: 0 0 80px;
+    }
+    .no-part-banner {
+      background: linear-gradient(135deg, #0d1a33 0%, #0a1628 100%);
+      border: 1px solid rgba(26,111,255,0.25);
+      border-radius: 16px;
+      padding: 48px 48px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .no-part-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 90% 50%, rgba(255,107,26,0.06) 0%, transparent 70%);
+    }
+    .no-part-banner .inner {
+      position: relative;
+      z-index: 1;
+    }
+    .no-part-banner .icon-wrap {
+      width: 56px;
+      height: 56px;
+      background: rgba(26,111,255,0.15);
+      border: 1px solid rgba(26,111,255,0.3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #1A6FFF;
+      margin-bottom: 20px;
+    }
+    .no-part-banner h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0 0 14px;
+    }
+    .no-part-banner p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+    .no-part-banner .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-lg {
+      font-size: 0.9rem;
+      padding: 12px 22px;
+    }
+
+    /* --- Footer --- */
+    .site-footer {
+      background: #050810;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 64px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+      gap: 40px;
+      padding-bottom: 48px;
+    }
+    @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-brand .brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .footer-brand .brand-name span { color: #1A6FFF; }
+    .footer-brand .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin: 4px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .footer-brand p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .footer-social a:hover {
+      background: #1A6FFF;
+      border-color: #1A6FFF;
+      color: #fff;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul li a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: #1A6FFF; }
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .footer-contact-item .icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(26,111,255,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1A6FFF;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .footer-contact-item .text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .footer-contact-item .text a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+    .footer-contact-item .text a:hover { color: #1A6FFF; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      margin: 0;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    .footer-bottom a:hover { color: #1A6FFF; }
+
+    /* --- Floating WhatsApp --- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 88px;
+      right: 24px;
+      z-index: 999;
+      width: 54px;
+      height: 54px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.6);
+    }
+
+    /* --- Back to Top --- */
+    .back-to-top {
+      position: fixed;
+      bottom: 88px;
+      left: 24px;
+      z-index: 999;
+      width: 42px;
+      height: 42px;
+      background: rgba(26,111,255,0.85);
+      border: 1px solid rgba(26,111,255,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      backdrop-filter: blur(6px);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: #1A6FFF;
+      transform: translateY(-3px);
+    }
+
+    /* --- Mobile CTA Bar --- */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: #0d1424;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 16px;
+      gap: 10px;
+    }
+    @media (max-width: 768px) { .mobile-bar { display: flex; } }
+    .mobile-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 8px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .mobile-bar .mb-call  { background: #1A6FFF; color: #fff; }
+    .mobile-bar .mb-wa    { background: #25D366; color: #fff; }
+    .mobile-bar .mb-enq   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.12); }
+
+    /* --- Reveal animation --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Navbar supplement --- */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(5,8,16,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      height: 70px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .nav-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-brand span { color: #1A6FFF; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 7px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: #ffffff; background: rgba(255,255,255,0.07); }
+    .nav-links a.active { color: #1A6FFF; background: rgba(26,111,255,0.1); }
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-cta a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .nav-cta .nc-phone {
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .nav-cta .nc-phone:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+    .nav-cta .nc-enquire {
+      background: #1A6FFF;
+      color: #ffffff;
+    }
+    .nav-cta .nc-enquire:hover { background: #0f5ce8; box-shadow: 0 4px 14px rgba(26,111,255,0.35); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================= -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">GEN<span>SETS</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="brands.html">Brands</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="tel:+919876543210" class="nc-phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="enquiry.html" class="nc-enquire">Get Quote</a>
+        </div>
+        <div class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       PAGE HERO
+  ============================================= -->
+  <section class="page-hero" aria-label="Products hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i></span>
+        <span class="current">Products</span>
+      </nav>
+      <h1>Generator Spare Parts &amp;<br><span>Industrial Components</span></h1>
+      <p class="hero-subtitle">500+ products across all major categories — sourced, verified, and dispatched from Coimbatore</p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FILTER BAR
+  ============================================= -->
+  <section class="filter-section" aria-label="Product filters">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="Filter products by category">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="controllers">Controllers</button>
+        <button class="filter-btn" data-filter="avrs">AVRs</button>
+        <button class="filter-btn" data-filter="actuators">Actuators</button>
+        <button class="filter-btn" data-filter="sensors">Sensors</button>
+        <button class="filter-btn" data-filter="engine-parts">Engine Parts</button>
+        <button class="filter-btn" data-filter="electrical">Electrical</button>
+        <button class="filter-btn" data-filter="cooling">Cooling</button>
+        <button class="filter-btn" data-filter="cummins">Cummins</button>
+        <button class="filter-btn" data-filter="jcb">JCB Parts</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PRODUCTS GRID
+  ============================================= -->
+  <section class="products-section" aria-label="Products listing">
+    <div class="container">
+
+      <div class="section-header-row">
+        <h2>All Products</h2>
+        <span class="product-count" id="productCountLabel">Showing <strong id="productCount">38</strong> products</span>
+      </div>
+
+      <div class="grid-3" id="productsGrid">
+
+        <!-- ── CONTROLLERS ─────────────────────── -->
+
+        <!-- 1. Deep Sea 4520 Controller -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-dse4520">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Deep Sea DSE4520 generator controller circuit board" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Deep Sea 4520 Controller</h3>
+          <p class="product-desc">Advanced engine protection controller with CAN bus interface, comprehensive engine monitoring, and remote communication capability for industrial generators.</p>
+          <div class="product-tags">
+            <span class="tag">Deep Sea</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">Kirloskar</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Deep%20Sea%204520%20Controller" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 2. Cummins PCC3300 Controller -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-pcc3300">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Cummins PCC3300 PowerCommand generator control module" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins PCC3300 Controller</h3>
+          <p class="product-desc">Cummins PowerCommand 3300 digital generator set control module with advanced metering, genset monitoring, and SAE J1939 CANbus communication.</p>
+          <div class="product-tags">
+            <span class="tag">Cummins</span>
+            <span class="tag">PCC</span>
+            <span class="tag">Engine Control</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20PCC3300%20Controller" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 3. Deep Sea 7320 MKII -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-dse7320">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Deep Sea DSE7320 MKII paralleling controller circuit board" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Deep Sea 7320 MKII</h3>
+          <p class="product-desc">Multi-set synchronising and load sharing controller for paralleling up to 32 generator sets in complex power management systems.</p>
+          <div class="product-tags">
+            <span class="tag">Deep Sea</span>
+            <span class="tag">Paralleling</span>
+            <span class="tag">Load Share</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Deep%20Sea%207320%20MKII" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 4. InteliGen 200 Controller -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-inteligennt200">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="ComAp InteliGen NT 200 genset controller" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">InteliGen 200 Controller</h3>
+          <p class="product-desc">ComAp InteliGen 200 genset controller with advanced protection, automatic mains failure, and full AMF functionality.</p>
+          <div class="product-tags">
+            <span class="tag">ComAp</span>
+            <span class="tag">AMF</span>
+            <span class="tag">InteliGen</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20InteliGen%20200%20Controller" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 5. Cummins PCC1302 Controller -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-pcc1302">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Cummins PCC1302 PowerCommand compact controller module" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins PCC1302 Controller</h3>
+          <p class="product-desc">Cummins PowerCommand 1302 digital generator control module with basic monitoring and fault protection for smaller generator sets.</p>
+          <div class="product-tags">
+            <span class="tag">Cummins</span>
+            <span class="tag">PCC</span>
+            <span class="tag">Compact</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20PCC1302%20Controller" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 6. Woodward 8404-1001 Controller -->
+        <div class="product-card card reveal" data-category="controllers">
+          <div class="product-badge">Controller</div>
+          <div class="img-wrapper product-img" data-replace="product-woodward8404">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Woodward 8404-1001 digital engine governor controller" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Woodward 8404-1001 Controller</h3>
+          <p class="product-desc">Woodward digital engine governor controller for precise speed and load control in industrial diesel generator applications.</p>
+          <div class="product-tags">
+            <span class="tag">Woodward</span>
+            <span class="tag">Governor</span>
+            <span class="tag">Speed Control</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Woodward%208404-1001%20Controller" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── AVRS ──────────────────────────────── -->
+
+        <!-- 7. Leroy-Somer R450T AVR -->
+        <div class="product-card card reveal" data-category="avrs">
+          <div class="product-badge">AVR</div>
+          <div class="img-wrapper product-img" data-replace="product-r450t">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Leroy-Somer R450T automatic voltage regulator circuit board" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Leroy-Somer R450T AVR</h3>
+          <p class="product-desc">Genuine Leroy-Somer R450T automatic voltage regulator for Leroy-Somer and compatible alternators. Provides stable voltage regulation under varying loads.</p>
+          <div class="product-tags">
+            <span class="tag">Leroy-Somer</span>
+            <span class="tag">R450T</span>
+            <span class="tag">Alternator</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Leroy-Somer%20R450T%20AVR" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 8. Stamford MX321 AVR -->
+        <div class="product-card card reveal" data-category="avrs">
+          <div class="product-badge">AVR</div>
+          <div class="img-wrapper product-img" data-replace="product-mx321">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Stamford MX321 automatic voltage regulator board" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Stamford MX321 AVR</h3>
+          <p class="product-desc">Stamford MX321 automatic voltage regulator for Newage Stamford alternators, providing ±0.5% voltage regulation accuracy.</p>
+          <div class="product-tags">
+            <span class="tag">Stamford</span>
+            <span class="tag">MX321</span>
+            <span class="tag">Alternator</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Stamford%20MX321%20AVR" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 9. Mecc Alte DSR AVR -->
+        <div class="product-card card reveal" data-category="avrs">
+          <div class="product-badge">AVR</div>
+          <div class="img-wrapper product-img" data-replace="product-meccalte-dsr">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Mecc Alte DSR automatic voltage regulator" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Mecc Alte DSR AVR</h3>
+          <p class="product-desc">Mecc Alte DSR automatic voltage regulator for Mecc Alte alternators used in single and three-phase generator applications.</p>
+          <div class="product-tags">
+            <span class="tag">Mecc Alte</span>
+            <span class="tag">DSR</span>
+            <span class="tag">Three-phase</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Mecc%20Alte%20DSR%20AVR" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 10. SX460 AVR -->
+        <div class="product-card card reveal" data-category="avrs">
+          <div class="product-badge">AVR</div>
+          <div class="img-wrapper product-img" data-replace="product-sx460">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="SX460 universal automatic voltage regulator replacement board" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">SX460 AVR</h3>
+          <p class="product-desc">SX460 automatic voltage regulator compatible with multiple alternator brands. Popular drop-in replacement for many generator installations.</p>
+          <div class="product-tags">
+            <span class="tag">SX460</span>
+            <span class="tag">Universal</span>
+            <span class="tag">Replacement</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20SX460%20AVR" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── ACTUATORS ──────────────────────────── -->
+
+        <!-- 11. GAC EG3000 Actuator -->
+        <div class="product-card card reveal" data-category="actuators">
+          <div class="product-badge">Actuator</div>
+          <div class="img-wrapper product-img" data-replace="product-gac-eg3000">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="GAC EG3000 electric governor actuator for diesel engine" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">GAC EG3000 Actuator</h3>
+          <p class="product-desc">GAC EG3000 series electric governor actuator for diesel engine speed control. Compatible with multiple engine brands and governor systems.</p>
+          <div class="product-tags">
+            <span class="tag">GAC</span>
+            <span class="tag">Speed Control</span>
+            <span class="tag">Diesel</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20GAC%20EG3000%20Actuator" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 12. Woodward 8256-024 Actuator -->
+        <div class="product-card card reveal" data-category="actuators">
+          <div class="product-badge">Actuator</div>
+          <div class="img-wrapper product-img" data-replace="product-woodward-actuator">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Woodward 8256-024 linear electric actuator for fuel rack control" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Woodward 8256-024 Actuator</h3>
+          <p class="product-desc">Woodward linear electric actuator for fuel rack and throttle control on industrial diesel engines and generators.</p>
+          <div class="product-tags">
+            <span class="tag">Woodward</span>
+            <span class="tag">Linear</span>
+            <span class="tag">Fuel Control</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Woodward%208256-024%20Actuator" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 13. DECS 100 Actuator -->
+        <div class="product-card card reveal" data-category="actuators">
+          <div class="product-badge">Actuator</div>
+          <div class="img-wrapper product-img" data-replace="product-decs100">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="DECS 100 digital excitation control actuator system" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">DECS 100 Actuator</h3>
+          <p class="product-desc">Digital excitation control actuator system for generator voltage regulation and excitation management on industrial alternators.</p>
+          <div class="product-tags">
+            <span class="tag">DECS</span>
+            <span class="tag">Excitation</span>
+            <span class="tag">Control</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20DECS%20100%20Actuator" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── SENSORS ────────────────────────────── -->
+
+        <!-- 14. VDO Oil Pressure Sender -->
+        <div class="product-card card reveal" data-category="sensors">
+          <div class="product-badge">Sensor</div>
+          <div class="img-wrapper product-img" data-replace="product-vdo-oil">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="VDO oil pressure sender unit for diesel engine protection" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">VDO Oil Pressure Sender</h3>
+          <p class="product-desc">VDO oil pressure sender unit for engine protection systems. Compatible with Deep Sea, Cummins PCC, and most digital generator controllers.</p>
+          <div class="product-tags">
+            <span class="tag">VDO</span>
+            <span class="tag">Oil Pressure</span>
+            <span class="tag">Engine Protection</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20VDO%20Oil%20Pressure%20Sender" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 15. VDO Coolant Temperature Sender -->
+        <div class="product-card card reveal" data-category="sensors">
+          <div class="product-badge">Sensor</div>
+          <div class="img-wrapper product-img" data-replace="product-vdo-temp">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="VDO coolant temperature sender for diesel generator engine" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">VDO Coolant Temperature Sender</h3>
+          <p class="product-desc">VDO coolant temperature sender for engine monitoring and over-temperature protection on diesel generator sets.</p>
+          <div class="product-tags">
+            <span class="tag">VDO</span>
+            <span class="tag">Temperature</span>
+            <span class="tag">Coolant</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20VDO%20Coolant%20Temperature%20Sender" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 16. Speed Sensor Proximity Switch -->
+        <div class="product-card card reveal" data-category="sensors">
+          <div class="product-badge">Sensor</div>
+          <div class="img-wrapper product-img" data-replace="product-speed-sensor">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Magnetic pickup speed sensor for diesel engine RPM monitoring" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Speed Sensor Proximity Switch</h3>
+          <p class="product-desc">Magnetic pickup speed sensor for engine RPM monitoring. Compatible with flywheel ring gear on Cummins, Kirloskar, and other diesel engines.</p>
+          <div class="product-tags">
+            <span class="tag">RPM</span>
+            <span class="tag">Magnetic Pickup</span>
+            <span class="tag">Flywheel</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Speed%20Sensor%20Proximity%20Switch" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 17. Fuel Level Float Sender -->
+        <div class="product-card card reveal" data-category="sensors">
+          <div class="product-badge">Sensor</div>
+          <div class="img-wrapper product-img" data-replace="product-fuel-sender">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80&fit=crop" alt="Float type fuel level sender for generator fuel tank" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Fuel Level Float Sender</h3>
+          <p class="product-desc">Float-type fuel level sender for generator fuel tanks. Provides accurate level signal to digital controllers and standalone fuel gauges.</p>
+          <div class="product-tags">
+            <span class="tag">Fuel Level</span>
+            <span class="tag">Float</span>
+            <span class="tag">Tank</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Fuel%20Level%20Float%20Sender" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── ELECTRICAL ──────────────────────────── -->
+
+        <!-- 18. Generator Relay Card -->
+        <div class="product-card card reveal" data-category="electrical">
+          <div class="product-badge">Electrical</div>
+          <div class="img-wrapper product-img" data-replace="product-relay-card">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Generator protection relay card for digital control systems" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Generator Relay Card</h3>
+          <p class="product-desc">Generator protection relay card for start/stop control, fault protection, and auxiliary switching functions on digital control systems.</p>
+          <div class="product-tags">
+            <span class="tag">Relay</span>
+            <span class="tag">Protection</span>
+            <span class="tag">Control</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Generator%20Relay%20Card" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 19. Generator Battery Charger -->
+        <div class="product-card card reveal" data-category="electrical">
+          <div class="product-badge">Electrical</div>
+          <div class="img-wrapper product-img" data-replace="product-battery-charger">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Automatic float battery charger for generator starting batteries" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Generator Battery Charger</h3>
+          <p class="product-desc">Automatic float battery charger for generator starting batteries. Maintains optimal charge state for reliable engine cranking.</p>
+          <div class="product-tags">
+            <span class="tag">Battery</span>
+            <span class="tag">Float Charge</span>
+            <span class="tag">12V/24V</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Generator%20Battery%20Charger" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 20. AMF Control Panel -->
+        <div class="product-card card reveal" data-category="electrical">
+          <div class="product-badge">Electrical</div>
+          <div class="img-wrapper product-img" data-replace="product-amf-panel">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&fit=crop" alt="Automatic Mains Failure AMF control panel for generator changeover" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">AMF Control Panel</h3>
+          <p class="product-desc">Automatic Mains Failure control panel for automatic generator changeover when grid power fails. Suitable for single and three-phase systems.</p>
+          <div class="product-tags">
+            <span class="tag">AMF</span>
+            <span class="tag">Auto Changeover</span>
+            <span class="tag">Panel</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20AMF%20Control%20Panel" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 21. PSO 500 Control Panel -->
+        <div class="product-card card reveal" data-category="electrical">
+          <div class="product-badge">Electrical</div>
+          <div class="img-wrapper product-img" data-replace="product-pso500">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&fit=crop" alt="PSO 500 Cummins generator control panel with digital display" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">PSO 500 Control Panel</h3>
+          <p class="product-desc">PSO 500 Cummins generator control panel with digital display, engine monitoring, and fault indication for Cummins generator sets.</p>
+          <div class="product-tags">
+            <span class="tag">PSO 500</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">Panel</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20PSO%20500%20Control%20Panel" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 22. Industrial Contactor 63A -->
+        <div class="product-card card reveal" data-category="electrical">
+          <div class="product-badge">Electrical</div>
+          <div class="img-wrapper product-img" data-replace="product-contactor-63a">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Heavy duty industrial contactor 63A for generator output switching" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Industrial Contactor 63A</h3>
+          <p class="product-desc">Heavy-duty industrial contactor for generator output switching and load control applications in commercial and industrial installations.</p>
+          <div class="product-tags">
+            <span class="tag">Contactor</span>
+            <span class="tag">63A</span>
+            <span class="tag">Load Switch</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Industrial%20Contactor%2063A" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── ENGINE PARTS ────────────────────────── -->
+
+        <!-- 23. Cummins 6BT Piston Kit -->
+        <div class="product-card card reveal" data-category="engine-parts">
+          <div class="product-badge">Engine Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-6bt-piston">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Cummins 6BT piston kit with rings and pin for engine overhaul" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins 6BT Piston Kit</h3>
+          <p class="product-desc">Complete piston kit for Cummins 6BT and 6BTA engines including piston, rings, and pin. OEM-equivalent specification for engine overhaul.</p>
+          <div class="product-tags">
+            <span class="tag">Cummins</span>
+            <span class="tag">6BT</span>
+            <span class="tag">Overhaul</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%206BT%20Piston%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 24. Kirloskar Piston Kit -->
+        <div class="product-card card reveal" data-category="engine-parts">
+          <div class="product-badge">Engine Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-kirloskar-piston">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Kirloskar HA294 RV series piston kit for Indian generator engines" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Kirloskar Piston Kit</h3>
+          <p class="product-desc">OEM-equivalent piston kit for Kirloskar HA294, RV1, and RV series engines commonly used in Indian generator sets.</p>
+          <div class="product-tags">
+            <span class="tag">Kirloskar</span>
+            <span class="tag">Piston</span>
+            <span class="tag">Engine</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Kirloskar%20Piston%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 25. Connecting Rod Assembly -->
+        <div class="product-card card reveal" data-category="engine-parts">
+          <div class="product-badge">Engine Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-conrod">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="High strength forged connecting rod assembly for diesel generator engine" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Connecting Rod Assembly</h3>
+          <p class="product-desc">High-strength forged connecting rod assembly for diesel generator engine overhaul. Compatible with Cummins, Kirloskar, and KOEL engines.</p>
+          <div class="product-tags">
+            <span class="tag">Connecting Rod</span>
+            <span class="tag">Overhaul</span>
+            <span class="tag">Forged</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Connecting%20Rod%20Assembly" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 26. Rocker Arm Assembly -->
+        <div class="product-card card reveal" data-category="engine-parts">
+          <div class="product-badge">Engine Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-rocker-arm">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Complete rocker arm assembly with shaft and bushings for diesel engine" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Rocker Arm Assembly</h3>
+          <p class="product-desc">Complete rocker arm assembly for diesel generator engines including rocker arm, shaft, and bushings. Multiple brand compatibilities available.</p>
+          <div class="product-tags">
+            <span class="tag">Rocker Arm</span>
+            <span class="tag">Valve Train</span>
+            <span class="tag">Engine</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Rocker%20Arm%20Assembly" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 27. Cummins 6BT Head Gasket Set -->
+        <div class="product-card card reveal" data-category="engine-parts">
+          <div class="product-badge">Engine Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-head-gasket">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Cummins 6BT complete top end gasket kit for engine rebuild" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins 6BT Head Gasket Set</h3>
+          <p class="product-desc">Complete top end gasket kit for Cummins 6BT engine rebuilds including head gasket, valve stem seals, and manifold gaskets.</p>
+          <div class="product-tags">
+            <span class="tag">Gasket Kit</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">Top End</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%206BT%20Head%20Gasket%20Set" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── COOLING ─────────────────────────────── -->
+
+        <!-- 28. Banco Generator Radiator -->
+        <div class="product-card card reveal" data-category="cooling">
+          <div class="product-badge">Cooling</div>
+          <div class="img-wrapper product-img" data-replace="product-banco-radiator">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&fit=crop" alt="Banco aluminum generator radiator core for diesel generator sets" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Banco Generator Radiator</h3>
+          <p class="product-desc">Banco aluminum generator radiator core for diesel generator sets. Available for multiple generator sizes from 25kVA to 500kVA.</p>
+          <div class="product-tags">
+            <span class="tag">Banco</span>
+            <span class="tag">Radiator</span>
+            <span class="tag">Cooling</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Banco%20Generator%20Radiator" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 29. Copper Core Radiator -->
+        <div class="product-card card reveal" data-category="cooling">
+          <div class="product-badge">Cooling</div>
+          <div class="img-wrapper product-img" data-replace="product-copper-radiator">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&fit=crop" alt="Heavy duty copper core radiator for industrial generator sets" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Copper Core Radiator</h3>
+          <p class="product-desc">Heavy-duty copper core radiator assembly for industrial generator sets operating in high-ambient temperature conditions.</p>
+          <div class="product-tags">
+            <span class="tag">Copper Core</span>
+            <span class="tag">Industrial</span>
+            <span class="tag">High Temperature</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Copper%20Core%20Radiator" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 30. Thermostat & Housing -->
+        <div class="product-card card reveal" data-category="cooling">
+          <div class="product-badge">Cooling</div>
+          <div class="img-wrapper product-img" data-replace="product-thermostat">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Engine thermostat and housing assembly for diesel generator coolant control" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Thermostat &amp; Housing</h3>
+          <p class="product-desc">Engine thermostat and housing assembly for diesel generator engines. Controls coolant flow for optimal engine operating temperature.</p>
+          <div class="product-tags">
+            <span class="tag">Thermostat</span>
+            <span class="tag">Coolant</span>
+            <span class="tag">Temperature</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Thermostat%20%26%20Housing" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── CUMMINS ──────────────────────────────── -->
+
+        <!-- 31. Cummins PCC3.3 Repair Kit -->
+        <div class="product-card card reveal" data-category="cummins">
+          <div class="product-badge">Cummins</div>
+          <div class="img-wrapper product-img" data-replace="product-pcc33-kit">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80&fit=crop" alt="Cummins PCC3.3 controller repair kit with capacitors and fuses" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins PCC3.3 Repair Kit</h3>
+          <p class="product-desc">Cummins PCC3.3 controller repair and component kit including replacement capacitors, fuses, and common failure components.</p>
+          <div class="product-tags">
+            <span class="tag">PCC3.3</span>
+            <span class="tag">Repair</span>
+            <span class="tag">Component Kit</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20PCC3.3%20Repair%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 32. Cummins Fuel Lift Pump -->
+        <div class="product-card card reveal" data-category="cummins">
+          <div class="product-badge">Cummins</div>
+          <div class="img-wrapper product-img" data-replace="product-cummins-fuelpump">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Cummins mechanical fuel lift pump for 6BT B-series engine" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins Fuel Lift Pump</h3>
+          <p class="product-desc">Cummins mechanical fuel lift pump for 6BT and B-series engines. Ensures reliable fuel delivery from tank to injection pump.</p>
+          <div class="product-tags">
+            <span class="tag">Fuel Pump</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">B-Series</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20Fuel%20Lift%20Pump" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 33. Cummins Water Pump -->
+        <div class="product-card card reveal" data-category="cummins">
+          <div class="product-badge">Cummins</div>
+          <div class="img-wrapper product-img" data-replace="product-cummins-waterpump">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Cummins engine water pump for 6BT 6CT diesel generator cooling" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins Water Pump</h3>
+          <p class="product-desc">Cummins engine water pump for 6BT and 6CT series diesel engines. OEM-equivalent specification for reliable coolant circulation.</p>
+          <div class="product-tags">
+            <span class="tag">Water Pump</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">Cooling</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20Water%20Pump" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 34. Cummins Injector Set (6BT) -->
+        <div class="product-card card reveal" data-category="cummins">
+          <div class="product-badge">Cummins</div>
+          <div class="img-wrapper product-img" data-replace="product-cummins-injectors">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80&fit=crop" alt="Cummins 6BT OEM equivalent fuel injectors balanced spray pattern" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">Cummins Injector Set (6BT)</h3>
+          <p class="product-desc">Genuine OEM-equivalent fuel injectors for Cummins 6BT engine. Balanced spray pattern for optimal combustion and fuel efficiency.</p>
+          <div class="product-tags">
+            <span class="tag">Injectors</span>
+            <span class="tag">Cummins</span>
+            <span class="tag">6BT</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20Cummins%20Injector%20Set%20(6BT)" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- ── JCB PARTS ───────────────────────────── -->
+
+        <!-- 35. JCB Ecomax Packing Kit -->
+        <div class="product-card card reveal" data-category="jcb">
+          <div class="product-badge">JCB Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-jcb-packingkit">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80&fit=crop" alt="JCB Ecomax engine packing kit with head gasket and seals" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">JCB Ecomax Packing Kit</h3>
+          <p class="product-desc">Complete engine packing kit for JCB Ecomax diesel engine including head gasket, valve seals, sump gasket, and all required seals.</p>
+          <div class="product-tags">
+            <span class="tag">JCB</span>
+            <span class="tag">Ecomax</span>
+            <span class="tag">Engine</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20JCB%20Ecomax%20Packing%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 36. JCB Head Gasket -->
+        <div class="product-card card reveal" data-category="jcb">
+          <div class="product-badge">JCB Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-jcb-headgasket">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80&fit=crop" alt="JCB Ecomax 4-cylinder OEM equivalent head gasket" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">JCB Head Gasket</h3>
+          <p class="product-desc">OEM-equivalent head gasket for JCB Ecomax 4-cylinder diesel engine used in construction equipment and generator applications.</p>
+          <div class="product-tags">
+            <span class="tag">JCB</span>
+            <span class="tag">Head Gasket</span>
+            <span class="tag">4-Cylinder</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20JCB%20Head%20Gasket" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 37. JCB Oil Seal Kit -->
+        <div class="product-card card reveal" data-category="jcb">
+          <div class="product-badge">JCB Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-jcb-oilseal">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80&fit=crop" alt="JCB Ecomax complete oil seal kit crankshaft camshaft seals rebuild" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">JCB Oil Seal Kit</h3>
+          <p class="product-desc">Complete oil seal kit for JCB Ecomax engine including crankshaft seals, camshaft seals, and auxiliary seals for full engine rebuild.</p>
+          <div class="product-tags">
+            <span class="tag">JCB</span>
+            <span class="tag">Oil Seals</span>
+            <span class="tag">Rebuild</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20JCB%20Oil%20Seal%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+        <!-- 38. JCB Fuel Filter Kit -->
+        <div class="product-card card reveal" data-category="jcb">
+          <div class="product-badge">JCB Parts</div>
+          <div class="img-wrapper product-img" data-replace="product-jcb-fuelfilter">
+            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80&fit=crop" alt="JCB Ecomax fuel filtration kit primary and secondary fuel filters" class="site-img" loading="lazy">
+          </div>
+          <h3 class="product-name">JCB Fuel Filter Kit</h3>
+          <p class="product-desc">JCB Ecomax fuel filtration kit including primary and secondary fuel filters for optimal fuel cleanliness and injector protection.</p>
+          <div class="product-tags">
+            <span class="tag">JCB</span>
+            <span class="tag">Fuel Filter</span>
+            <span class="tag">Filtration</span>
+          </div>
+          <div class="product-cta">
+            <a href="tel:+919876543210" class="btn btn-primary btn-sm"><i class="fa-solid fa-phone"></i> Call</a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20info%20about%20JCB%20Fuel%20Filter%20Kit" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="enquiry.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Enquire</a>
+          </div>
+        </div>
+
+      </div><!-- /.grid-3 #productsGrid -->
+
+      <!-- No results message -->
+      <div id="noResults" style="display:none; text-align:center; padding:60px 0; color:rgba(255,255,255,0.4); font-family:'Inter',sans-serif;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size:2rem; margin-bottom:12px; display:block; color:rgba(255,255,255,0.2);"></i>
+        No products found in this category.
+      </div>
+
+    </div><!-- /.container -->
+  </section><!-- /.products-section -->
+
+  <!-- =============================================
+       CAN'T FIND YOUR PART?
+  ============================================= -->
+  <section class="no-part-section" aria-label="Custom parts sourcing">
+    <div class="container">
+      <div class="no-part-banner">
+        <div class="inner">
+          <div class="icon-wrap">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </div>
+          <h2>Can't Find Your Part?</h2>
+          <p>Looking for a specific generator spare part not listed here? Our technical team sources parts across all major brands — Cummins, Kirloskar, KOEL, Ashok Leyland, Perkins, Volvo Penta, Stamford, Leroy-Somer, Mecc Alte, ComAp, Woodward, GAC, Deep Sea, and more.</p>
+          <div class="cta-row">
+            <a href="tel:+919876543210" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-phone"></i> Call Our Parts Expert
+            </a>
+            <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20have%20a%20part%20number%20I%20need%20to%20source" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Part Number
+            </a>
+            <a href="enquiry.html" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-file-lines"></i> Send Specifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="brand-name">GEN<span>SETS</span></div>
+          <div class="tagline">Generator Spare Parts, Coimbatore</div>
+          <p>GENSETS is Coimbatore's trusted supplier of generator spare parts and industrial components. We supply verified parts for all major brands — dispatched fast from our Coimbatore warehouse.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:info@gensets.in" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="brands.html">Brands We Stock</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="about.html">About GENSETS</a></li>
+            <li><a href="enquiry.html">Send Enquiry</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Product Categories -->
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?filter=controllers">Controllers</a></li>
+            <li><a href="products.html?filter=avrs">AVRs</a></li>
+            <li><a href="products.html?filter=actuators">Actuators</a></li>
+            <li><a href="products.html?filter=sensors">Sensors</a></li>
+            <li><a href="products.html?filter=engine-parts">Engine Parts</a></li>
+            <li><a href="products.html?filter=electrical">Electrical</a></li>
+            <li><a href="products.html?filter=cooling">Cooling</a></li>
+            <li><a href="products.html?filter=cummins">Cummins</a></li>
+            <li><a href="products.html?filter=jcb">JCB Parts</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="text">
+                <a href="tel:+919876543210">+91 98765 43210</a>
+                Mon – Sat, 9 AM – 6 PM IST
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="text">
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+                Quick replies on WhatsApp
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="text">
+                <a href="mailto:info@gensets.in">info@gensets.in</a>
+                Send parts enquiries by email
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="text">
+                Coimbatore – 641006<br>Tamil Nadu, India
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 GENSETS, Coimbatore. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a>
+          &nbsp;&bull;&nbsp;
+          <a href="terms.html">Terms &amp; Conditions</a>
+          &nbsp;&bull;&nbsp;
+          <a href="sitemap.html">Sitemap</a>
+        </p>
+      </div>
+
+    </div><!-- /.container -->
+  </footer>
+
+  <!-- =============================================
+       FLOATING WHATSAPP
+  ============================================= -->
+  <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20generator%20spare%20parts%20info" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- =============================================
+       BACK TO TOP
+  ============================================= -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- =============================================
+       MOBILE CTA BAR
+  ============================================= -->
+  <div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
+    <a href="tel:+919876543210" class="mb-call"><i class="fa-solid fa-phone"></i> Call</a>
+    <a href="https://wa.me/919876543210" class="mb-wa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="enquiry.html" class="mb-enq"><i class="fa-solid fa-envelope"></i> Enquire</a>
+  </div>
+
+  <!-- =============================================
+       SCRIPTS
+  ============================================= -->
+  <script>
+    // ── Filter functionality ──────────────────────────────────────────
+    (function () {
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var cards      = document.querySelectorAll('.product-card');
+      var countEl    = document.getElementById('productCount');
+      var noResults  = document.getElementById('noResults');
+      var heading    = document.querySelector('.section-header-row h2');
+
+      var categoryLabels = {
+        'all':         'All Products',
+        'controllers': 'Controllers',
+        'avrs':        'AVRs',
+        'actuators':   'Actuators',
+        'sensors':     'Sensors',
+        'engine-parts':'Engine Parts',
+        'electrical':  'Electrical',
+        'cooling':     'Cooling',
+        'cummins':     'Cummins',
+        'jcb':         'JCB Parts'
+      };
+
+      function applyFilter(filter) {
+        var visible = 0;
+        cards.forEach(function (card) {
+          var cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+        if (countEl) countEl.textContent = visible;
+        if (heading)  heading.textContent = categoryLabels[filter] || 'Products';
+        if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+      }
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilter(btn.getAttribute('data-filter'));
+          // scroll grid into view on mobile
+          if (window.innerWidth < 768) {
+            document.querySelector('.products-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Support ?filter= query param on page load
+      var params = new URLSearchParams(window.location.search);
+      var qFilter = params.get('filter');
+      if (qFilter) {
+        var matchBtn = document.querySelector('.filter-btn[data-filter="' + qFilter + '"]');
+        if (matchBtn) {
+          document.querySelector('.filter-btn.active').classList.remove('active');
+          matchBtn.classList.add('active');
+          applyFilter(qFilter);
+        }
+      }
+    }());
+
+    // ── Back to Top ────────────────────────────────────────────────
+    (function () {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 400) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      });
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }());
+
+    // ── Reveal on scroll ────────────────────────────────────────────
+    (function () {
+      var reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { io.observe(el); });
+    }());
+
+    // ── Mobile nav hamburger ────────────────────────────────────────
+    (function () {
+      var ham   = document.getElementById('navHamburger');
+      var links = document.querySelector('.nav-links');
+      var cta   = document.querySelector('.nav-cta');
+      if (!ham) return;
+      ham.addEventListener('click', function () {
+        var open = ham.getAttribute('aria-expanded') === 'true';
+        ham.setAttribute('aria-expanded', String(!open));
+        if (links) links.style.display = open ? '' : 'flex';
+        if (cta)   cta.style.display   = open ? '' : 'flex';
+      });
+    }());
+  </script>
+
+  <!-- Site JS (shared utilities) -->
+  <script src="main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+========================================
+IMAGE REPLACEMENT GUIDE — PRODUCTS.HTML
+========================================
+==========================================================
+  IMAGE REPLACEMENT MAP — products.html
+  Replace Unsplash placeholders with real product photos.
+  Use data-replace attribute to target each wrapper.
+
+  CONTROLLERS
+  [1]  data-replace="product-dse4520"        → Deep Sea DSE4520 controller photo
+  [2]  data-replace="product-pcc3300"        → Cummins PCC3300 module photo
+  [3]  data-replace="product-dse7320"        → Deep Sea DSE7320 MKII photo
+  [4]  data-replace="product-inteligennt200" → ComAp InteliGen 200 photo
+  [5]  data-replace="product-pcc1302"        → Cummins PCC1302 module photo
+  [6]  data-replace="product-woodward8404"   → Woodward 8404-1001 controller photo
+
+  AVRS
+  [7]  data-replace="product-r450t"          → Leroy-Somer R450T AVR photo
+  [8]  data-replace="product-mx321"          → Stamford MX321 AVR photo
+  [9]  data-replace="product-meccalte-dsr"   → Mecc Alte DSR AVR photo
+  [10] data-replace="product-sx460"          → SX460 AVR photo
+
+  ACTUATORS
+  [11] data-replace="product-gac-eg3000"     → GAC EG3000 actuator photo
+  [12] data-replace="product-woodward-actuator" → Woodward 8256-024 actuator photo
+  [13] data-replace="product-decs100"        → DECS 100 excitation control photo
+
+  SENSORS
+  [14] data-replace="product-vdo-oil"        → VDO oil pressure sender photo
+  [15] data-replace="product-vdo-temp"       → VDO coolant temperature sender photo
+  [16] data-replace="product-speed-sensor"   → Magnetic pickup speed sensor photo
+  [17] data-replace="product-fuel-sender"    → Fuel level float sender photo
+
+  ELECTRICAL
+  [18] data-replace="product-relay-card"     → Generator relay card photo
+  [19] data-replace="product-battery-charger" → Generator battery charger photo
+  [20] data-replace="product-amf-panel"      → AMF control panel photo
+  [21] data-replace="product-pso500"         → PSO 500 Cummins panel photo
+  [22] data-replace="product-contactor-63a"  → Industrial contactor 63A photo
+
+  ENGINE PARTS
+  [23] data-replace="product-6bt-piston"     → Cummins 6BT piston kit photo
+  [24] data-replace="product-kirloskar-piston" → Kirloskar piston kit photo
+  [25] data-replace="product-conrod"         → Connecting rod assembly photo
+  [26] data-replace="product-rocker-arm"     → Rocker arm assembly photo
+  [27] data-replace="product-head-gasket"    → Cummins 6BT head gasket set photo
+
+  COOLING
+  [28] data-replace="product-banco-radiator"  → Banco generator radiator photo
+  [29] data-replace="product-copper-radiator" → Copper core radiator photo
+  [30] data-replace="product-thermostat"      → Thermostat & housing photo
+
+  CUMMINS
+  [31] data-replace="product-pcc33-kit"       → Cummins PCC3.3 repair kit photo
+  [32] data-replace="product-cummins-fuelpump" → Cummins fuel lift pump photo
+  [33] data-replace="product-cummins-waterpump" → Cummins water pump photo
+  [34] data-replace="product-cummins-injectors" → Cummins 6BT injector set photo
+
+  JCB PARTS
+  [35] data-replace="product-jcb-packingkit"  → JCB Ecomax packing kit photo
+  [36] data-replace="product-jcb-headgasket"  → JCB head gasket photo
+  [37] data-replace="product-jcb-oilseal"     → JCB oil seal kit photo
+  [38] data-replace="product-jcb-fuelfilter"  → JCB fuel filter kit photo
+
+  To replace: find the div with data-replace="XXXXX" and swap the
+  <img src="..."> with your actual product image URL.
+==========================================================
+-->
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Mobile Sticky Bottom Bar -->
+<div class="mobile-bar">
+  <a href="tel:+919876543210" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
+  <a href="https://wa.me/919876543210?text=Hello%20GENSETS" class="wa-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  <a href="enquiry.html" class="enq-btn"><i class="fa-solid fa-envelope"></i> Enquiry</a>
+</div>
+
+</body>
+</html>

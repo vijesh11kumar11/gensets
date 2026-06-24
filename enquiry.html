@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote | GENSETS, Coimbatore</title>
+  <meta name="description" content="Request a quote for generator spare parts, maintenance, and AMC services. GENSETS, Coimbatore — technical team responds within 4 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* =============================================
+       ENQUIRY PAGE — PAGE-SPECIFIC STYLES
+       ============================================= */
+
+    /* ---------- Hero ---------- */
+    .page-hero {
+      background: linear-gradient(135deg, #0d1117 0%, #111827 50%, #0d1117 100%);
+      border-bottom: 1px solid rgba(26, 111, 255, 0.2);
+      padding: 60px 0 48px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+      letter-spacing: 0.5px;
+    }
+    .page-hero h1 span {
+      color: #1A6FFF;
+    }
+    .page-hero .hero-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: #9ca3af;
+      max-width: 580px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    .breadcrumb a {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #1A6FFF;
+    }
+    .breadcrumb .sep {
+      color: #374151;
+    }
+    .breadcrumb .current {
+      color: #1A6FFF;
+    }
+
+    /* ---------- Layout ---------- */
+    .enquiry-section {
+      background: #0d1117;
+      padding: 64px 0 80px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ---------- Form Card ---------- */
+    .form-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    /* ---------- Form Section Title ---------- */
+    .form-section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 0 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #1A6FFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-section-title .section-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1A6FFF;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .form-section-block {
+      margin-bottom: 40px;
+    }
+    .form-section-block:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Form Group & Row ---------- */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-row .form-group {
+      margin-bottom: 0;
+    }
+
+    /* ---------- Labels ---------- */
+    .form-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #d1d5db;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .form-label .required-star {
+      color: #FF6B1A;
+      margin-left: 2px;
+    }
+
+    /* ---------- Inputs, Selects, Textareas ---------- */
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: #0d1117;
+      border: 1.5px solid #1f2937;
+      border-radius: 8px;
+      color: #f3f4f6;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #4b5563;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: #1A6FFF;
+      box-shadow: 0 0 0 3px rgba(26, 111, 255, 0.15);
+    }
+    .form-input.error,
+    .form-select.error,
+    .form-textarea.error {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    }
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-select option {
+      background: #111827;
+      color: #f3f4f6;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6;
+    }
+
+    /* ---------- Field Error ---------- */
+    .field-error {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: #ef4444;
+      display: none;
+      align-items: center;
+      gap: 5px;
+    }
+    .field-error.visible {
+      display: flex;
+    }
+
+    /* ---------- Radio Cards ---------- */
+    .radio-cards-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #d1d5db;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .radio-cards-label .required-star {
+      color: #FF6B1A;
+      margin-left: 2px;
+    }
+    .radio-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .radio-card {
+      position: relative;
+    }
+    .radio-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .radio-card label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px 12px;
+      background: #0d1117;
+      border: 1.5px solid #1f2937;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #9ca3af;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      min-height: 52px;
+      line-height: 1.3;
+    }
+    .radio-card input[type="radio"]:checked + label {
+      border-color: #1A6FFF;
+      background: rgba(26, 111, 255, 0.1);
+      color: #93c5fd;
+    }
+    .radio-card label:hover {
+      border-color: #374151;
+      color: #d1d5db;
+    }
+    .radio-cards-error {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: #ef4444;
+      display: none;
+      align-items: center;
+      gap: 5px;
+      margin-top: -8px;
+      margin-bottom: 12px;
+    }
+    .radio-cards-error.visible {
+      display: flex;
+    }
+
+    /* ---------- Checkbox Grid ---------- */
+    .checkbox-grid-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #d1d5db;
+      margin-bottom: 12px;
+      margin-top: 4px;
+      display: block;
+    }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: #1A6FFF;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checkbox-item span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: #9ca3af;
+      line-height: 1.3;
+    }
+
+    /* ---------- Divider inside form ---------- */
+    .form-divider {
+      border: none;
+      border-top: 1px solid #1f2937;
+      margin: 32px 0;
+    }
+
+    /* ---------- Submit Button ---------- */
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 18px 24px;
+      background: #1A6FFF;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      margin-top: 32px;
+    }
+    .btn-submit:hover {
+      background: #155de0;
+      box-shadow: 0 6px 24px rgba(26, 111, 255, 0.35);
+      transform: translateY(-1px);
+    }
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+    .btn-submit i {
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Success Box ---------- */
+    #form-success {
+      display: none;
+    }
+    .success-box {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .success-box .success-icon {
+      color: #22c55e;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .success-box h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 12px;
+    }
+    .success-box p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 10px;
+    }
+    .success-box .success-cta-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: #6b7280;
+      margin: 20px auto 16px;
+    }
+    .success-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: transparent;
+      border: 2px solid #1A6FFF;
+      color: #1A6FFF;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-call:hover {
+      background: #1A6FFF;
+      color: #fff;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: #25D366;
+      border: 2px solid #25D366;
+      color: #fff;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp:hover {
+      background: #1da851;
+      border-color: #1da851;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .enquiry-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 100px;
+    }
+    .sidebar-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+    .sidebar-card.emergency-card {
+      border-color: #FF6B1A;
+      background: linear-gradient(135deg, #111827 0%, #1a1008 100%);
+    }
+    .sidebar-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 18px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .sidebar-card.emergency-card h3 {
+      color: #FF6B1A;
+    }
+
+    /* Sidebar List */
+    .sidebar-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sidebar-list ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.4;
+    }
+    .sidebar-list ul li i {
+      color: #22c55e;
+      font-size: 0.9rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Sidebar Contact Buttons */
+    .sidebar-contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    .sidebar-contact-btn:last-of-type {
+      margin-bottom: 0;
+    }
+    .sidebar-contact-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+    .sidebar-contact-btn.phone-btn {
+      background: #1A6FFF;
+      color: #fff;
+      border: 2px solid #1A6FFF;
+    }
+    .sidebar-contact-btn.wa-btn {
+      background: #25D366;
+      color: #fff;
+      border: 2px solid #25D366;
+    }
+    .sidebar-hours {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #1f2937;
+    }
+    .sidebar-hours p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.83rem;
+      color: #6b7280;
+      margin: 0 0 5px;
+    }
+    .sidebar-hours .emerg-text {
+      color: #FF6B1A;
+      font-weight: 600;
+    }
+
+    .sidebar-emerg-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+    .btn-orange-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      background: #FF6B1A;
+      color: #fff;
+      border: 2px solid #FF6B1A;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer;
+    }
+    .btn-orange-full:hover {
+      background: #e55b0e;
+      border-color: #e55b0e;
+      transform: translateY(-1px);
+    }
+
+    /* ---------- CTA Banner ---------- */
+    .cta-banner {
+      background: linear-gradient(135deg, #1A6FFF 0%, #0d4db5 100%);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 12px;
+      letter-spacing: 0.5px;
+    }
+    .cta-banner p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.82);
+      margin: 0 0 28px;
+    }
+    .cta-banner-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-cta-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #fff;
+      color: #1A6FFF;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-cta-white:hover {
+      background: #f0f4ff;
+    }
+    .btn-cta-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.55);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-cta-outline:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      background: #080c12;
+      border-top: 1px solid #1f2937;
+      padding: 64px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #1f2937;
+    }
+    .footer-brand-col .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1A6FFF;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+    .footer-brand-col .footer-logo span {
+      color: #FF6B1A;
+    }
+    .footer-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      color: #9ca3af;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .footer-social a:hover {
+      background: #1A6FFF;
+      color: #fff;
+      border-color: #1A6FFF;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0 0 18px;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links li a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.87rem;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-links li a:hover {
+      color: #1A6FFF;
+    }
+    .footer-links li a i {
+      font-size: 0.7rem;
+      color: #374151;
+    }
+    .footer-contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.87rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    .footer-contact-list li i {
+      color: #1A6FFF;
+      font-size: 0.9rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .footer-contact-list li a {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-contact-list li a:hover {
+      color: #1A6FFF;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      color: #4b5563;
+      margin: 0;
+    }
+    .footer-gst {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      color: #374151;
+    }
+
+    /* ---------- Floating WhatsApp ---------- */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 88px;
+      right: 24px;
+      z-index: 9999;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .float-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+    }
+
+    /* ---------- Back to Top ---------- */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #1A6FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(26, 111, 255, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Mobile Bar ---------- */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9998;
+      background: #111827;
+      border-top: 1px solid #1f2937;
+      padding: 10px 0 8px;
+    }
+    .mobile-bar-inner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .mobile-bar-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+      color: #6b7280;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .mobile-bar-btn i {
+      font-size: 1.15rem;
+    }
+    .mobile-bar-btn.wa-bar {
+      color: #25D366;
+    }
+    .mobile-bar-btn:hover,
+    .mobile-bar-btn.active {
+      color: #1A6FFF;
+    }
+
+    /* ---------- Navigation ---------- */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 17, 23, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1f2937;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1A6FFF;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+    .nav-logo span {
+      color: #FF6B1A;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links li a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #9ca3af;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #ffffff;
+      background: rgba(26, 111, 255, 0.12);
+    }
+    .nav-links li a.active {
+      color: #93c5fd;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #1A6FFF;
+      color: #fff;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover {
+      background: #155de0;
+    }
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #9ca3af;
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .enquiry-layout {
+        grid-template-columns: 1fr;
+      }
+      .enquiry-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .enquiry-sidebar .emergency-card {
+        grid-column: 1 / -1;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+      .nav-mobile-toggle {
+        display: block;
+      }
+      .form-card {
+        padding: 24px 18px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .form-row .form-group {
+        margin-bottom: 20px;
+      }
+      .radio-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .checkbox-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .mobile-bar {
+        display: block;
+      }
+      .float-whatsapp {
+        bottom: 76px;
+      }
+      .back-to-top {
+        bottom: 76px;
+        right: 80px;
+      }
+      .enquiry-sidebar {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .radio-cards {
+        grid-template-columns: 1fr;
+      }
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+      .success-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      .cta-banner-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION
+       ============================================= -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">GEN<span>SETS</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="brands.html">Brands</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="enquiry.html" class="active" aria-current="page">Enquiry</a></li>
+        </ul>
+        <a href="enquiry.html" class="nav-cta">
+          <i class="fa-solid fa-paper-plane"></i> Get a Quote
+        </a>
+        <button class="nav-mobile-toggle" aria-label="Toggle mobile menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- =============================================
+         PAGE HERO
+         ============================================= -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <h1>Request a <span>Quote</span></h1>
+        <p class="hero-subtitle">Tell us what you need — our technical team will respond with availability and guidance</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true"><i class="fa-solid fa-chevron-right" style="font-size:0.65rem;"></i></span>
+          <span class="current" aria-current="page">Request a Quote</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =============================================
+         ENQUIRY SECTION
+         ============================================= -->
+    <section class="enquiry-section" aria-label="Enquiry form section">
+      <div class="container">
+        <div class="enquiry-layout">
+
+          <!-- ========== MAIN COLUMN ========== -->
+          <div class="main-col">
+
+            <!-- FORM -->
+            <div id="form-card-wrapper">
+              <form id="enquiry-form" class="form-card" novalidate aria-label="Enquiry request form">
+
+                <!-- === SECTION A: YOUR DETAILS === -->
+                <div class="form-section-block">
+                  <h2 class="form-section-title">
+                    <span class="section-letter">A</span>
+                    Your Details
+                  </h2>
+
+                  <!-- Full Name + Company Name -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="full-name">
+                        Full Name <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="full-name"
+                        name="full_name"
+                        placeholder="Your full name"
+                        required
+                        autocomplete="name"
+                        aria-required="true"
+                      />
+                      <span class="field-error" id="full-name-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter your full name.
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="company-name">
+                        Company Name <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="company-name"
+                        name="company_name"
+                        placeholder="Your company or organisation"
+                        required
+                        autocomplete="organization"
+                        aria-required="true"
+                      />
+                      <span class="field-error" id="company-name-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter your company name.
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Designation + Phone -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="designation">Designation</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="designation"
+                        name="designation"
+                        placeholder="e.g. Maintenance Engineer"
+                        autocomplete="organization-title"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="phone">
+                        Phone <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        class="form-input"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+91 98765 43210"
+                        required
+                        autocomplete="tel"
+                        aria-required="true"
+                      />
+                      <span class="field-error" id="phone-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid phone number.
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Email + City -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="email">Email</label>
+                      <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                      />
+                      <span class="field-error" id="email-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email address.
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="city">
+                        City <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Your city"
+                        required
+                        autocomplete="address-level2"
+                        aria-required="true"
+                      />
+                      <span class="field-error" id="city-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter your city.
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- State (single field) -->
+                  <div class="form-group">
+                    <label class="form-label" for="state">State</label>
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="state"
+                      name="state"
+                      placeholder="e.g. Tamil Nadu"
+                      autocomplete="address-level1"
+                    />
+                  </div>
+                </div>
+
+                <hr class="form-divider" />
+
+                <!-- === SECTION B: GENERATOR INFORMATION === -->
+                <div class="form-section-block">
+                  <h2 class="form-section-title">
+                    <span class="section-letter">B</span>
+                    Generator Information
+                  </h2>
+
+                  <!-- Generator Brand (full width) -->
+                  <div class="form-group">
+                    <label class="form-label" for="gen-brand">
+                      Generator Brand <span class="required-star" aria-hidden="true">*</span>
+                    </label>
+                    <select class="form-select" id="gen-brand" name="gen_brand" required aria-required="true">
+                      <option value="" disabled selected>Select generator brand</option>
+                      <option value="cummins">Cummins</option>
+                      <option value="kirloskar">Kirloskar</option>
+                      <option value="koel">KOEL</option>
+                      <option value="ashok-leyland">Ashok Leyland</option>
+                      <option value="perkins">Perkins</option>
+                      <option value="volvo-penta">Volvo Penta</option>
+                      <option value="mahindra">Mahindra</option>
+                      <option value="caterpillar">Caterpillar</option>
+                      <option value="stamford">Stamford</option>
+                      <option value="leroy-somer">Leroy-Somer</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <span class="field-error" id="gen-brand-error" role="alert">
+                      <i class="fa-solid fa-circle-exclamation"></i> Please select a generator brand.
+                    </span>
+                  </div>
+
+                  <!-- Generator Model + kVA Rating -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="gen-model">Generator Model</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="gen-model"
+                        name="gen_model"
+                        placeholder="e.g. DG 125 kVA"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="kva-rating">
+                        kVA Rating <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="kva-rating"
+                        name="kva_rating"
+                        placeholder="e.g. 125 kVA"
+                        required
+                        aria-required="true"
+                      />
+                      <span class="field-error" id="kva-rating-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please enter the kVA rating.
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Engine Model + Alternator Brand -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="engine-model">Engine Model</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="engine-model"
+                        name="engine_model"
+                        placeholder="e.g. 6BTA5.9-G2"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="alternator-brand">Alternator Brand</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="alternator-brand"
+                        name="alternator_brand"
+                        placeholder="e.g. Stamford, Leroy-Somer"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Year of Manufacture (single field) -->
+                  <div class="form-group">
+                    <label class="form-label" for="year-manufacture">Year of Manufacture</label>
+                    <input
+                      class="form-input"
+                      type="number"
+                      id="year-manufacture"
+                      name="year_manufacture"
+                      placeholder="e.g. 2018"
+                      min="1980"
+                      max="2026"
+                    />
+                  </div>
+                </div>
+
+                <hr class="form-divider" />
+
+                <!-- === SECTION C: YOUR REQUIREMENT === -->
+                <div class="form-section-block">
+                  <h2 class="form-section-title">
+                    <span class="section-letter">C</span>
+                    Your Requirement
+                  </h2>
+
+                  <!-- Enquiry Type (radio cards) -->
+                  <span class="radio-cards-label">
+                    Enquiry Type <span class="required-star" aria-hidden="true">*</span>
+                  </span>
+                  <div class="radio-cards" role="radiogroup" aria-label="Enquiry type" aria-required="true">
+                    <div class="radio-card">
+                      <input type="radio" id="enq-spare-parts" name="enquiry_type" value="spare-parts" required />
+                      <label for="enq-spare-parts">Spare Parts Supply</label>
+                    </div>
+                    <div class="radio-card">
+                      <input type="radio" id="enq-maintenance" name="enquiry_type" value="maintenance" />
+                      <label for="enq-maintenance">Generator Maintenance</label>
+                    </div>
+                    <div class="radio-card">
+                      <input type="radio" id="enq-amc" name="enquiry_type" value="amc" />
+                      <label for="enq-amc">Annual Maintenance Contract</label>
+                    </div>
+                    <div class="radio-card">
+                      <input type="radio" id="enq-emergency" name="enquiry_type" value="emergency" />
+                      <label for="enq-emergency">Emergency Support</label>
+                    </div>
+                    <div class="radio-card">
+                      <input type="radio" id="enq-consultation" name="enquiry_type" value="consultation" />
+                      <label for="enq-consultation">Technical Consultation</label>
+                    </div>
+                    <div class="radio-card">
+                      <input type="radio" id="enq-upgrade" name="enquiry_type" value="upgrade" />
+                      <label for="enq-upgrade">Generator Upgrade</label>
+                    </div>
+                  </div>
+                  <span class="radio-cards-error" id="enquiry-type-error" role="alert">
+                    <i class="fa-solid fa-circle-exclamation"></i> Please select an enquiry type.
+                  </span>
+
+                  <!-- Categories Needed -->
+                  <span class="checkbox-grid-label">Categories Needed</span>
+                  <div class="checkbox-grid" role="group" aria-label="Product categories needed">
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="controllers" />
+                      <span>Generator Controllers</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="avrs" />
+                      <span>AVRs</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="actuators" />
+                      <span>Actuators</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="engine-sensors" />
+                      <span>Engine Sensors</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="battery-chargers" />
+                      <span>Battery Chargers</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="fuel-gauges" />
+                      <span>Fuel Gauges</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="relay-cards" />
+                      <span>Relay Cards</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="piston-kits" />
+                      <span>Piston Kits</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="connecting-rods" />
+                      <span>Connecting Rods</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="rocker-arms" />
+                      <span>Rocker Arms</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="radiators" />
+                      <span>Radiators</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="cummins-parts" />
+                      <span>Cummins Parts</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="jcb-parts" />
+                      <span>JCB Parts</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="electrical" />
+                      <span>Electrical Components</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="categories" value="other" />
+                      <span>Other</span>
+                    </label>
+                  </div>
+
+                  <!-- Part Number / Description (required, full width) -->
+                  <div class="form-group">
+                    <label class="form-label" for="part-description">
+                      Part Number or Description <span class="required-star" aria-hidden="true">*</span>
+                    </label>
+                    <textarea
+                      class="form-textarea"
+                      id="part-description"
+                      name="part_description"
+                      placeholder="Enter part numbers, model names, or describe what you need..."
+                      required
+                      aria-required="true"
+                      rows="5"
+                    ></textarea>
+                    <span class="field-error" id="part-description-error" role="alert">
+                      <i class="fa-solid fa-circle-exclamation"></i> Please describe the parts or services you need.
+                    </span>
+                  </div>
+
+                  <!-- Quantity + Urgency -->
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="quantity">Quantity Required</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="quantity"
+                        name="quantity"
+                        placeholder="e.g. 2 nos, 1 set"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="urgency">
+                        Urgency <span class="required-star" aria-hidden="true">*</span>
+                      </label>
+                      <select class="form-select" id="urgency" name="urgency" required aria-required="true">
+                        <option value="" disabled selected>Select urgency</option>
+                        <option value="normal">Normal</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="emergency">Emergency</option>
+                      </select>
+                      <span class="field-error" id="urgency-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i> Please select urgency level.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <hr class="form-divider" />
+
+                <!-- === SECTION D: ADDITIONAL INFORMATION === -->
+                <div class="form-section-block">
+                  <h2 class="form-section-title">
+                    <span class="section-letter">D</span>
+                    Additional Information
+                  </h2>
+
+                  <!-- How did you hear about us -->
+                  <div class="form-group">
+                    <label class="form-label" for="hear-about">How did you hear about us?</label>
+                    <select class="form-select" id="hear-about" name="hear_about">
+                      <option value="" disabled selected>Select an option</option>
+                      <option value="google">Google Search</option>
+                      <option value="word-of-mouth">Word of Mouth</option>
+                      <option value="indiamart">IndiaMART</option>
+                      <option value="previous-customer">Previous Customer</option>
+                      <option value="social-media">Social Media</option>
+                      <option value="trade-show">Trade Show</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <!-- Additional Notes -->
+                  <div class="form-group">
+                    <label class="form-label" for="additional-notes">Additional Notes</label>
+                    <textarea
+                      class="form-textarea"
+                      id="additional-notes"
+                      name="additional_notes"
+                      placeholder="Any other details that may help us serve you better..."
+                      rows="4"
+                    ></textarea>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn-submit" id="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Submit Enquiry Request
+                  </button>
+                </div>
+
+              </form>
+            </div>
+            <!-- END FORM -->
+
+            <!-- SUCCESS MESSAGE (hidden by default) -->
+            <div id="form-success">
+              <div class="success-box">
+                <div class="success-icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h2>Thank You for Your Enquiry!</h2>
+                <p>Our technical team will review your requirements and contact you within 4 business hours.</p>
+                <p class="success-cta-text">Need immediate help? Call or WhatsApp us directly:</p>
+                <div class="success-actions">
+                  <a href="tel:+919876543210" class="btn-call">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                  </a>
+                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- END SUCCESS MESSAGE -->
+
+          </div>
+          <!-- END MAIN COLUMN -->
+
+          <!-- ========== SIDEBAR ========== -->
+          <aside class="enquiry-sidebar" aria-label="Enquiry information sidebar">
+
+            <!-- Sidebar Card 1: Why Request a Quote -->
+            <div class="sidebar-card">
+              <h3>Why Request a Quote?</h3>
+              <div class="sidebar-list">
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>Free technical consultation</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>Compatibility verified before dispatch</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>Competitive pricing for bulk orders</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>Fast response within 4 hours</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>No spam, no unsolicited calls</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span>GST invoice provided</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Sidebar Card 2: Prefer Direct Contact -->
+            <div class="sidebar-card">
+              <h3>Prefer Direct Contact?</h3>
+              <a href="tel:+919876543210" class="sidebar-contact-btn phone-btn">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                +91 98765 43210
+              </a>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="sidebar-contact-btn wa-btn">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                WhatsApp Us
+              </a>
+              <div class="sidebar-hours">
+                <p>Mon–Sat &nbsp;9AM–7PM</p>
+                <p class="emerg-text"><i class="fa-solid fa-circle-dot" style="font-size:0.65rem; margin-right:4px;"></i>24/7 Emergency Support</p>
+              </div>
+            </div>
+
+            <!-- Sidebar Card 3: Emergency Support -->
+            <div class="sidebar-card emergency-card">
+              <h3><i class="fa-solid fa-bolt" style="margin-right:8px; font-size:1rem;"></i>Emergency Support</h3>
+              <p class="sidebar-emerg-text">
+                For critical generator breakdowns, call our emergency line immediately — available 24/7.
+              </p>
+              <a href="tel:+919876543210" class="btn-orange-full">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                Emergency Call
+              </a>
+            </div>
+
+          </aside>
+          <!-- END SIDEBAR -->
+
+        </div>
+        <!-- END .enquiry-layout -->
+      </div>
+    </section>
+
+    <!-- =============================================
+         CTA BANNER
+         ============================================= -->
+    <section class="cta-banner" aria-label="Call to action">
+      <div class="container">
+        <h2>Still Have Questions?</h2>
+        <p>Browse our product catalogue or get in touch with our team — we are always ready to help.</p>
+        <div class="cta-banner-btns">
+          <a href="products.html" class="btn-cta-white">
+            <i class="fa-solid fa-layer-group"></i> Browse Products
+          </a>
+          <a href="contact.html" class="btn-cta-outline">
+            <i class="fa-solid fa-headset"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="footer-logo" aria-label="GENSETS Home">GEN<span>SETS</span></a>
+          <p class="footer-tagline">
+            Coimbatore's trusted source for generator spare parts, controllers, AVRs, and technical support.
+            Serving industries across Tamil Nadu and India since 2005.
+          </p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="#" aria-label="Facebook" title="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/919876543210" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" aria-label="YouTube" title="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="brands.html"><i class="fa-solid fa-chevron-right"></i> Brands</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+            <li><a href="enquiry.html"><i class="fa-solid fa-chevron-right"></i> Request a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Product Categories Column -->
+        <div class="footer-col">
+          <h4>Product Categories</h4>
+          <ul class="footer-links">
+            <li><a href="products.html#controllers"><i class="fa-solid fa-chevron-right"></i> Generator Controllers</a></li>
+            <li><a href="products.html#avrs"><i class="fa-solid fa-chevron-right"></i> AVRs</a></li>
+            <li><a href="products.html#actuators"><i class="fa-solid fa-chevron-right"></i> Actuators</a></li>
+            <li><a href="products.html#sensors"><i class="fa-solid fa-chevron-right"></i> Engine Sensors</a></li>
+            <li><a href="products.html#battery-chargers"><i class="fa-solid fa-chevron-right"></i> Battery Chargers</a></li>
+            <li><a href="products.html#cummins"><i class="fa-solid fa-chevron-right"></i> Cummins Parts</a></li>
+            <li><a href="products.html#electrical"><i class="fa-solid fa-chevron-right"></i> Electrical Components</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Ganapathy, Coimbatore 641006, Tamil Nadu, India</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </li>
+            <li>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">WhatsApp: 919876543210</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@gensets.in">info@gensets.in</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-bolt"></i>
+              <span style="color: #FF6B1A;">24/7 Emergency Support</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 GENSETS, Coimbatore. All rights reserved.</p>
+        <p class="footer-gst">GST No: 33XXXXX0000X1ZX</p>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href="https://wa.me/919876543210"
+    class="float-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    title="Chat on WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top Button -->
+  <a href="#main-content" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </a>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bar" role="navigation" aria-label="Mobile bottom navigation">
+    <div class="mobile-bar-inner">
+      <a href="index.html" class="mobile-bar-btn" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="products.html" class="mobile-bar-btn" aria-label="Products">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Products</span>
+      </a>
+      <a href="enquiry.html" class="mobile-bar-btn active" aria-label="Enquiry" aria-current="page">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span>Enquiry</span>
+      </a>
+      <a href="https://wa.me/919876543210" class="mobile-bar-btn wa-bar" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+      <a href="tel:+919876543210" class="mobile-bar-btn" aria-label="Call us">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="main.js"></script>
+
+  <!-- Enquiry Page Script -->
+  <script>
+    (function () {
+      'use strict';
+
+      // ---- Back-to-top visibility ----
+      var backToTop = document.getElementById('back-to-top');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 320) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // ---- Form validation helpers ----
+      function showError(inputId, errorId) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        if (input) input.classList.add('error');
+        if (error) error.classList.add('visible');
+      }
+      function clearError(inputId, errorId) {
+        var input = document.getElementById(inputId);
+        var error = document.getElementById(errorId);
+        if (input) input.classList.remove('error');
+        if (error) error.classList.remove('visible');
+      }
+      function isValidEmail(val) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      }
+      function isValidPhone(val) {
+        return /^[\d\s\+\-\(\)]{7,15}$/.test(val.trim());
+      }
+
+      // Live validation on blur
+      var liveFields = [
+        { id: 'full-name', errId: 'full-name-error', check: function (v) { return v.trim().length >= 2; } },
+        { id: 'company-name', errId: 'company-name-error', check: function (v) { return v.trim().length >= 2; } },
+        { id: 'phone', errId: 'phone-error', check: isValidPhone },
+        { id: 'city', errId: 'city-error', check: function (v) { return v.trim().length >= 2; } },
+        { id: 'kva-rating', errId: 'kva-rating-error', check: function (v) { return v.trim().length >= 1; } },
+        { id: 'part-description', errId: 'part-description-error', check: function (v) { return v.trim().length >= 5; } }
+      ];
+      liveFields.forEach(function (f) {
+        var el = document.getElementById(f.id);
+        if (!el) return;
+        el.addEventListener('blur', function () {
+          if (!f.check(el.value)) {
+            showError(f.id, f.errId);
+          } else {
+            clearError(f.id, f.errId);
+          }
+        });
+        el.addEventListener('input', function () {
+          if (f.check(el.value)) {
+            clearError(f.id, f.errId);
+          }
+        });
+      });
+
+      // Email live validation (optional field but must be valid if filled)
+      var emailEl = document.getElementById('email');
+      if (emailEl) {
+        emailEl.addEventListener('blur', function () {
+          if (emailEl.value.trim() !== '' && !isValidEmail(emailEl.value)) {
+            showError('email', 'email-error');
+          } else {
+            clearError('email', 'email-error');
+          }
+        });
+        emailEl.addEventListener('input', function () {
+          if (emailEl.value.trim() === '' || isValidEmail(emailEl.value)) {
+            clearError('email', 'email-error');
+          }
+        });
+      }
+
+      // Select live validation
+      var selectFields = [
+        { id: 'gen-brand', errId: 'gen-brand-error' },
+        { id: 'urgency', errId: 'urgency-error' }
+      ];
+      selectFields.forEach(function (f) {
+        var el = document.getElementById(f.id);
+        if (!el) return;
+        el.addEventListener('change', function () {
+          if (el.value) {
+            clearError(f.id, f.errId);
+          } else {
+            showError(f.id, f.errId);
+          }
+        });
+      });
+
+      // ---- Form submit handler ----
+      var form = document.getElementById('enquiry-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var valid = true;
+
+          // Full Name
+          var fullName = document.getElementById('full-name').value;
+          if (!fullName || fullName.trim().length < 2) {
+            showError('full-name', 'full-name-error');
+            valid = false;
+          } else {
+            clearError('full-name', 'full-name-error');
+          }
+
+          // Company Name
+          var companyName = document.getElementById('company-name').value;
+          if (!companyName || companyName.trim().length < 2) {
+            showError('company-name', 'company-name-error');
+            valid = false;
+          } else {
+            clearError('company-name', 'company-name-error');
+          }
+
+          // Phone
+          var phone = document.getElementById('phone').value;
+          if (!phone || !isValidPhone(phone)) {
+            showError('phone', 'phone-error');
+            valid = false;
+          } else {
+            clearError('phone', 'phone-error');
+          }
+
+          // Email (optional but must be valid if filled)
+          var emailVal = document.getElementById('email').value;
+          if (emailVal.trim() !== '' && !isValidEmail(emailVal)) {
+            showError('email', 'email-error');
+            valid = false;
+          } else {
+            clearError('email', 'email-error');
+          }
+
+          // City
+          var city = document.getElementById('city').value;
+          if (!city || city.trim().length < 2) {
+            showError('city', 'city-error');
+            valid = false;
+          } else {
+            clearError('city', 'city-error');
+          }
+
+          // Generator Brand
+          var genBrand = document.getElementById('gen-brand').value;
+          if (!genBrand) {
+            showError('gen-brand', 'gen-brand-error');
+            valid = false;
+          } else {
+            clearError('gen-brand', 'gen-brand-error');
+          }
+
+          // kVA Rating
+          var kva = document.getElementById('kva-rating').value;
+          if (!kva || kva.trim().length < 1) {
+            showError('kva-rating', 'kva-rating-error');
+            valid = false;
+          } else {
+            clearError('kva-rating', 'kva-rating-error');
+          }
+
+          // Enquiry Type (radio)
+          var radioChecked = document.querySelector('input[name="enquiry_type"]:checked');
+          var radioError = document.getElementById('enquiry-type-error');
+          if (!radioChecked) {
+            if (radioError) radioError.classList.add('visible');
+            valid = false;
+          } else {
+            if (radioError) radioError.classList.remove('visible');
+          }
+
+          // Part Description
+          var partDesc = document.getElementById('part-description').value;
+          if (!partDesc || partDesc.trim().length < 5) {
+            showError('part-description', 'part-description-error');
+            valid = false;
+          } else {
+            clearError('part-description', 'part-description-error');
+          }
+
+          // Urgency
+          var urgency = document.getElementById('urgency').value;
+          if (!urgency) {
+            showError('urgency', 'urgency-error');
+            valid = false;
+          } else {
+            clearError('urgency', 'urgency-error');
+          }
+
+          if (!valid) {
+            // Scroll to first error
+            var firstError = form.querySelector('.form-input.error, .form-select.error, .form-textarea.error');
+            if (!firstError) firstError = form.querySelector('.radio-cards-error.visible');
+            if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+          }
+
+          // All valid — show success message
+          var submitBtn = document.getElementById('submit-btn');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+          }
+
+          // Simulate async submission
+          setTimeout(function () {
+            var formCardWrapper = document.getElementById('form-card-wrapper');
+            var successDiv = document.getElementById('form-success');
+            if (formCardWrapper) formCardWrapper.style.display = 'none';
+            if (successDiv) {
+              successDiv.style.display = 'block';
+              successDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 900);
+        });
+      }
+
+      // ---- Mobile nav toggle ----
+      var mobileToggle = document.querySelector('.nav-mobile-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', function () {
+          var expanded = navLinks.classList.toggle('mobile-open');
+          mobileToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      }
+
+    })();
+  </script>
+
+  <!-- No images on this page — all visuals are achieved through CSS styling and Font Awesome icons -->
+
+<!--
+========================================
+IMAGE REPLACEMENT GUIDE — ENQUIRY.HTML
+========================================
+This page contains no product or section images.
+All UI is form-based with CSS and icon styling.
+If a hero or trust-building image is added in future,
+use the standard .img-wrapper data-replace structure.
+========================================
+-->
+</body>
+</html>
