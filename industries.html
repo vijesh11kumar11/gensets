@@ -25,18 +25,18 @@
 
     /* --- Page Hero --- */
     .page-hero {
-      background: linear-gradient(135deg, #0a0e1a 0%, #0d1424 50%, #0a1628 100%);
+      background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
       padding: 120px 0 70px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid rgba(26, 111, 255, 0.15);
+      border-bottom: 1px solid var(--color-border);
     }
     .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26, 111, 255, 0.12) 0%, transparent 70%);
+      background: none;
     }
     .page-hero-content {
       position: relative;
@@ -62,19 +62,19 @@
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       font-weight: 800;
-      color: #ffffff;
+      color: var(--color-text-dark);
       line-height: 1.05;
       margin: 0 0 18px;
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
     .page-hero-title span {
-      color: #1A6FFF;
+      color: var(--color-blue-primary);
     }
     .page-hero-subtitle {
       font-family: 'Inter', sans-serif;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.65);
+      color: var(--color-text-body);
       max-width: 620px;
       margin: 0 auto 30px;
       line-height: 1.65;
@@ -976,44 +976,67 @@
 </head>
 <body>
 
-  <!-- =========================================================
-       NAVIGATION
-       ========================================================= -->
-  <nav class="navbar" id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="nav-logo-text">GEN<span>SETS</span></div>
+<header class="site-header" id="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
       </a>
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
+    </div>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li></li>
-        <li><a href="industries.html" class="active">Industries</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
-      </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-
-    <div class="nav-mobile" id="navMobile">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="industries.html" class="active">Industries</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact Us</a>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
     </div>
-  </nav>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
 
 
   <!-- =========================================================

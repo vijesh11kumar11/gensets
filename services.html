@@ -19,84 +19,82 @@
 </head>
 <body>
 
-  <!-- ===== NAVIGATION HEADER ===== -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
+<header class="site-header" id="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
 
-      <!-- Logo -->
-      <a href="index.html" class="logo" aria-label="GENSETS Home">
-        <span class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></span>
-        <span class="logo-text">GEN<span class="logo-accent">SETS</span></span>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="services.html" class="nav-link nav-link--active" aria-current="page">Services</a></li>
-          <li></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Header CTA -->
-      <div class="header-actions">
-        <a href="tel:+919363208579" class="btn btn-outline btn-sm header-tel">
-          <i class="fa-solid fa-phone"></i>
-          <span>+91 98765 43210</span>
-        </a>
-        <a href="enquiry.html" class="btn btn-primary btn-sm">Get Quote</a>
-      </div>
-
-      <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
-      <ul class="nav-mobile-list">
-        <li><a href="index.html" class="nav-mobile-link">Home</a></li>
-        <li><a href="products.html" class="nav-mobile-link">Products</a></li>
-        <li><a href="services.html" class="nav-mobile-link nav-mobile-link--active">Services</a></li>
-        <li></li>
-        <li><a href="about.html" class="nav-mobile-link">About</a></li>
-        <li><a href="contact.html" class="nav-mobile-link">Contact</a></li>
-        <li class="nav-mobile-cta">
-          <a href="enquiry.html" class="btn btn-primary btn-block">Enquire Now</a>
-        </li>
-      </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
     </nav>
-  </header>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
 
   <main id="main-content">
 
     <!-- ===== PAGE HERO ===== -->
     <section class="page-hero" aria-label="Page introduction">
-      <div class="page-hero-overlay"></div>
-      <div class="container page-hero-inner">
-
-        <!-- Breadcrumb -->
+      <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol class="breadcrumb-list">
-            <li class="breadcrumb-item">
-              <a href="index.html" class="breadcrumb-link">
-                <i class="fa-solid fa-house"></i> Home
-              </a>
-            </li>
-            <li class="breadcrumb-separator" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
-            <li class="breadcrumb-item breadcrumb-item--active" aria-current="page">Services</li>
-          </ol>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+          <span aria-current="page">Services</span>
         </nav>
-
-        <h1 class="page-hero-title">Industrial Power Services</h1>
+        <h1 class="page-hero-title">Industrial Power <span class="accent">Services</span></h1>
         <p class="page-hero-subtitle">Generator maintenance, emergency support, AMC, and technical consultation for industrial facilities</p>
+      </div>
+    </section>
 
         <!-- Quick jump links -->
         <div class="page-hero-jumps">
