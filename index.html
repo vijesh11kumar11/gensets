@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GENSETS — Coimbatore's leading supplier of generator spare parts, AVRs, controllers, actuators, engine components and industrial power solutions. Call +91 98765 43210.">
-  <title>Home | GENSETS — Generator Spare Parts, Coimbatore</title>
+  <meta name="description" content="GENSETS â€” Coimbatore's generator experts since 2000. Sales, spare parts, service, rental, and used genset sales. Call +91 93632 08579.">
+  <title>Home | GENSETS â€” Generator Spare Parts, Coimbatore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,39 +13,67 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header" id="site-header">
-  <nav class="nav-inner">
-    <a href="index.html" class="nav-logo"><i class="fa-solid fa-bolt logo-bolt"></i>GENSETS</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="enquiry.html">Enquiry</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="tel:+919876543210" class="nav-phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
-      <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-sm" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-  </nav>
-</header>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
 
-<div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-menu-close" id="mobile-menu-close"><i class="fa-solid fa-xmark"></i></button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="products.html">Products</a>
-  <a href="services.html">Services</a>
-  <a href="industries.html">Industries</a>
-  <a href="contact.html">Contact</a>
-  <a href="enquiry.html">Enquiry</a>
-  <a href="tel:+919876543210" class="btn btn-primary mt-md"><i class="fa-solid fa-phone"></i> Call Now</a>
-  <a href="https://wa.me/919876543210?text=Hello%20GENSETS" class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-</div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
+      </a>
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
 
 <!-- SECTION 1: HERO -->
 <section class="hero grid-texture">
@@ -61,12 +89,12 @@
         </h1>
         <p class="hero-sub">Premium quality generator spare parts, controllers, AVRs, actuators, and engine components for industrial facilities across Tamil Nadu and India.</p>
         <div class="hero-cta">
-          <a href="tel:+919876543210" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Now</a>
-          <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-lg" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+          <a href="tel:+919363208579" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Now</a>
+          <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-lg" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
           <a href="enquiry.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-file-lines"></i> Request a Quote</a>
         </div>
         <div class="trust-badges">
-          <span class="trust-badge"><i class="fa-solid fa-check"></i> 15+ Years Experience</span>
+          <span class="trust-badge"><i class="fa-solid fa-check"></i> Since 2000</span>
           <span class="trust-badge"><i class="fa-solid fa-check"></i> 500+ Products</span>
           <span class="trust-badge"><i class="fa-solid fa-check"></i> Pan-India Supply</span>
           <span class="trust-badge"><i class="fa-solid fa-check"></i> 24/7 Emergency Support</span>
@@ -74,7 +102,7 @@
       </div>
       <div class="hero-img-col">
         <div class="hero-img-wrapper img-wrapper" data-replace="hero-generator-hall">
-          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80&fit=crop" alt="Industrial generator hall — replace with GENSETS facility or generator set photo" class="site-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80&fit=crop" alt="Industrial generator hall â€” replace with GENSETS facility or generator set photo" class="site-img" loading="lazy">
         </div>
         <div class="hero-stat-card">
           <i class="fa-solid fa-industry"></i>
@@ -94,7 +122,7 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+        <div class="stat-number" data-target="25" data-suffix="+">25+</div>
         <div class="stat-label">Years Experience</div>
       </div>
       <div class="stat-item">
@@ -123,16 +151,23 @@
     <div class="grid-1-2">
       <div class="overview-img-wrap">
         <div class="img-wrapper" data-replace="about-company-overview" style="aspect-ratio:1/1;border-radius:var(--radius-xl);overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&fit=crop" alt="GENSETS team or warehouse — replace with actual company photo" class="site-img" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&fit=crop" alt="GENSETS team or warehouse â€” replace with actual company photo" class="site-img" loading="lazy">
         </div>
-        <div class="overview-badge">EST. 2009 | Coimbatore, TN</div>
+        <div class="overview-badge">EST. 2000 | Coimbatore, TN</div>
       </div>
       <div class="reveal">
         <div class="section-label">About GENSETS</div>
         <h2 class="section-heading">Coimbatore's Most Trusted Generator <span class="accent">Parts Supplier</span></h2>
-        <p style="color:var(--color-silver);margin-bottom:16px;">Established in 2009, GENSETS has grown to become the most trusted name in generator spare parts supply across Coimbatore and Tamil Nadu. We supply premium quality OEM and OEM-equivalent parts to industrial facilities, hospitals, hotels, data centers, and manufacturing plants throughout India.</p>
-        <p style="color:var(--color-silver);margin-bottom:16px;">Our deep technical expertise in generator systems — from Cummins and Kirloskar to Deep Sea, InteliGen, Leroy-Somer, and Stamford — means you always get the right part, verified for compatibility before dispatch. We don't just sell parts; we solve power reliability problems.</p>
-        <p style="color:var(--color-silver);margin-bottom:24px;">From a single critical spare to bulk procurement contracts, GENSETS delivers with speed, precision, and the kind of technical support that prevents costly downtime.</p>
+        <p style="color:var(--color-text-body);margin-bottom:16px;">Established in 2000, GENSETS has grown to become the most trusted name in generator spare parts supply across Coimbatore and Tamil Nadu. We supply premium quality OEM and OEM-equivalent parts to industrial facilities, hospitals, hotels, data centers, and manufacturing plants throughout India.</p>
+        <p style="color:var(--color-text-body);margin-bottom:16px;">Our deep technical expertise in generator systems â€” from Cummins and Kirloskar to Deep Sea, InteliGen, Leroy-Somer, and Stamford â€” means you always get the right part, verified for compatibility before dispatch. We don't just sell parts; we solve power reliability problems.</p>
+        <p style="color:var(--color-text-body);margin-bottom:24px;">From a single critical spare to bulk procurement contracts, GENSETS delivers with speed, precision, and the kind of technical support that prevents costly downtime.</p>
+        <div class="service-types-row">
+          <span class="stype-badge"><i class="fa-solid fa-store"></i> Sales</span>
+          <span class="stype-badge"><i class="fa-solid fa-gears"></i> Spare Parts</span>
+          <span class="stype-badge"><i class="fa-solid fa-screwdriver-wrench"></i> Service</span>
+          <span class="stype-badge"><i class="fa-solid fa-truck-ramp-box"></i> Rental</span>
+          <span class="stype-badge"><i class="fa-solid fa-tags"></i> Used Genset Sale</span>
+        </div>
         <div class="checklist">
           <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> Genuine OEM &amp; OEM-Equivalent Parts</div>
           <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> Technical Expert Consultation</div>
@@ -141,7 +176,7 @@
           <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> Pan-India Shipping</div>
           <div class="checklist-item"><i class="fa-solid fa-circle-check"></i> Emergency Spare Parts Support</div>
         </div>
-        <a href="about.html" class="btn btn-outline">Learn About GENSETS →</a>
+        <a href="about.html" class="btn btn-outline">Learn About GENSETS â†’</a>
       </div>
     </div>
   </div>
@@ -153,31 +188,31 @@
     <div class="text-center" style="margin-bottom:3rem;">
       <div class="section-label" style="justify-content:center;">Our Products</div>
       <h2 class="section-heading">Complete Generator <span class="accent">Parts Ecosystem</span></h2>
-      <p class="section-subtext" style="margin:0 auto;">From controllers and AVRs to engine internals and radiators — 500+ products across every generator spare part category.</p>
+      <p class="section-subtext" style="margin:0 auto;">From controllers and AVRs to engine internals and radiators â€” 500+ products across every generator spare part category.</p>
     </div>
     <div class="grid-4">
-      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-microchip"></i></div><h3>Generator Controllers</h3><p>Deep Sea, Cummins PCC, InteliGen and multi-brand digital engine controllers for automated generator sets.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-bolt"></i></div><h3>Automatic Voltage Regulators</h3><p>Leroy-Somer R450T, Stamford, and compatible AVRs for precise voltage regulation.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-desktop"></i></div><h3>Generator Control Panels</h3><p>PSO 500, AMF panels, manual and automatic control panels for industrial applications.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box icon-box-orange"><i class="fa-solid fa-cogs"></i></div><h3>Actuators</h3><p>Electric linear actuators and engine speed control actuators for diesel generator sets.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-gauge"></i></div><h3>Engine Sensors</h3><p>Oil pressure, coolant temperature, speed sensors and RPM monitoring devices.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-battery-full"></i></div><h3>Battery Chargers</h3><p>Generator battery float chargers and trickle chargers for reliable battery maintenance.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box icon-box-orange"><i class="fa-solid fa-gas-pump"></i></div><h3>Fuel Level Gauges</h3><p>Float-type and electronic fuel level senders and display gauges for generator tanks.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box"><i class="fa-solid fa-network-wired"></i></div><h3>Relay Cards</h3><p>Generator relay modules, protection relay cards, and auxiliary relay assemblies.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-tachometer-alt"></i></div><h3>Speed Governors</h3><p>Mechanical and electronic speed governors and speed limiting devices.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box icon-box-orange"><i class="fa-solid fa-circle-dot"></i></div><h3>Piston Kits</h3><p>OEM and equivalent piston kits for Cummins, Kirloskar, and major generator brands.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-link"></i></div><h3>Connecting Rods</h3><p>High-strength connecting rod assemblies for diesel engine overhaul and rebuild.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div><h3>Rocker Arm Assemblies</h3><p>Engine rocker arm assemblies, shafts, and valve train components.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal"><div class="icon-box icon-box-orange"><i class="fa-solid fa-temperature-half"></i></div><h3>Radiators</h3><p>Banco generator radiators, cooling cores, and heat exchanger assemblies.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-industry"></i></div><h3>Cummins Components</h3><p>Cummins engine and generator parts including PCC controllers, filters, and kits.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-wrench"></i></div><h3>JCB Spare Parts</h3><p>JCB Ecomax engine packing kits, head gaskets, and mechanical components.</p><a href="products.html">View Products →</a></div>
-      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box icon-box-orange"><i class="fa-solid fa-plug"></i></div><h3>Electrical Components</h3><p>Industrial contactors, circuit breakers, and wiring accessories for generators.</p><a href="products.html">View Products →</a></div>
+      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-microchip"></i></div><h3>Generator Controllers</h3><p>Deep Sea, Cummins PCC, InteliGen and multi-brand digital engine controllers for automated generator sets.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-bolt"></i></div><h3>Automatic Voltage Regulators</h3><p>Leroy-Somer R450T, Stamford, and compatible AVRs for precise voltage regulation.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-desktop"></i></div><h3>Generator Control Panels</h3><p>PSO 500, AMF panels, manual and automatic control panels for industrial applications.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box icon-box-orange"><i class="fa-solid fa-cogs"></i></div><h3>Actuators</h3><p>Electric linear actuators and engine speed control actuators for diesel generator sets.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-gauge"></i></div><h3>Engine Sensors</h3><p>Oil pressure, coolant temperature, speed sensors and RPM monitoring devices.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-battery-full"></i></div><h3>Battery Chargers</h3><p>Generator battery float chargers and trickle chargers for reliable battery maintenance.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box icon-box-orange"><i class="fa-solid fa-gas-pump"></i></div><h3>Fuel Level Gauges</h3><p>Float-type and electronic fuel level senders and display gauges for generator tanks.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box"><i class="fa-solid fa-network-wired"></i></div><h3>Relay Cards</h3><p>Generator relay modules, protection relay cards, and auxiliary relay assemblies.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal"><div class="icon-box"><i class="fa-solid fa-tachometer-alt"></i></div><h3>Speed Governors</h3><p>Mechanical and electronic speed governors and speed limiting devices.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box icon-box-orange"><i class="fa-solid fa-circle-dot"></i></div><h3>Piston Kits</h3><p>OEM and equivalent piston kits for Cummins, Kirloskar, and major generator brands.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-link"></i></div><h3>Connecting Rods</h3><p>High-strength connecting rod assemblies for diesel engine overhaul and rebuild.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div><h3>Rocker Arm Assemblies</h3><p>Engine rocker arm assemblies, shafts, and valve train components.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal"><div class="icon-box icon-box-orange"><i class="fa-solid fa-temperature-half"></i></div><h3>Radiators</h3><p>Banco generator radiators, cooling cores, and heat exchanger assemblies.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-industry"></i></div><h3>Cummins Components</h3><p>Cummins engine and generator parts including PCC controllers, filters, and kits.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-2"><div class="icon-box"><i class="fa-solid fa-wrench"></i></div><h3>JCB Spare Parts</h3><p>JCB Ecomax engine packing kits, head gaskets, and mechanical components.</p><a href="products.html">View Products â†’</a></div>
+      <div class="card cat-card reveal reveal-delay-3"><div class="icon-box icon-box-orange"><i class="fa-solid fa-plug"></i></div><h3>Electrical Components</h3><p>Industrial contactors, circuit breakers, and wiring accessories for generators.</p><a href="products.html">View Products â†’</a></div>
     </div>
     <div class="cat-banner reveal">
       <p>Can't find what you need? Our technical team can source any generator spare part.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="tel:+919876543210" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
-        <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="tel:+919363208579" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
   </div>
@@ -191,7 +226,7 @@
     <div class="grid-3" style="margin-top:2.5rem;">
       <div class="card reveal"><div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Technical Expertise</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">Our team has deep technical knowledge of generator systems, ensuring you always get the right part for your specific application and brand.</p></div>
       <div class="card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Genuine Quality Parts</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">We supply OEM and premium OEM-equivalent spare parts that meet manufacturer specifications for performance, fit, and longevity.</p></div>
-      <div class="card card-orange reveal reveal-delay-2"><div class="icon-box icon-box-orange"><i class="fa-solid fa-boxes-stacked"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Wide Product Range</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">500+ products across all major categories — GENSETS is your single-source supplier for all generator spare part requirements.</p></div>
+      <div class="card card-orange reveal reveal-delay-2"><div class="icon-box icon-box-orange"><i class="fa-solid fa-boxes-stacked"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Wide Product Range</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">500+ products across all major categories â€” GENSETS is your single-source supplier for all generator spare part requirements.</p></div>
       <div class="card reveal reveal-delay-1"><div class="icon-box"><i class="fa-solid fa-truck-fast"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Fast Dispatch</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">Parts dispatched promptly from our Coimbatore warehouse. Emergency parts supply coordination available for critical breakdowns.</p></div>
       <div class="card card-orange reveal reveal-delay-2"><div class="icon-box icon-box-orange"><i class="fa-solid fa-map-location-dot"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Pan-India Supply</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">We supply to customers across Tamil Nadu and throughout India with reliable courier and freight partnerships.</p></div>
       <div class="card reveal reveal-delay-3"><div class="icon-box"><i class="fa-solid fa-headset"></i></div><h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--color-white);margin-bottom:10px;">Expert Consultation</h3><p style="font-size:var(--text-sm);color:var(--color-silver);">Talk to our technical team before ordering. We verify compatibility, check specifications, and confirm the right solution.</p></div>
@@ -203,7 +238,7 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-label">Our Services</div>
-    <h2 class="section-heading">Beyond Parts Supply — Complete <span class="accent">Power Solutions</span></h2>
+    <h2 class="section-heading">Beyond Parts Supply â€” Complete <span class="accent">Power Solutions</span></h2>
     <div class="grid-3" style="margin-top:2.5rem;">
       <div class="card service-card service-top-border reveal">
         <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -215,13 +250,13 @@
         <div class="icon-box icon-box-orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
         <h3>Emergency Repair Support</h3>
         <p>Critical breakdown support with rapid spare parts sourcing and technical guidance to get your generator back online fast.</p>
-        <a href="tel:+919876543210" class="btn btn-orange btn-sm"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="tel:+919363208579" class="btn btn-orange btn-sm"><i class="fa-solid fa-phone"></i> Call Now</a>
       </div>
       <div class="card service-card service-top-border reveal reveal-delay-2">
         <div class="icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
         <h3>Spare Parts Consultation</h3>
         <p>Technical consultation to identify the correct spare part, cross-reference OEM numbers, and verify compatibility before purchase.</p>
-        <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-sm" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+        <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-sm" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
       </div>
       <div class="card service-card service-top-border reveal">
         <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
@@ -243,7 +278,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:2.5rem;">
-      <a href="services.html" class="btn btn-outline">View All Services →</a>
+      <a href="services.html" class="btn btn-outline">View All Services â†’</a>
     </div>
   </div>
 </section>
@@ -283,7 +318,7 @@
           <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="testi-quote">"GENSETS supplied the exact Deep Sea 4520 controller we needed within 24 hours. Their technical team confirmed compatibility before dispatch. Zero downtime for our plant."</p>
           <div class="testi-name">Rajesh Kumar</div>
-          <div class="testi-role">Maintenance Manager — Textile Manufacturing, Tiruppur</div>
+          <div class="testi-role">Maintenance Manager â€” Textile Manufacturing, Tiruppur</div>
           <span class="testi-badge">Manufacturing</span>
         </div>
       </div>
@@ -292,7 +327,7 @@
           <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="testi-quote">"We've been sourcing Cummins spare parts from GENSETS for 3 years. Consistent quality, correct part numbers every time, and they always have stock when we need it urgently."</p>
           <div class="testi-name">Priya Venkatesh</div>
-          <div class="testi-role">Procurement Head — Pharmaceutical Plant, Chennai</div>
+          <div class="testi-role">Procurement Head â€” Pharmaceutical Plant, Chennai</div>
           <span class="testi-badge">Pharmaceutical</span>
         </div>
       </div>
@@ -301,16 +336,16 @@
           <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="testi-quote">"The AVR sourcing team at GENSETS is exceptional. They identified the correct Leroy-Somer replacement and had it at our site within 48 hours. Highly professional."</p>
           <div class="testi-name">Anand Subramanian</div>
-          <div class="testi-role">Chief Engineer — 5-Star Hotel, Coimbatore</div>
+          <div class="testi-role">Chief Engineer â€” 5-Star Hotel, Coimbatore</div>
           <span class="testi-badge">Hospitality</span>
         </div>
       </div>
       <div class="testimonial-slide">
         <div class="card" style="max-width:700px;margin:0 auto;">
           <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testi-quote">"Our hospital relies on 100% generator uptime. GENSETS has been our emergency spare parts partner for years — they understand the criticality and always deliver."</p>
+          <p class="testi-quote">"Our hospital relies on 100% generator uptime. GENSETS has been our emergency spare parts partner for years â€” they understand the criticality and always deliver."</p>
           <div class="testi-name">Dr. Senthil Rajan</div>
-          <div class="testi-role">Facility Manager — Multi-Specialty Hospital, Coimbatore</div>
+          <div class="testi-role">Facility Manager â€” Multi-Specialty Hospital, Coimbatore</div>
           <span class="testi-badge">Healthcare</span>
         </div>
       </div>
@@ -319,7 +354,7 @@
           <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
           <p class="testi-quote">"Excellent product knowledge and fast supply. They cross-referenced our old part number and supplied the correct replacement sensor when other vendors couldn't help."</p>
           <div class="testi-name">Mohammed Farooq</div>
-          <div class="testi-role">Site Engineer — Data Center, Bangalore</div>
+          <div class="testi-role">Site Engineer â€” Data Center, Bangalore</div>
           <span class="testi-badge">Data Center</span>
         </div>
       </div>
@@ -337,7 +372,7 @@
     <div class="trust-row">
       <span class="trust-item"><i class="fa-solid fa-file-invoice"></i> GST Registered</span>
       <span class="trust-item"><i class="fa-solid fa-map-location-dot"></i> Pan-India Supply</span>
-      <span class="trust-item"><i class="fa-solid fa-calendar"></i> 15+ Years Experience</span>
+      <span class="trust-item"><i class="fa-solid fa-calendar"></i> 25+ Years Experience</span>
       <span class="trust-item"><i class="fa-solid fa-shield-halved"></i> OEM Quality Parts</span>
       <span class="trust-item"><i class="fa-solid fa-triangle-exclamation"></i> 24/7 Emergency Support</span>
       <span class="trust-item"><i class="fa-solid fa-users"></i> Expert Technical Team</span>
@@ -352,11 +387,11 @@
   <h2>Need Generator Parts Now?</h2>
   <p>Call our technical team or WhatsApp us. We'll confirm part availability, check compatibility, and dispatch from Coimbatore immediately.</p>
   <div class="cta-btns">
-    <a href="tel:+919876543210" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call: +91 98765 43210</a>
-    <a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-lg" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+    <a href="tel:+919363208579" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call: +91 98765 43210</a>
+    <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-lg" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
     <a href="enquiry.html" class="btn btn-outline btn-lg"><i class="fa-solid fa-envelope"></i> Send Enquiry</a>
   </div>
-  <p class="cta-note">Available Mon–Sat 9AM–7PM | Emergency support available 24/7</p>
+  <p class="cta-note">Available Monâ€“Sat 9AMâ€“7PM | Emergency support available 24/7</p>
 </section>
 
 <!-- FOOTER -->
@@ -364,7 +399,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><i class="fa-solid fa-bolt logo-bolt"></i>GENSETS</a>
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="logo-text">GENSETS</span>
+        </a>
         <p>Coimbatore's trusted partner for generator spare parts, industrial power solutions, and engineering services. Supplying quality parts to factories, hospitals, hotels, and industries across Tamil Nadu and India.</p>
         <div class="footer-social">
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -402,42 +440,63 @@
       </div>
       <div class="footer-col">
         <h4>Contact Us</h4>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>GENSETS Industrial Solutions, Ganapathy, Coimbatore - 641006, Tamil Nadu, India</span></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+919876543210">+91 98765 43210</a></div>
-        <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919876543210" target="_blank">WhatsApp: +91 98765 43210</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@gensets.in">info@gensets.in</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 7:00 PM<br><span style="color:var(--color-orange)">24/7 Emergency Support</span></span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i>
+          <div>
+            <a href="tel:+919363208579">+91 93632 08579</a><br>
+            <a href="tel:+916383991815">+91 63839 91815</a><br>
+            <span style="color:var(--color-text-light);font-size:0.8rem;">
+              Office: <a href="tel:+918903152279">+91 89031 52279</a>
+            </span>
+          </div>
+        </div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Shop No 5, HM Complex, Addis Street,<br>Grey Town, Near Nehru Stadium,<br>Coimbatore - 641018, Tamil Nadu</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Monâ€“Sat: 9:00 AM â€“ 7:00 PM<br>
+          <strong style="color:var(--color-orange);">24/7 Emergency Support</strong>
+        </span></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
-      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html" style="color:var(--color-blue-primary)">Contact Us</a></p>
+      <p>Â© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
+      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html">Contact Us</a></p>
     </div>
   </div>
 </footer>
 
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/919876543210?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
-<div class="mobile-bar">
-  <a href="tel:+919876543210" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
-  <a href="https://wa.me/919876543210?text=Hello%20GENSETS" class="wa-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-  <a href="enquiry.html" class="enq-btn"><i class="fa-solid fa-envelope"></i> Enquiry</a>
+<a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Mobile Sticky Bottom Bar -->
+<div class="mobile-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+919363208579" class="mbar-btn mbar-call">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="enquiry.html" class="mbar-btn mbar-enq">
+    <i class="fa-solid fa-file-lines"></i>
+    <span>Get Quote</span>
+  </a>
 </div>
 <script src="main.js"></script>
 
 <!--
 ========================================
-IMAGE REPLACEMENT GUIDE — INDEX.HTML
+IMAGE REPLACEMENT GUIDE â€” INDEX.HTML
 ========================================
 data-replace="hero-generator-hall"
-  → Replace with: Large industrial generator hall, GENSETS facility or generator set photo
-  → Current: Unsplash placeholder
+  â†’ Replace with: Large industrial generator hall, GENSETS facility or generator set photo
+  â†’ Current: Unsplash placeholder
 
 data-replace="about-company-overview"
-  → Replace with: GENSETS warehouse, office, or team photo
-  → Current: Unsplash placeholder
+  â†’ Replace with: GENSETS warehouse, office, or team photo
+  â†’ Current: Unsplash placeholder
 ========================================
 -->
 </body>
 </html>
+
+

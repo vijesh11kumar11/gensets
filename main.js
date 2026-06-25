@@ -1,157 +1,216 @@
-// ============================================================
-// GENSETS — main.js
-// ============================================================
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function () {
 
-  // 1. STICKY HEADER
+  // ── 1. STICKY HEADER ──
   const header = document.getElementById('site-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 80);
-    });
-  }
+  const onScroll = () => {
+    if (header) {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-  // 2. MOBILE HAMBURGER MENU
+  // ── 2. MOBILE DRAWER ──
   const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileClose = document.getElementById('mobile-menu-close');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-    if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const drawerClose = document.getElementById('drawer-close');
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add('open');
+    if (overlay) overlay.classList.add('open');
+    if (hamburger) { hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); }
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+    if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) hamburger.addEventListener('click', openDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (overlay) overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+  // Close drawer when a link is clicked
+  if (drawer) {
+    drawer.querySelectorAll('.drawer-link').forEach(link => {
+      link.addEventListener('click', closeDrawer);
     });
   }
 
-  // 3. ACTIVE NAV LINK
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+  // ── 3. ACTIVE NAV LINK ──
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link, .drawer-link').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const file = href.split('/').pop();
+    if (file === currentFile || (currentFile === '' && file === 'index.html')) {
       link.classList.add('active');
     }
   });
 
-  // 4. SCROLL REVEAL
-  const revealElements = document.querySelectorAll('.reveal');
-  if (revealElements.length) {
-    const revealObserver = new IntersectionObserver((entries) => {
+  // ── 4. SCROLL REVEAL ──
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+          revealObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    revealElements.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
   }
 
-  // 5. STATS COUNTER ANIMATION
-  function animateCounter(el, target, duration) {
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { start = target; clearInterval(timer); }
-      el.textContent = Math.floor(start) + (el.dataset.suffix || '');
-    }, 16);
-  }
-  const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
+  // ── 5. STATS COUNTER ──
+  const statsEl = document.querySelector('.stats-bar');
+  if (statsEl) {
+    const counterObs = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        document.querySelectorAll('.stat-number').forEach(el => {
-          const target = parseInt(el.dataset.target);
-          if (!isNaN(target)) animateCounter(el, target, 1500);
+        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+          const target = parseInt(el.dataset.target) || 0;
+          const suffix = el.dataset.suffix || '';
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 60));
+          const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            el.textContent = current + suffix;
+            if (current >= target) clearInterval(timer);
+          }, 25);
         });
-        statsObserver.disconnect();
+        counterObs.disconnect();
       }
-    }, { threshold: 0.3 });
-    statsObserver.observe(statsSection);
+    }, { threshold: 0.4 });
+    counterObs.observe(statsEl);
   }
 
-  // 6. PRODUCT CATEGORY FILTER
+  // ── 6. PRODUCT FILTER ──
   const filterBtns = document.querySelectorAll('.filter-btn');
   const productCards = document.querySelectorAll('.product-card');
-  if (filterBtns.length > 0) {
+  if (filterBtns.length && productCards.length) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         productCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'block';
-            setTimeout(() => card.style.opacity = '1', 10);
-          } else {
-            card.style.opacity = '0';
-            setTimeout(() => card.style.display = 'none', 200);
-          }
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+          if (show) setTimeout(() => { card.style.opacity = '1'; }, 10);
+          else card.style.opacity = '0';
         });
       });
     });
   }
 
-  // 7. TESTIMONIALS SLIDER
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.testimonial-slide');
+  // ── 7. TESTIMONIAL SLIDER ──
+  const slides = document.querySelectorAll('.testi-slide');
   const prevBtn = document.getElementById('testi-prev');
   const nextBtn = document.getElementById('testi-next');
+  const dotsContainer = document.getElementById('testi-dots');
+  let current = 0, autoTimer;
+
   function showSlide(n) {
     if (!slides.length) return;
-    slides.forEach(s => s.classList.remove('active'));
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+    slides[current].classList.remove('active');
+    current = ((n % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    if (dotsContainer) {
+      dotsContainer.querySelectorAll('.testi-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
   }
-  if (slides.length > 0) {
+
+  if (slides.length) {
     showSlide(0);
-    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-    setInterval(() => showSlide(currentSlide + 1), 5000);
+    if (prevBtn) prevBtn.addEventListener('click', () => { showSlide(current - 1); resetAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { showSlide(current + 1); resetAuto(); });
+    if (dotsContainer) {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { showSlide(i); resetAuto(); });
+        dotsContainer.appendChild(dot);
+      });
+    }
+    function startAuto() { autoTimer = setInterval(() => showSlide(current + 1), 5000); }
+    function resetAuto() { clearInterval(autoTimer); startAuto(); }
+    startAuto();
   }
 
-  // 8. BACK TO TOP
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
+  // ── 8. BACK TO TOP ──
+  const btt = document.getElementById('back-to-top');
+  if (btt) {
     window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
-    });
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      btt.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
-  // 9. ENQUIRY FORM VALIDATION
+  // ── 9. FORM VALIDATION — CONTACT ──
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+      contactForm.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) {
+          valid = false;
+          field.classList.add('error');
+          const err = field.parentElement.querySelector('.field-error');
+          if (err) err.style.display = 'block';
+        } else {
+          field.classList.remove('error');
+          const err = field.parentElement.querySelector('.field-error');
+          if (err) err.style.display = 'none';
+        }
+      });
+      if (valid && contactSuccess) {
+        contactForm.style.display = 'none';
+        contactSuccess.style.display = 'block';
+        contactSuccess.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    contactForm.querySelectorAll('[required]').forEach(field => {
+      field.addEventListener('input', () => {
+        field.classList.remove('error');
+        const err = field.parentElement.querySelector('.field-error');
+        if (err) err.style.display = 'none';
+      });
+    });
+  }
+
+  // ── 10. FORM VALIDATION — ENQUIRY ──
   const enquiryForm = document.getElementById('enquiry-form');
+  const enquirySuccess = document.getElementById('enquiry-success');
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', function (e) {
       e.preventDefault();
       let valid = true;
       enquiryForm.querySelectorAll('[required]').forEach(field => {
-        const err = field.nextElementSibling;
         if (!field.value.trim()) {
           valid = false;
-          field.style.borderColor = '#ef4444';
-          if (err && err.classList.contains('field-error')) err.style.display = 'block';
+          field.classList.add('error');
         } else {
-          field.style.borderColor = '';
-          if (err && err.classList.contains('field-error')) err.style.display = 'none';
+          field.classList.remove('error');
         }
       });
-      if (valid) {
+      if (valid && enquirySuccess) {
         enquiryForm.style.display = 'none';
-        const s = document.getElementById('form-success');
-        if (s) s.style.display = 'block';
+        enquirySuccess.style.display = 'block';
+        enquirySuccess.scrollIntoView({ behavior: 'smooth' });
       }
-    });
-  }
-
-  // 10. CONTACT FORM VALIDATION
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      contactForm.style.display = 'none';
-      const s = document.getElementById('contact-success');
-      if (s) s.style.display = 'block';
     });
   }
 

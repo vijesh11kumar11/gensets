@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About GENSETS — 15 years of generator spare parts expertise from Coimbatore, Tamil Nadu. Trusted by 1000+ clients across India." />
+  <meta name="description" content="About GENSETS â€” 25 years of generator spare parts expertise from Coimbatore, Tamil Nadu. Trusted by 1000+ clients across India." />
   <meta name="keywords" content="about GENSETS, generator spare parts Coimbatore, industrial power solutions, Tamil Nadu generator parts supplier" />
-  <title>About Us | GENSETS — Power. Precision. Performance.</title>
+  <title>About Us | GENSETS â€” Power. Precision. Performance.</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,53 +20,67 @@
 </head>
 <body>
 
-  <!-- ========== SITE HEADER / NAV ========== -->
-  <header class="site-header" id="siteHeader">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="GENSETS Home">
-        <span class="logo-bolt"><i class="fa-solid fa-bolt"></i></span>
-        <span>GENSETS</span>
+<header class="site-header" id="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
       </a>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="brands.html">Brands</a>
-        <a href="about.html" class="active" aria-current="page">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a href="tel:+919876543210" class="nav-phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
-        <a href="contact.html" class="btn btn-primary btn-sm">Get Quote</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close mobile menu">
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <nav aria-label="Mobile navigation">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="brands.html">Brands</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="mobile-menu-footer">
-        <a href="tel:+919876543210" class="btn btn-primary btn-full"><i class="fa-solid fa-phone"></i> Call Now</a>
-        <a href="https://wa.me/919876543210" class="btn btn-whatsapp btn-full" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-      </div>
     </div>
-  </header>
-  <!-- END HEADER -->
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
 
   <main>
 
@@ -79,7 +93,7 @@
           <span aria-current="page">About Us</span>
         </nav>
         <h1 class="page-hero-title">About <span class="accent">GENSETS</span></h1>
-        <p class="page-hero-subtitle">15 years of industrial power expertise from the heart of Coimbatore</p>
+        <p class="page-hero-subtitle">25 years of industrial power expertise from the heart of Coimbatore</p>
       </div>
     </section>
     <!-- END SECTION A -->
@@ -106,11 +120,11 @@
             <p class="section-label">Who We Are</p>
             <h2 class="section-heading" id="who-we-are-heading">Built on Engineering.<br /><span class="accent">Driven by Reliability.</span></h2>
 
-            <p>Established in 2009, GENSETS has grown from a specialist generator spare parts dealer in Coimbatore into one of South India's most trusted industrial power component suppliers. We were founded by engineers for engineers — people who understand that downtime is never an option when critical power infrastructure is at stake.</p>
+            <p>Established in 2000, GENSETS has grown from a specialist generator spare parts dealer in Coimbatore into one of South India's most trusted industrial power component suppliers. We were founded by engineers for engineers â€” people who understand that downtime is never an option when critical power infrastructure is at stake.</p>
 
-            <p>From our base in Ganapathy, Coimbatore, we supply genuine and OEM-equivalent spare parts across the length and breadth of India. Our deep relationships with leading generator manufacturers, combined with an inventory spanning 500+ products, means we can source what you need — fast. Hospitals, hotels, data centers, factories, and telecom installations rely on us to keep their generators running.</p>
+            <p>From our base in Ganapathy, Coimbatore, we supply genuine and OEM-equivalent spare parts across the length and breadth of India. Our deep relationships with leading generator manufacturers, combined with an inventory spanning 500+ products, means we can source what you need â€” fast. Hospitals, hotels, data centers, factories, and telecom installations rely on us to keep their generators running.</p>
 
-            <p>What sets GENSETS apart is our technical backbone. Every member of our team carries hands-on experience with diesel generator systems. We don't just dispatch parts — we verify compatibility, advise on fitment, and stand behind every component we supply. After 15 years, our reputation rests on a single promise: the right part, at the right time, every time.</p>
+            <p>What sets GENSETS apart is our technical backbone. Every member of our team carries hands-on experience with diesel generator systems. We don't just dispatch parts â€” we verify compatibility, advise on fitment, and stand behind every component we supply. After 15 years, our reputation rests on a single promise: the right part, at the right time, every time.</p>
 
             <!-- Metric Boxes -->
             <div class="metric-boxes" role="list" aria-label="Company statistics">
@@ -144,13 +158,13 @@
         <div style="text-align:center; margin-bottom: 3rem;">
           <p class="section-label">Our Story</p>
           <h2 class="section-heading" id="journey-heading">Our <span class="accent">Journey</span></h2>
-          <p class="section-subtext">From a single office in Coimbatore to serving 1000+ clients across India — here's how we got here.</p>
+          <p class="section-subtext">From a single office in Coimbatore to serving 1000+ clients across India â€” here's how we got here.</p>
         </div>
 
         <div class="timeline" role="list" aria-label="Company timeline">
 
           <div class="timeline-item reveal" role="listitem">
-            <div class="timeline-year">2009</div>
+            <div class="timeline-year">2000</div>
             <div>
               <div class="timeline-event">Foundation</div>
               <p class="timeline-desc">GENSETS was established in Ganapathy, Coimbatore by a team of generator engineers with a vision to become the most reliable spare parts supplier in South India. Operations began with a focused inventory of critical DG set components.</p>
@@ -161,7 +175,7 @@
             <div class="timeline-year">2012</div>
             <div>
               <div class="timeline-event">Product Expansion</div>
-              <p class="timeline-desc">We expanded our product catalogue to include Automatic Voltage Regulators (AVRs), digital controllers, electronic governors, and fuel actuators — becoming a one-stop source for generator control and regulation components.</p>
+              <p class="timeline-desc">We expanded our product catalogue to include Automatic Voltage Regulators (AVRs), digital controllers, electronic governors, and fuel actuators â€” becoming a one-stop source for generator control and regulation components.</p>
             </div>
           </div>
 
@@ -169,7 +183,7 @@
             <div class="timeline-year">2015</div>
             <div>
               <div class="timeline-event">Industrial Clientele</div>
-              <p class="timeline-desc">GENSETS began supplying to large-scale industrial customers including hospitals, five-star hotels, data centers, and manufacturing facilities — sectors where reliable power is mission-critical and downtime carries severe consequences.</p>
+              <p class="timeline-desc">GENSETS began supplying to large-scale industrial customers including hospitals, five-star hotels, data centers, and manufacturing facilities â€” sectors where reliable power is mission-critical and downtime carries severe consequences.</p>
             </div>
           </div>
 
@@ -193,7 +207,7 @@
             <div class="timeline-year">2024</div>
             <div>
               <div class="timeline-event">Today</div>
-              <p class="timeline-desc">GENSETS now serves 1000+ clients with a product range exceeding 500 SKUs across 50+ industries. We continue to invest in inventory depth, technical training, and logistics infrastructure — always with the same founding commitment to reliability.</p>
+              <p class="timeline-desc">GENSETS now serves 1000+ clients with a product range exceeding 500 SKUs across 50+ industries. We continue to invest in inventory depth, technical training, and logistics infrastructure â€” always with the same founding commitment to reliability.</p>
             </div>
           </div>
 
@@ -218,7 +232,7 @@
               <i class="fa-solid fa-crosshairs"></i>
             </div>
             <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 1rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;">Our Mission</h3>
-            <p>To be the most trusted generator spare parts supplier in South India by delivering verified, high-quality components with unmatched technical support — ensuring our customers' power systems never fail when it matters most.</p>
+            <p>To be the most trusted generator spare parts supplier in South India by delivering verified, high-quality components with unmatched technical support â€” ensuring our customers' power systems never fail when it matters most.</p>
           </div>
 
           <!-- Vision -->
@@ -227,7 +241,7 @@
               <i class="fa-solid fa-eye"></i>
             </div>
             <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 1rem 0 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;">Our Vision</h3>
-            <p>To build India's most respected industrial power solutions brand — one that engineers, facility managers, and procurement teams across every sector turn to first, confident in the quality, availability, and expertise we consistently deliver.</p>
+            <p>To build India's most respected industrial power solutions brand â€” one that engineers, facility managers, and procurement teams across every sector turn to first, confident in the quality, availability, and expertise we consistently deliver.</p>
           </div>
 
           <!-- Values -->
@@ -268,7 +282,7 @@
             </div>
             <div>
               <h3>Part Compatibility Verification</h3>
-              <p>We verify every part's compatibility with your specific generator model before dispatch — eliminating the costly risk of incorrect fitment and wasted downtime.</p>
+              <p>We verify every part's compatibility with your specific generator model before dispatch â€” eliminating the costly risk of incorrect fitment and wasted downtime.</p>
             </div>
           </div>
 
@@ -278,7 +292,7 @@
             </div>
             <div>
               <h3>Extensive Stock Depth</h3>
-              <p>Our warehouse carries deep inventory across 500+ SKUs, including fast-moving consumables and hard-to-find legacy components — so you're not left waiting on back-orders.</p>
+              <p>Our warehouse carries deep inventory across 500+ SKUs, including fast-moving consumables and hard-to-find legacy components â€” so you're not left waiting on back-orders.</p>
             </div>
           </div>
 
@@ -298,7 +312,7 @@
             </div>
             <div>
               <h3>Experienced Technical Team</h3>
-              <p>Our team brings 15+ years of hands-on generator expertise. From AVR selection to controller troubleshooting, we provide real technical guidance — not just a catalogue.</p>
+              <p>Our team brings 25+ years of hands-on generator expertise. From AVR selection to controller troubleshooting, we provide real technical guidance â€” not just a catalogue.</p>
             </div>
           </div>
 
@@ -318,7 +332,7 @@
             </div>
             <div>
               <h3>Transparent Communication</h3>
-              <p>We give honest timelines and straightforward availability information — no overpromising, no surprises. You'll always know exactly where your order stands.</p>
+              <p>We give honest timelines and straightforward availability information â€” no overpromising, no surprises. You'll always know exactly where your order stands.</p>
             </div>
           </div>
 
@@ -339,18 +353,18 @@
           <img
             class="site-img"
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&fit=crop"
-            alt="The GENSETS team — experienced generator parts specialists"
+            alt="The GENSETS team â€” experienced generator parts specialists"
             loading="lazy"
             width="1200"
             height="450"
             style="width: 100%; height: 100%; object-fit: cover; display: block;"
           />
           <div class="team-overlay" aria-hidden="true">
-            <span>Our team — The people behind GENSETS</span>
+            <span>Our team â€” The people behind GENSETS</span>
           </div>
         </div>
 
-        <p style="text-align: center; max-width: 680px; margin: 2rem auto 0; color: var(--text-muted, #9ca3af);">Every member of the GENSETS team is a specialist. From our technical advisors who handle compatibility queries to our logistics team who ensure on-time delivery — everyone here shares the same commitment to keeping your generators running.</p>
+        <p style="text-align: center; max-width: 680px; margin: 2rem auto 0; color: var(--text-muted, #9ca3af);">Every member of the GENSETS team is a specialist. From our technical advisors who handle compatibility queries to our logistics team who ensure on-time delivery â€” everyone here shares the same commitment to keeping your generators running.</p>
       </div>
     </section>
     <!-- END SECTION F -->
@@ -360,13 +374,13 @@
       <div class="container" style="text-align: center;">
         <p class="section-label" style="color: rgba(255,255,255,0.75);">Get in Touch</p>
         <h2 class="section-heading" id="cta-heading" style="color: #ffffff;">Ready to Work <span class="accent-orange">With Us?</span></h2>
-        <p class="cta-note" style="color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto 2.5rem;">Whether you need a specific spare part, a bulk supply arrangement, or technical guidance on your generator system — our team is ready to help. Reach out today.</p>
+        <p class="cta-note" style="color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto 2.5rem;">Whether you need a specific spare part, a bulk supply arrangement, or technical guidance on your generator system â€” our team is ready to help. Reach out today.</p>
 
         <div class="cta-btns" role="list" aria-label="Contact options">
-          <a href="tel:+919876543210" class="btn btn-orange btn-lg" role="listitem">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call +91 98765 43210
+          <a href="tel:+919363208579" class="btn btn-orange btn-lg" role="listitem">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call +91 93632 08579
           </a>
-          <a href="https://wa.me/919876543210?text=Hi%20GENSETS%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer" role="listitem">
+          <a href="https://wa.me/919363208579?text=Hi%20GENSETS%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer" role="listitem">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
           </a>
           <a href="contact.html" class="btn btn-outline btn-lg" role="listitem">
@@ -390,13 +404,13 @@
             <span class="logo-bolt"><i class="fa-solid fa-bolt"></i></span>
             <span>GENSETS</span>
           </a>
-          <p>Power. Precision. Performance.<br />Your trusted generator spare parts partner since 2009.</p>
+          <p>Power. Precision. Performance.<br />Your trusted generator spare parts partner since 2000.</p>
           <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted, #9ca3af);">GST: 33XXXXX0000X1ZX</p>
           <div class="footer-social" aria-label="Social media links">
             <a href="#" aria-label="GENSETS on Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" aria-label="GENSETS on Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="GENSETS on LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://wa.me/919876543210" aria-label="GENSETS on WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/919363208579" aria-label="GENSETS on WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -405,11 +419,12 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">All Products</a></li>
-            <li><a href="brands.html">Brands We Carry</a></li>
-            <li><a href="about.html">About GENSETS</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="contact.html#enquiry">Request a Quote</a></li>
+            <li><a href="enquiry.html">Request a Quote</a></li>
           </ul>
         </div>
 
@@ -432,15 +447,15 @@
           <address style="font-style: normal;">
             <div class="footer-contact-item">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <span>GENSETS Industrial Solutions,<br />Ganapathy, Coimbatore - 641006,<br />Tamil Nadu, India</span>
+              <span>Shop No 5, HM Complex, Addis Street,<br />Grey Town, Near Nehru Stadium,<br />Coimbatore - 641018, Tamil Nadu</span>
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919363208579">+91 93632 08579</a>
             </div>
             <div class="footer-contact-item">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+              <a href="https://wa.me/919363208579" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -448,7 +463,7 @@
             </div>
             <div class="footer-contact-item">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              <span>Mon–Sat: 9AM – 7PM<br /><span class="accent-orange">24/7 Emergency Support</span></span>
+              <span>Monâ€“Sat: 9AM â€“ 7PM<br /><span class="accent-orange">24/7 Emergency Support</span></span>
             </div>
           </address>
         </div>
@@ -465,7 +480,7 @@
 
   <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
   <a
-    href="https://wa.me/919876543210?text=Hi%20GENSETS%2C%20I%20need%20help%20with%20a%20generator%20spare%20part."
+    href="https://wa.me/919363208579?text=Hi%20GENSETS%2C%20I%20need%20help%20with%20a%20generator%20spare%20part."
     class="float-whatsapp"
     target="_blank"
     rel="noopener noreferrer"
@@ -476,17 +491,17 @@
   </a>
 
   <!-- ========== BACK TO TOP ========== -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
 
   <!-- ========== MOBILE STICKY BAR ========== -->
   <div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
-    <a href="tel:+919876543210" class="call-btn">
+    <a href="tel:+919363208579" class="call-btn">
       <i class="fa-solid fa-phone" aria-hidden="true"></i>
       <span>Call</span>
     </a>
-    <a href="https://wa.me/919876543210" class="wa-btn" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919363208579" class="wa-btn" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
       <span>WhatsApp</span>
     </a>
@@ -514,7 +529,7 @@
 
   2. data-replace="about-team-photo"
      Current src : https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&fit=crop
-     Replace with: Group photo of the GENSETS team — ideally in work environment
+     Replace with: Group photo of the GENSETS team â€” ideally in work environment
      Recommended : Wide landscape shot (16:6 crop area) showing team members together
      Aspect ratio : ~16:6 (wide banner)
 
@@ -524,16 +539,18 @@
 
 <!--
 ========================================
-IMAGE REPLACEMENT GUIDE — ABOUT.HTML
+IMAGE REPLACEMENT GUIDE â€” ABOUT.HTML
 ========================================
 data-replace="about-company-building"
-  → Replace with: GENSETS company building, office exterior, or showroom photo
-  → Current: Unsplash warehouse placeholder
+  â†’ Replace with: GENSETS company building, office exterior, or showroom photo
+  â†’ Current: Unsplash warehouse placeholder
 
 data-replace="about-team-photo"
-  → Replace with: GENSETS full team photo in warehouse, office, or outdoor setting
-  → Current: Unsplash team meeting placeholder
+  â†’ Replace with: GENSETS full team photo in warehouse, office, or outdoor setting
+  â†’ Current: Unsplash team meeting placeholder
 ========================================
 -->
 </body>
 </html>
+
+
