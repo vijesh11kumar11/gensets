@@ -148,6 +148,16 @@ document.addEventListener('DOMContentLoaded', function () {
     startAuto();
   }
 
+  // ── 7b. SUBTLE HERO PARALLAX (respects reduced motion) ──
+  const heroImg = document.querySelector('.hero-img-wrapper');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroImg && !prefersReduced) {
+    window.addEventListener('scroll', () => {
+      const y = Math.min(window.scrollY, 600);
+      heroImg.style.transform = 'translateY(' + (y * 0.05) + 'px)';
+    }, { passive: true });
+  }
+
   // ── 8. BACK TO TOP ──
   const btt = document.getElementById('back-to-top');
   if (btt) {

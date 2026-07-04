@@ -10,7 +10,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6.5.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eecS6sOptCNFYYqM3LeFRxEZWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,18 +25,18 @@
 
     /* --- Page Hero --- */
     .page-hero {
-      background: linear-gradient(135deg, #0a0e1a 0%, #0d1424 50%, #0a1628 100%);
+      background: radial-gradient(120% 120% at 50% 0%, #F7F6F3 0%, #FFFFFF 60%);
       padding: 120px 0 70px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid rgba(26, 111, 255, 0.15);
+      border-bottom: 1px solid rgba(42, 75, 212, 0.15);
     }
     .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26, 111, 255, 0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(42, 75, 212, 0.12) 0%, transparent 70%);
     }
     .page-hero-content {
       position: relative;
@@ -46,9 +46,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(26, 111, 255, 0.12);
-      border: 1px solid rgba(26, 111, 255, 0.3);
-      color: #1A6FFF;
+      background: rgba(42, 75, 212, 0.12);
+      border: 1px solid rgba(42, 75, 212, 0.3);
+      color: #2A4BD4;
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem;
       font-weight: 600;
@@ -59,7 +59,7 @@
       margin-bottom: 22px;
     }
     .page-hero-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       font-weight: 800;
       color: #ffffff;
@@ -69,7 +69,7 @@
       letter-spacing: 0.02em;
     }
     .page-hero-title span {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .page-hero-subtitle {
       font-family: 'Inter', sans-serif;
@@ -94,14 +94,14 @@
       transition: color 0.2s;
     }
     .breadcrumb a:hover {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .breadcrumb i {
       font-size: 0.65rem;
       color: rgba(255,255,255,0.25);
     }
     .breadcrumb span {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
 
     /* --- Industries Intro Strip --- */
@@ -125,10 +125,10 @@
       text-align: center;
     }
     .intro-stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 2.4rem;
       font-weight: 800;
-      color: #1A6FFF;
+      color: #2A4BD4;
       line-height: 1;
       margin-bottom: 6px;
     }
@@ -171,7 +171,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(26,111,255,0.15) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(42, 75, 212,0.15) 0%, transparent 60%);
       z-index: 1;
       pointer-events: none;
     }
@@ -199,7 +199,7 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(26,111,255,0.9);
+      background: rgba(42, 75, 212,0.9);
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem;
@@ -215,8 +215,8 @@
     .industry-icon-large {
       width: 72px;
       height: 72px;
-      background: rgba(26,111,255,0.1);
-      border: 1px solid rgba(26,111,255,0.25);
+      background: rgba(42, 75, 212,0.1);
+      border: 1px solid rgba(42, 75, 212,0.25);
       border-radius: 18px;
       display: flex;
       align-items: center;
@@ -225,19 +225,19 @@
     }
     .industry-icon-large i {
       font-size: 2rem;
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .industry-num {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #FF6B1A;
+      color: #B26B3E;
       margin-bottom: 8px;
     }
     .industry-name {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2rem, 3.5vw, 2.8rem);
       font-weight: 800;
       color: #ffffff;
@@ -249,10 +249,10 @@
       margin-bottom: 24px;
     }
     .industry-block-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
-      color: #FF6B1A;
+      color: #B26B3E;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 10px;
@@ -293,8 +293,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(26,111,255,0.08);
-      border: 1px solid rgba(26,111,255,0.2);
+      background: rgba(42, 75, 212,0.08);
+      border: 1px solid rgba(42, 75, 212,0.2);
       color: rgba(255,255,255,0.75);
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
@@ -304,12 +304,12 @@
       transition: all 0.2s;
     }
     .rec-pill i {
-      color: #1A6FFF;
+      color: #2A4BD4;
       font-size: 0.75rem;
     }
     .rec-pill:hover {
-      background: rgba(26,111,255,0.15);
-      border-color: rgba(26,111,255,0.4);
+      background: rgba(42, 75, 212,0.15);
+      border-color: rgba(42, 75, 212,0.4);
       color: #fff;
     }
 
@@ -323,7 +323,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #1A6FFF;
+      background: #2A4BD4;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
@@ -355,15 +355,15 @@
       white-space: nowrap;
     }
     .btn-ind-secondary:hover {
-      border-color: #FF6B1A;
-      color: #FF6B1A;
+      border-color: #B26B3E;
+      color: #B26B3E;
       transform: translateY(-1px);
     }
 
     /* Divider between sections */
     .industry-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(26,111,255,0.2) 50%, transparent);
+      background: linear-gradient(90deg, transparent, rgba(42, 75, 212,0.2) 50%, transparent);
       margin: 0;
       border: none;
     }
@@ -406,12 +406,12 @@
       transition: all 0.2s;
     }
     .ind-pill i {
-      color: #1A6FFF;
+      color: #2A4BD4;
       font-size: 0.8rem;
     }
     .ind-pill:hover {
-      background: rgba(26,111,255,0.1);
-      border-color: rgba(26,111,255,0.3);
+      background: rgba(42, 75, 212,0.1);
+      border-color: rgba(42, 75, 212,0.3);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -423,13 +423,13 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-top: 1px solid rgba(26,111,255,0.15);
+      border-top: 1px solid rgba(42, 75, 212,0.15);
     }
     .industries-cta-banner::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(26,111,255,0.1) 0%, transparent 70%);
+      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(42, 75, 212,0.1) 0%, transparent 70%);
     }
     .industries-cta-banner .container {
       position: relative;
@@ -441,11 +441,11 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #FF6B1A;
+      color: #B26B3E;
       margin-bottom: 16px;
     }
     .cta-banner-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 800;
       color: #fff;
@@ -454,7 +454,7 @@
       margin: 0 0 18px;
     }
     .cta-banner-title span {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .cta-banner-sub {
       font-family: 'Inter', sans-serif;
@@ -474,7 +474,7 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      background: #1A6FFF;
+      background: #2A4BD4;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-size: 0.93rem;
@@ -522,8 +522,8 @@
       transition: all 0.2s;
     }
     .btn-cta-outline:hover {
-      border-color: #FF6B1A;
-      color: #FF6B1A;
+      border-color: #B26B3E;
+      color: #B26B3E;
       transform: translateY(-2px);
     }
 
@@ -570,9 +570,9 @@
       z-index: 9998;
       width: 46px;
       height: 46px;
-      background: rgba(26,111,255,0.15);
-      border: 1px solid rgba(26,111,255,0.3);
-      color: #1A6FFF;
+      background: rgba(42, 75, 212,0.15);
+      border: 1px solid rgba(42, 75, 212,0.3);
+      color: #2A4BD4;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -589,7 +589,7 @@
       pointer-events: all;
     }
     .back-to-top:hover {
-      background: rgba(26,111,255,0.3);
+      background: rgba(42, 75, 212,0.3);
     }
 
     /* --- Mobile Sticky Bar --- */
@@ -601,7 +601,7 @@
       right: 0;
       z-index: 9990;
       background: #0d1220;
-      border-top: 1px solid rgba(26,111,255,0.2);
+      border-top: 1px solid rgba(42, 75, 212,0.2);
       padding: 10px 16px;
     }
     .mobile-sticky-inner {
@@ -623,7 +623,7 @@
       transition: opacity 0.2s;
     }
     .msb-btn:hover { opacity: 0.85; }
-    .msb-call { background: #1A6FFF; color: #fff; }
+    .msb-call { background: #2A4BD4; color: #fff; }
     .msb-wa { background: #25D366; color: #fff; }
     .msb-email { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); }
 
@@ -636,7 +636,7 @@
       z-index: 9000;
       background: rgba(8,12,20,0.95);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(26,111,255,0.12);
+      border-bottom: 1px solid rgba(42, 75, 212,0.12);
       padding: 0 0;
     }
     .nav-inner {
@@ -657,7 +657,7 @@
     .nav-logo-icon {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, #1A6FFF 0%, #0d52cc 100%);
+      background: linear-gradient(135deg, #2A4BD4 0%, #0d52cc 100%);
       border-radius: 9px;
       display: flex;
       align-items: center;
@@ -666,7 +666,7 @@
       font-size: 1rem;
     }
     .nav-logo-text {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.5rem;
       font-weight: 800;
       color: #fff;
@@ -674,7 +674,7 @@
       text-transform: uppercase;
     }
     .nav-logo-text span {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .nav-links {
       display: flex;
@@ -697,16 +697,16 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: #fff;
-      background: rgba(26,111,255,0.1);
+      background: rgba(42, 75, 212,0.1);
     }
     .nav-links a.active {
-      color: #1A6FFF;
+      color: #2A4BD4;
     }
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: #1A6FFF;
+      background: #2A4BD4;
       color: #fff !important;
       font-weight: 600 !important;
       padding: 9px 18px !important;
@@ -746,7 +746,7 @@
       display: none;
       flex-direction: column;
       background: #0d1220;
-      border-top: 1px solid rgba(26,111,255,0.12);
+      border-top: 1px solid rgba(42, 75, 212,0.12);
       padding: 16px 24px 20px;
     }
     .nav-mobile.open {
@@ -763,12 +763,12 @@
     }
     .nav-mobile a:last-child { border-bottom: none; }
     .nav-mobile a:hover,
-    .nav-mobile a.active { color: #1A6FFF; }
+    .nav-mobile a.active { color: #2A4BD4; }
 
     /* --- Footer --- */
     .footer {
       background: #060911;
-      border-top: 1px solid rgba(26,111,255,0.1);
+      border-top: 1px solid rgba(42, 75, 212,0.1);
       padding: 70px 0 0;
     }
     .footer-grid {
@@ -788,7 +788,7 @@
     .footer-logo-icon {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, #1A6FFF 0%, #0d52cc 100%);
+      background: linear-gradient(135deg, #2A4BD4 0%, #0d52cc 100%);
       border-radius: 9px;
       display: flex;
       align-items: center;
@@ -798,14 +798,14 @@
       flex-shrink: 0;
     }
     .footer-logo-text {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.5rem;
       font-weight: 800;
       color: #fff;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .footer-logo-text span { color: #1A6FFF; }
+    .footer-logo-text span { color: #2A4BD4; }
     .footer-tagline {
       font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
@@ -823,7 +823,7 @@
       color: rgba(255,255,255,0.55);
     }
     .footer-contact-item i {
-      color: #1A6FFF;
+      color: #2A4BD4;
       font-size: 0.85rem;
       margin-top: 2px;
       flex-shrink: 0;
@@ -833,9 +833,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-contact-item a:hover { color: #1A6FFF; }
+    .footer-contact-item a:hover { color: #2A4BD4; }
     .footer-col-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       color: #fff;
@@ -861,25 +861,25 @@
       align-items: center;
       gap: 7px;
     }
-    .footer-links a:hover { color: #1A6FFF; }
+    .footer-links a:hover { color: #2A4BD4; }
     .footer-links a i {
       font-size: 0.65rem;
-      color: rgba(26,111,255,0.5);
+      color: rgba(42, 75, 212,0.5);
     }
     .footer-gst {
       margin-top: 22px;
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(26,111,255,0.08);
-      border: 1px solid rgba(26,111,255,0.15);
+      background: rgba(42, 75, 212,0.08);
+      border: 1px solid rgba(42, 75, 212,0.15);
       padding: 7px 14px;
       border-radius: 7px;
       font-family: 'Inter', sans-serif;
       font-size: 0.78rem;
       color: rgba(255,255,255,0.45);
     }
-    .footer-gst i { color: #1A6FFF; font-size: 0.8rem; }
+    .footer-gst i { color: #2A4BD4; font-size: 0.8rem; }
     .footer-gst strong { color: rgba(255,255,255,0.65); }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -896,7 +896,7 @@
       color: rgba(255,255,255,0.3);
     }
     .footer-copy a {
-      color: rgba(26,111,255,0.7);
+      color: rgba(42, 75, 212,0.7);
       text-decoration: none;
     }
     .footer-badges {
@@ -913,9 +913,9 @@
       border-radius: 5px;
     }
     .footer-badge-gst {
-      background: rgba(26,111,255,0.1);
-      border: 1px solid rgba(26,111,255,0.2);
-      color: rgba(26,111,255,0.8);
+      background: rgba(42, 75, 212,0.1);
+      border: 1px solid rgba(42, 75, 212,0.2);
+      color: rgba(42, 75, 212,0.8);
     }
     .footer-badge-tn {
       background: rgba(255,107,26,0.08);
@@ -972,7 +972,19 @@
       .cta-banner-buttons { flex-direction: column; align-items: center; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
-  </style>
+  
+  /* ── Light hero text overrides (added during redesign) ── */
+  .page-hero { color: var(--color-text-body); }
+  .page-hero h1, .page-hero h2, .page-hero-title { color: var(--color-text-dark) !important; }
+  .page-hero-subtitle, .page-hero p { color: var(--color-text-body) !important; }
+  .breadcrumb { color: var(--color-text-light) !important; }
+  .breadcrumb a { color: var(--color-blue-primary) !important; }
+  .breadcrumb span, .breadcrumb .sep { color: var(--color-text-light) !important; }
+  .page-hero-badge, .hero-badge { background: var(--color-blue-light) !important; color: var(--color-blue-primary) !important; border: none !important; }
+  .page-hero .hero-kicker, .page-hero-kicker { color: var(--color-text-light) !important; }
+  .page-hero .intro-stat-num { color: var(--color-blue-primary) !important; }
+  .page-hero .intro-stat-lbl { color: var(--color-text-light) !important; }
+</style>
 </head>
 <body>
 
@@ -1960,10 +1972,19 @@
 </footer>
 
 <!-- Mobile Sticky Bottom Bar -->
-<div class="mobile-bar">
-  <a href="tel:+919363208579" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
-  <a href="https://wa.me/919363208579?text=Hello%20GENSETS" class="wa-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-  <a href="enquiry.html" class="enq-btn"><i class="fa-solid fa-envelope"></i> Enquiry</a>
+<div class="mobile-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+919363208579" class="mbar-btn mbar-call">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="enquiry.html" class="mbar-btn mbar-enq">
+    <i class="fa-solid fa-file-lines"></i>
+    <span>Get Quote</span>
+  </a>
 </div>
 
 <!--

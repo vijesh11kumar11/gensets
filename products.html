@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6.5.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjM0Q0BFN3n6+3xyNLKpDXwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -25,7 +25,7 @@
 
     /* --- Page Hero --- */
     .page-hero {
-      background: linear-gradient(135deg, #0a0f1e 0%, #0d1a33 60%, #0a0f1e 100%);
+      background: radial-gradient(120% 120% at 50% 0%, #F7F6F3 0%, #FFFFFF 60%);
       padding: 120px 0 60px;
       position: relative;
       overflow: hidden;
@@ -35,7 +35,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(26,111,255,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(42, 75, 212,0.12) 0%, transparent 70%),
         radial-gradient(ellipse 40% 40% at 80% 30%, rgba(255,107,26,0.08) 0%, transparent 70%);
     }
     .page-hero .container {
@@ -56,11 +56,11 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .breadcrumb a:hover { color: #1A6FFF; }
-    .breadcrumb .sep { color: rgba(255,255,255,0.25); }
-    .breadcrumb .current { color: rgba(255,255,255,0.75); }
+    .breadcrumb a:hover { color: #2A4BD4; }
+    .breadcrumb .sep { color: var(--color-text-light); }
+    .breadcrumb .current { color: var(--color-text-body); }
     .page-hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 800;
       color: #ffffff;
@@ -69,7 +69,7 @@
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
-    .page-hero h1 span { color: #1A6FFF; }
+    .page-hero h1 span { color: #2A4BD4; }
     .page-hero .hero-subtitle {
       font-family: 'Inter', sans-serif;
       font-size: clamp(0.95rem, 2vw, 1.15rem);
@@ -107,15 +107,15 @@
       white-space: nowrap;
     }
     .filter-btn:hover {
-      border-color: #1A6FFF;
-      color: #1A6FFF;
-      background: rgba(26,111,255,0.08);
+      border-color: #2A4BD4;
+      color: #2A4BD4;
+      background: rgba(42, 75, 212,0.08);
     }
     .filter-btn.active {
-      background: #1A6FFF;
-      border-color: #1A6FFF;
+      background: #2A4BD4;
+      border-color: #2A4BD4;
       color: #ffffff;
-      box-shadow: 0 4px 14px rgba(26,111,255,0.35);
+      box-shadow: 0 4px 14px rgba(42, 75, 212,0.35);
     }
 
     /* --- Products Section --- */
@@ -132,7 +132,7 @@
       gap: 12px;
     }
     .section-header-row h2 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: 700;
       color: #ffffff;
@@ -146,7 +146,7 @@
       color: rgba(255,255,255,0.45);
     }
     .product-count strong {
-      color: #1A6FFF;
+      color: #2A4BD4;
       font-weight: 600;
     }
 
@@ -161,7 +161,7 @@
 
     /* --- Product Card --- */
     .product-card {
-      background: #0d1424;
+      background: #15171C;
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 12px;
       overflow: hidden;
@@ -172,8 +172,8 @@
     }
     .product-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(26,111,255,0.4);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(26,111,255,0.15);
+      border-color: rgba(42, 75, 212,0.4);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(42, 75, 212,0.15);
     }
     .product-card.hidden {
       display: none;
@@ -183,12 +183,12 @@
       top: 12px;
       left: 12px;
       z-index: 3;
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      background: rgba(26,111,255,0.9);
+      background: rgba(42, 75, 212,0.9);
       color: #fff;
       padding: 4px 10px;
       border-radius: 100px;
@@ -211,7 +211,7 @@
     }
     .product-card > .product-name,
     .product-card > h3.product-name {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
@@ -270,12 +270,12 @@
       padding: 7px 13px;
     }
     .btn-primary {
-      background: #1A6FFF;
+      background: #2A4BD4;
       color: #ffffff;
     }
     .btn-primary:hover {
       background: #0f5ce8;
-      box-shadow: 0 4px 14px rgba(26,111,255,0.4);
+      box-shadow: 0 4px 14px rgba(42, 75, 212,0.4);
     }
     .btn-whatsapp {
       background: #25D366;
@@ -291,8 +291,8 @@
       border: 1px solid rgba(255,255,255,0.18);
     }
     .btn-outline:hover {
-      border-color: #FF6B1A;
-      color: #FF6B1A;
+      border-color: #B26B3E;
+      color: #B26B3E;
       background: rgba(255,107,26,0.08);
     }
 
@@ -302,8 +302,8 @@
       padding: 0 0 80px;
     }
     .no-part-banner {
-      background: linear-gradient(135deg, #0d1a33 0%, #0a1628 100%);
-      border: 1px solid rgba(26,111,255,0.25);
+      background: linear-gradient(135deg, #15171C 0%, #15171C 100%);
+      border: 1px solid rgba(42, 75, 212,0.25);
       border-radius: 16px;
       padding: 48px 48px 44px;
       position: relative;
@@ -322,18 +322,18 @@
     .no-part-banner .icon-wrap {
       width: 56px;
       height: 56px;
-      background: rgba(26,111,255,0.15);
-      border: 1px solid rgba(26,111,255,0.3);
+      background: rgba(42, 75, 212,0.15);
+      border: 1px solid rgba(42, 75, 212,0.3);
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: #1A6FFF;
+      color: #2A4BD4;
       margin-bottom: 20px;
     }
     .no-part-banner h2 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.6rem, 3.5vw, 2.2rem);
       font-weight: 800;
       color: #ffffff;
@@ -374,14 +374,14 @@
     @media (max-width: 960px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 580px) { .footer-grid { grid-template-columns: 1fr; } }
     .footer-brand .brand-name {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.8rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .footer-brand .brand-name span { color: #1A6FFF; }
+    .footer-brand .brand-name span { color: #2A4BD4; }
     .footer-brand .tagline {
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
@@ -416,12 +416,12 @@
       transition: all 0.2s;
     }
     .footer-social a:hover {
-      background: #1A6FFF;
-      border-color: #1A6FFF;
+      background: #2A4BD4;
+      border-color: #2A4BD4;
       color: #fff;
     }
     .footer-col h4 {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
       color: rgba(255,255,255,0.4);
@@ -444,7 +444,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-col ul li a:hover { color: #1A6FFF; }
+    .footer-col ul li a:hover { color: #2A4BD4; }
     .footer-contact-list {
       display: flex;
       flex-direction: column;
@@ -458,12 +458,12 @@
     .footer-contact-item .icon {
       width: 32px;
       height: 32px;
-      background: rgba(26,111,255,0.12);
+      background: rgba(42, 75, 212,0.12);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #1A6FFF;
+      color: #2A4BD4;
       font-size: 0.8rem;
       flex-shrink: 0;
       margin-top: 1px;
@@ -480,7 +480,7 @@
       display: block;
       transition: color 0.2s;
     }
-    .footer-contact-item .text a:hover { color: #1A6FFF; }
+    .footer-contact-item .text a:hover { color: #2A4BD4; }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.06);
       padding: 20px 0;
@@ -500,7 +500,7 @@
       color: rgba(255,255,255,0.4);
       text-decoration: none;
     }
-    .footer-bottom a:hover { color: #1A6FFF; }
+    .footer-bottom a:hover { color: #2A4BD4; }
 
     /* --- Floating WhatsApp --- */
     .whatsapp-float {
@@ -534,8 +534,8 @@
       z-index: 999;
       width: 42px;
       height: 42px;
-      background: rgba(26,111,255,0.85);
-      border: 1px solid rgba(26,111,255,0.5);
+      background: rgba(42, 75, 212,0.85);
+      border: 1px solid rgba(42, 75, 212,0.5);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -553,7 +553,7 @@
       visibility: visible;
     }
     .back-to-top:hover {
-      background: #1A6FFF;
+      background: #2A4BD4;
       transform: translateY(-3px);
     }
 
@@ -565,7 +565,7 @@
       left: 0;
       right: 0;
       z-index: 998;
-      background: #0d1424;
+      background: #15171C;
       border-top: 1px solid rgba(255,255,255,0.1);
       padding: 10px 16px;
       gap: 10px;
@@ -585,7 +585,7 @@
       border-radius: 8px;
       transition: all 0.2s;
     }
-    .mobile-bar .mb-call  { background: #1A6FFF; color: #fff; }
+    .mobile-bar .mb-call  { background: #2A4BD4; color: #fff; }
     .mobile-bar .mb-wa    { background: #25D366; color: #fff; }
     .mobile-bar .mb-enq   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.12); }
 
@@ -619,7 +619,7 @@
       width: 100%;
     }
     .nav-brand {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 1.6rem;
       font-weight: 800;
       color: #ffffff;
@@ -627,7 +627,7 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .nav-brand span { color: #1A6FFF; }
+    .nav-brand span { color: #2A4BD4; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -647,7 +647,7 @@
       transition: all 0.2s;
     }
     .nav-links a:hover { color: #ffffff; background: rgba(255,255,255,0.07); }
-    .nav-links a.active { color: #1A6FFF; background: rgba(26,111,255,0.1); }
+    .nav-links a.active { color: #2A4BD4; background: rgba(42, 75, 212,0.1); }
     .nav-cta {
       display: flex;
       align-items: center;
@@ -668,10 +668,10 @@
     }
     .nav-cta .nc-phone:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
     .nav-cta .nc-enquire {
-      background: #1A6FFF;
+      background: #2A4BD4;
       color: #ffffff;
     }
-    .nav-cta .nc-enquire:hover { background: #0f5ce8; box-shadow: 0 4px 14px rgba(26,111,255,0.35); }
+    .nav-cta .nc-enquire:hover { background: #0f5ce8; box-shadow: 0 4px 14px rgba(42, 75, 212,0.35); }
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -698,7 +698,21 @@
       margin: 0 auto;
       padding: 0 24px;
     }
-  </style>
+  
+  /* ── Light hero text overrides (added during redesign) ── */
+  .page-hero { color: var(--color-text-body); }
+  .page-hero h1, .page-hero h2, .page-hero-title { color: var(--color-text-dark) !important; }
+  .page-hero-subtitle, .page-hero p { color: var(--color-text-body) !important; }
+  .breadcrumb { color: var(--color-text-light) !important; }
+  .breadcrumb a { color: var(--color-blue-primary) !important; }
+  .breadcrumb span, .breadcrumb .sep { color: var(--color-text-light) !important; }
+  .page-hero-badge, .hero-badge { background: var(--color-blue-light) !important; color: var(--color-blue-primary) !important; border: none !important; }
+  .page-hero .hero-kicker, .page-hero-kicker { color: var(--color-text-light) !important; }
+  .page-hero .stats-inline .stat-val { color: var(--color-text-dark) !important; }
+  .page-hero .stats-inline .stat-lbl { color: var(--color-text-light) !important; }
+  .page-hero .intro-stat-num { color: var(--color-blue-primary) !important; }
+  .page-hero .intro-stat-lbl { color: var(--color-text-light) !important; }
+</style>
 </head>
 <body>
 
@@ -1919,10 +1933,19 @@ IMAGE REPLACEMENT GUIDE â€” PRODUCTS.HTML
 <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
 <!-- Mobile Sticky Bottom Bar -->
-<div class="mobile-bar">
-  <a href="tel:+919363208579" class="call-btn"><i class="fa-solid fa-phone"></i> Call Now</a>
-  <a href="https://wa.me/919363208579?text=Hello%20GENSETS" class="wa-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-  <a href="enquiry.html" class="enq-btn"><i class="fa-solid fa-envelope"></i> Enquiry</a>
+<div class="mobile-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+919363208579" class="mbar-btn mbar-call">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="enquiry.html" class="mbar-btn mbar-enq">
+    <i class="fa-solid fa-file-lines"></i>
+    <span>Get Quote</span>
+  </a>
 </div>
 
 </body>
