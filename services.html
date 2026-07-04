@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GENSETS industrial power services â€” generator maintenance, emergency repair, spare parts consultation, AMC, upgrades, and technical training in Coimbatore, Tamil Nadu." />
+  <meta name="description" content="GENSETS industrial power services — generator maintenance, emergency repair, spare parts consultation, AMC, upgrades, and technical training in Coimbatore, Tamil Nadu." />
   <title>Industrial Power Services | GENSETS, Coimbatore</title>
 
   <!-- Google Fonts -->
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6.5.0 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -21,61 +21,68 @@
 
   <!-- ===== NAVIGATION HEADER ===== -->
   <header class="site-header" id="site-header">
-    <div class="container header-inner">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
 
-      <!-- Logo -->
-      <a href="index.html" class="logo" aria-label="GENSETS Home">
-        <span class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></span>
-        <span class="logo-text">GEN<span class="logo-accent">SETS</span></span>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="services.html" class="nav-link nav-link--active" aria-current="page">Services</a></li>
-          <li></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Header CTA -->
-      <div class="header-actions">
-        <a href="tel:+919363208579" class="btn btn-outline btn-sm header-tel">
-          <i class="fa-solid fa-phone"></i>
-          <span>+91 98765 43210</span>
-        </a>
-        <a href="enquiry.html" class="btn btn-primary btn-sm">Get Quote</a>
-      </div>
-
-      <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
-      <ul class="nav-mobile-list">
-        <li><a href="index.html" class="nav-mobile-link">Home</a></li>
-        <li><a href="products.html" class="nav-mobile-link">Products</a></li>
-        <li><a href="services.html" class="nav-mobile-link nav-mobile-link--active">Services</a></li>
-        <li></li>
-        <li><a href="about.html" class="nav-mobile-link">About</a></li>
-        <li><a href="contact.html" class="nav-mobile-link">Contact</a></li>
-        <li class="nav-mobile-cta">
-          <a href="enquiry.html" class="btn btn-primary btn-block">Enquire Now</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 
-  <main id="main-content">
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link active">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
+
+<main id="main-content">
 
     <!-- ===== PAGE HERO ===== -->
     <section class="page-hero" aria-label="Page introduction">
@@ -111,7 +118,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 1 â€” GENERATOR MAINTENANCE (text left, image right) ===== -->
+    <!-- ===== SERVICE 1 — GENERATOR MAINTENANCE (text left, image right) ===== -->
     <section class="service-detail" id="maintenance" aria-labelledby="svc-maintenance-title">
       <div class="container service-detail-inner">
 
@@ -171,7 +178,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 2 â€” EMERGENCY REPAIR SUPPORT (image left, text right) ===== -->
+    <!-- ===== SERVICE 2 — EMERGENCY REPAIR SUPPORT (image left, text right) ===== -->
     <section class="service-detail reverse section-alt" id="emergency" aria-labelledby="svc-emergency-title">
       <div class="container service-detail-inner">
 
@@ -231,7 +238,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 3 â€” SPARE PARTS CONSULTATION (text left, image right) ===== -->
+    <!-- ===== SERVICE 3 — SPARE PARTS CONSULTATION (text left, image right) ===== -->
     <section class="service-detail" id="consultation" aria-labelledby="svc-consultation-title">
       <div class="container service-detail-inner">
 
@@ -288,7 +295,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 4 â€” ANNUAL MAINTENANCE CONTRACTS (image left, text right) ===== -->
+    <!-- ===== SERVICE 4 — ANNUAL MAINTENANCE CONTRACTS (image left, text right) ===== -->
     <section class="service-detail reverse section-alt" id="amc" aria-labelledby="svc-amc-title">
       <div class="container service-detail-inner">
 
@@ -348,7 +355,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 5 â€” GENERATOR UPGRADES & RETROFITS (text left, image right) ===== -->
+    <!-- ===== SERVICE 5 — GENERATOR UPGRADES & RETROFITS (text left, image right) ===== -->
     <section class="service-detail" id="upgrades" aria-labelledby="svc-upgrades-title">
       <div class="container service-detail-inner">
 
@@ -358,7 +365,7 @@
             <i class="fa-solid fa-arrows-up-to-line"></i>
           </div>
           <h2 class="service-detail-title" id="svc-upgrades-title">Generator Upgrades &amp; Retrofits</h2>
-          <p class="service-detail-intro">Older generator sets can be modernized with new controllers, AVRs, and monitoring systems â€” extending their useful life and improving reliability without full replacement.</p>
+          <p class="service-detail-intro">Older generator sets can be modernized with new controllers, AVRs, and monitoring systems — extending their useful life and improving reliability without full replacement.</p>
 
           <ul class="service-bullets">
             <li><i class="fa-solid fa-circle-check"></i> Controller upgrades (analog to digital)</li>
@@ -407,7 +414,7 @@
       </div>
     </section>
 
-    <!-- ===== SERVICE 6 â€” TECHNICAL TRAINING SUPPORT (image left, text right) ===== -->
+    <!-- ===== SERVICE 6 — TECHNICAL TRAINING SUPPORT (image left, text right) ===== -->
     <section class="service-detail reverse section-alt" id="training" aria-labelledby="svc-training-title">
       <div class="container service-detail-inner">
 
@@ -484,7 +491,7 @@
               <i class="fa-solid fa-headset"></i>
             </div>
             <h3 class="process-step-title">Contact Us</h3>
-            <p class="process-step-desc">Reach out by phone, WhatsApp, or enquiry form with your requirement â€” model number, part name, or service needed.</p>
+            <p class="process-step-desc">Reach out by phone, WhatsApp, or enquiry form with your requirement — model number, part name, or service needed.</p>
           </div>
 
           <div class="process-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
@@ -495,7 +502,7 @@
               <i class="fa-solid fa-magnifying-glass-chart"></i>
             </div>
             <h3 class="process-step-title">Technical Review</h3>
-            <p class="process-step-desc">Our team reviews your requirement, verifies compatibility, and confirms availability â€” before confirming the order.</p>
+            <p class="process-step-desc">Our team reviews your requirement, verifies compatibility, and confirms availability — before confirming the order.</p>
           </div>
 
           <div class="process-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
@@ -517,7 +524,7 @@
               <i class="fa-solid fa-hands-holding-circle"></i>
             </div>
             <h3 class="process-step-title">Support</h3>
-            <p class="process-step-desc">Post-supply technical support is available if needed â€” we are on hand to assist with installation guidance or follow-up queries.</p>
+            <p class="process-step-desc">Post-supply technical support is available if needed — we are on hand to assist with installation guidance or follow-up queries.</p>
           </div>
 
         </div>
@@ -532,7 +539,7 @@
 
         <div class="cta-banner-text">
           <h2 class="cta-banner-title" id="cta-banner-heading">Power Solutions for Every Industry</h2>
-          <p class="cta-banner-subtitle">Talk to our team about your generator requirement â€” spare parts, service, or maintenance contracts.</p>
+          <p class="cta-banner-subtitle">Talk to our team about your generator requirement — spare parts, service, or maintenance contracts.</p>
         </div>
 
         <div class="cta-banner-actions">
@@ -553,182 +560,94 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" aria-label="Site footer">
-    <div class="footer-top">
-      <div class="container footer-grid">
-
-        <!-- Column 1: Brand -->
-        <div class="footer-col footer-col--brand">
-          <a href="index.html" class="footer-logo" aria-label="GENSETS Home">
-            <span class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></span>
-            <span class="logo-text">GEN<span class="logo-accent">SETS</span></span>
-          </a>
-          <p class="footer-tagline">Coimbatore's trusted source for industrial generator spare parts and power solutions since 2005.</p>
-          <address class="footer-address">
-            <p><i class="fa-solid fa-location-dot"></i> Ganapathy, Coimbatore &ndash; 641006, Tamil Nadu, India</p>
-            <p><i class="fa-solid fa-phone"></i> <a href="tel:+919363208579">+91 98765 43210</a></p>
-            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@gensets.in">info@gensets.in</a></p>
-          </address>
-          <div class="footer-gst">GST: 33XXXXX0000X1ZX</div>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="logo-text">GENSETS</span>
+        </a>
+        <p>Coimbatore's trusted partner for generator spare parts, industrial power solutions, and engineering services. Supplying quality parts to factories, hospitals, hotels, and industries across Tamil Nadu and India.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-
-        <!-- Column 2: Quick Links -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-            <li><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
-            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="brands.html"><i class="fa-solid fa-chevron-right"></i> Brands</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
-            <li><a href="enquiry.html"><i class="fa-solid fa-chevron-right"></i> Enquiry Form</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Services -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Our Services</h3>
-          <ul class="footer-links">
-            <li><a href="#maintenance"><i class="fa-solid fa-chevron-right"></i> Generator Maintenance</a></li>
-            <li><a href="#emergency"><i class="fa-solid fa-chevron-right"></i> Emergency Repair Support</a></li>
-            <li><a href="#consultation"><i class="fa-solid fa-chevron-right"></i> Spare Parts Consultation</a></li>
-            <li><a href="#amc"><i class="fa-solid fa-chevron-right"></i> Annual Maintenance Contracts</a></li>
-            <li><a href="#upgrades"><i class="fa-solid fa-chevron-right"></i> Upgrades &amp; Retrofits</a></li>
-            <li><a href="#training"><i class="fa-solid fa-chevron-right"></i> Technical Training</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Contact & Social -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Get In Touch</h3>
-          <p class="footer-contact-note">Available Monday to Saturday, 9 AM to 7 PM IST. Emergency parts line available 24/7.</p>
-          <div class="footer-contact-btns">
-            <a href="tel:+919363208579" class="btn btn-outline btn-sm footer-btn">
-              <i class="fa-solid fa-phone"></i> Call Now
-            </a>
-            <a href="https://wa.me/919363208579?text=Hi%20GENSETS%2C%20I%20need%20generator%20spares." class="btn btn-whatsapp btn-sm footer-btn" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
-          </div>
-          <div class="footer-social">
-            <h4 class="footer-social-title">Follow Us</h4>
-            <div class="footer-social-links">
-              <a href="#" class="social-icon" aria-label="Facebook" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="social-icon" aria-label="Instagram" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" class="social-icon" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" class="social-icon" aria-label="YouTube" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-            </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="enquiry.html">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Product Categories</h4>
+        <ul>
+          <li><a href="products.html">Generator Controllers</a></li>
+          <li><a href="products.html">Automatic Voltage Regulators</a></li>
+          <li><a href="products.html">Actuators</a></li>
+          <li><a href="products.html">Engine Sensors</a></li>
+          <li><a href="products.html">Cummins Parts</a></li>
+          <li><a href="products.html">Deep Sea Controllers</a></li>
+          <li><a href="products.html">Radiators</a></li>
+          <li><a href="products.html">Piston Kits</a></li>
+          <li><a href="products.html">JCB Spare Parts</a></li>
+          <li><a href="products.html">Battery Chargers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i>
+          <div>
+            <a href="tel:+919363208579">+91 93632 08579</a><br>
+            <a href="tel:+916383991815">+91 63839 91815</a><br>
+            <span style="color:var(--color-text-light);font-size:0.8rem;">
+              Office: <a href="tel:+918903152279">+91 89031 52279</a>
+            </span>
           </div>
         </div>
-
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Shop No 5, HM Complex, Addis Street,<br>Grey Town, Near Nehru Stadium,<br>Coimbatore - 641018, Tamil Nadu</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 7:00 PM<br>
+          <strong style="color:var(--color-orange);">24/7 Emergency Support</strong>
+        </span></div>
       </div>
     </div>
-
-    <!-- Footer Bottom Bar -->
     <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p class="footer-copy">&copy; 2025 GENSETS, Coimbatore. All rights reserved.</p>
-        <p class="footer-legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <span aria-hidden="true">&bull;</span>
-          <a href="terms.html">Terms of Service</a>
-          <span aria-hidden="true">&bull;</span>
-          <a href="sitemap.html">Sitemap</a>
-        </p>
-      </div>
+      <p>© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
+      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html">Contact Us</a></p>
     </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-
-  <!-- Back to Top -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
-
-  <!-- Mobile Sticky Bottom Bar -->
-  <div class="mobile-bar" role="navigation" aria-label="Quick contact">
-    <a href="tel:+919363208579" class="mbar-btn mbar-call">
-      <i class="fa-solid fa-phone"></i>
-      <span>Call Now</span>
-    </a>
-    <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-whatsapp"></i>
-      <span>WhatsApp</span>
-    </a>
-    <a href="enquiry.html" class="mbar-btn mbar-enq">
-      <i class="fa-solid fa-file-lines"></i>
-      <span>Get Quote</span>
-    </a>
   </div>
+</footer>
 
-  <script src="main.js"></script>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Mobile Sticky Bottom Bar -->
+<div class="mobile-bar" role="navigation" aria-label="Quick contact">
+  <a href="tel:+919363208579" class="mbar-btn mbar-call">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Now</span>
+  </a>
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="enquiry.html" class="mbar-btn mbar-enq">
+    <i class="fa-solid fa-file-lines"></i>
+    <span>Get Quote</span>
+  </a>
+</div>
+
+<script src="main.js"></script>
 
 </body>
 </html>
-
-<!--
-=============================================================================
-IMAGE REPLACEMENT GUIDE â€” services.html
-=============================================================================
-Replace Unsplash placeholder images with your own production photos.
-Each <img> has a data-replace attribute to identify the slot.
-
-SLOT: service-maintenance
-  Selector : img[data-replace="service-maintenance"]
-  Suggested: Photo of an engineer/technician performing maintenance on a
-             diesel generator â€” checking oil, inspecting cables, or running
-             a load test in an industrial environment.
-  Current  : https://images.unsplash.com/photo-1537462715879-360eeb61a0ad
-
-SLOT: service-emergency
-  Selector : img[data-replace="service-emergency"]
-  Suggested: Photo conveying urgency â€” tools laid out for an emergency
-             repair, a technician on a phone call beside a generator, or
-             a parts counter with components ready for same-day dispatch.
-  Current  : https://images.unsplash.com/photo-1572981779307-38b8cabb2407
-
-SLOT: service-consultation
-  Selector : img[data-replace="service-consultation"]
-  Suggested: Photo of a technician reviewing part catalogues, cross-
-             referencing manuals, or working at a technical desk with
-             generator components visible.
-  Current  : https://images.unsplash.com/photo-1581094794329-c8112a89af12
-
-SLOT: service-amc
-  Selector : img[data-replace="service-amc"]
-  Suggested: Photo of a generator installation on a factory floor, an
-             industrial facility with standby power equipment, or a
-             technician completing a scheduled AMC inspection.
-  Current  : https://images.unsplash.com/photo-1565514020179-026b92b84bb6
-
-SLOT: service-upgrades
-  Selector : img[data-replace="service-upgrades"]
-  Suggested: Close-up of a generator controller panel, AVR unit, or
-             technician working on an AMF panel installation â€” conveys
-             modernization and electronics work.
-  Current  : https://images.unsplash.com/photo-1518770660439-4636190af475
-
-SLOT: service-training
-  Selector : img[data-replace="service-training"]
-  Suggested: Photo of a small group training session, a trainer pointing
-             at a generator panel, or maintenance staff gathered around
-             equipment for a hands-on demonstration.
-  Current  : https://images.unsplash.com/photo-1600880292203-757bb62b4baf
-
-RECOMMENDED IMAGE SPECS
-  Format    : WebP (with JPEG fallback)
-  Dimensions: 800 Ã— 534 px minimum (3:2 ratio)
-  Quality   : 80â€“85 % for WebP
-  File size : Under 120 KB per image after compression
-  Naming    : service-maintenance.webp, service-emergency.webp, etc.
-  Storage   : /images/services/ within the project root
-
-To use local images, replace the src attribute value, for example:
-  src="https://images.unsplash.com/..."
-  â†’ src="images/services/service-maintenance.webp"
-=============================================================================
--->
-
-
-

@@ -13,1025 +13,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6.5.0 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eecS6sOptCNFYYqM3LeFRxEZWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    /* =============================================
-       INDUSTRIES PAGE â€” SCOPED STYLES
-       ============================================= */
-
-    /* --- Page Hero --- */
-    .page-hero {
-      background: radial-gradient(120% 120% at 50% 0%, #F7F6F3 0%, #FFFFFF 60%);
-      padding: 120px 0 70px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(42, 75, 212, 0.15);
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(42, 75, 212, 0.12) 0%, transparent 70%);
-    }
-    .page-hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .page-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(42, 75, 212, 0.12);
-      border: 1px solid rgba(42, 75, 212, 0.3);
-      color: #2A4BD4;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 50px;
-      margin-bottom: 22px;
-    }
-    .page-hero-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.05;
-      margin: 0 0 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .page-hero-title span {
-      color: #2A4BD4;
-    }
-    .page-hero-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.65);
-      max-width: 620px;
-      margin: 0 auto 30px;
-      line-height: 1.65;
-    }
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
-    }
-    .breadcrumb a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .breadcrumb a:hover {
-      color: #2A4BD4;
-    }
-    .breadcrumb i {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.25);
-    }
-    .breadcrumb span {
-      color: #2A4BD4;
-    }
-
-    /* --- Industries Intro Strip --- */
-    .industries-intro {
-      background: #080c14;
-      padding: 50px 0 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .industries-intro-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .intro-stat {
-      background: #0d1220;
-      padding: 28px 24px;
-      text-align: center;
-    }
-    .intro-stat-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #2A4BD4;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .intro-stat-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    /* --- Industry Detail Sections --- */
-    .industry-detail {
-      padding: 90px 0;
-      background: #080c14;
-    }
-    .industry-detail.alt {
-      background: #0a0f1c;
-    }
-    .industry-detail-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-    .industry-detail.reverse .industry-detail-inner {
-      direction: rtl;
-    }
-    .industry-detail.reverse .industry-detail-inner > * {
-      direction: ltr;
-    }
-
-    /* Image Side */
-    .industry-detail-img {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .industry-detail-img::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(42, 75, 212,0.15) 0%, transparent 60%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .industry-detail-img img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      display: block;
-      border-radius: 16px;
-      transition: transform 0.5s ease;
-    }
-    .industry-detail-img:hover img {
-      transform: scale(1.03);
-    }
-    .industry-img-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 24px;
-      background: linear-gradient(to top, rgba(8,12,20,0.9) 0%, transparent 100%);
-      z-index: 2;
-    }
-    .industry-img-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(42, 75, 212,0.9);
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 50px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* Text Side */
-    .industry-detail-text {}
-    .industry-icon-large {
-      width: 72px;
-      height: 72px;
-      background: rgba(42, 75, 212,0.1);
-      border: 1px solid rgba(42, 75, 212,0.25);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-    .industry-icon-large i {
-      font-size: 2rem;
-      color: #2A4BD4;
-    }
-    .industry-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #B26B3E;
-      margin-bottom: 8px;
-    }
-    .industry-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.05;
-      text-transform: uppercase;
-      margin: 0 0 28px;
-    }
-    .industry-block {
-      margin-bottom: 24px;
-    }
-    .industry-block-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #B26B3E;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .industry-block-title i {
-      font-size: 0.9rem;
-    }
-    .industry-block p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    /* Recommended Products */
-    .rec-products {
-      margin: 28px 0 32px;
-    }
-    .rec-products-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 12px;
-    }
-    .rec-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .rec-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(42, 75, 212,0.08);
-      border: 1px solid rgba(42, 75, 212,0.2);
-      color: rgba(255,255,255,0.75);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 6px 13px;
-      border-radius: 50px;
-      transition: all 0.2s;
-    }
-    .rec-pill i {
-      color: #2A4BD4;
-      font-size: 0.75rem;
-    }
-    .rec-pill:hover {
-      background: rgba(42, 75, 212,0.15);
-      border-color: rgba(42, 75, 212,0.4);
-      color: #fff;
-    }
-
-    /* CTA Buttons */
-    .industry-ctas {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .btn-ind-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #2A4BD4;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-    .btn-ind-primary:hover {
-      background: #1259d9;
-      transform: translateY(-1px);
-    }
-    .btn-ind-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 11px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: border-color 0.2s, background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-    .btn-ind-secondary:hover {
-      border-color: #B26B3E;
-      color: #B26B3E;
-      transform: translateY(-1px);
-    }
-
-    /* Divider between sections */
-    .industry-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(42, 75, 212,0.2) 50%, transparent);
-      margin: 0;
-      border: none;
-    }
-
-    /* --- Industry Index Pills --- */
-    .ind-pills-section {
-      background: #080c14;
-      padding: 36px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .ind-pills-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .ind-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    .ind-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0d1220;
-      border: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.6);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.83rem;
-      font-weight: 500;
-      padding: 9px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .ind-pill i {
-      color: #2A4BD4;
-      font-size: 0.8rem;
-    }
-    .ind-pill:hover {
-      background: rgba(42, 75, 212,0.1);
-      border-color: rgba(42, 75, 212,0.3);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-
-    /* --- Final CTA Banner --- */
-    .industries-cta-banner {
-      background: linear-gradient(135deg, #060b17 0%, #0a1428 50%, #060b17 100%);
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid rgba(42, 75, 212,0.15);
-    }
-    .industries-cta-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(42, 75, 212,0.1) 0%, transparent 70%);
-    }
-    .industries-cta-banner .container {
-      position: relative;
-      z-index: 1;
-    }
-    .cta-banner-kicker {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #B26B3E;
-      margin-bottom: 16px;
-    }
-    .cta-banner-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      font-weight: 800;
-      color: #fff;
-      text-transform: uppercase;
-      line-height: 1.05;
-      margin: 0 0 18px;
-    }
-    .cta-banner-title span {
-      color: #2A4BD4;
-    }
-    .cta-banner-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.55);
-      max-width: 520px;
-      margin: 0 auto 40px;
-      line-height: 1.65;
-    }
-    .cta-banner-buttons {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-cta-main {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #2A4BD4;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.93rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 9px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-cta-main:hover {
-      background: #1259d9;
-      transform: translateY(-2px);
-    }
-    .btn-cta-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #25D366;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.93rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 9px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-cta-whatsapp:hover {
-      background: #1cb956;
-      transform: translateY(-2px);
-    }
-    .btn-cta-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: transparent;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.93rem;
-      font-weight: 600;
-      padding: 13px 28px;
-      border-radius: 9px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: all 0.2s;
-    }
-    .btn-cta-outline:hover {
-      border-color: #B26B3E;
-      color: #B26B3E;
-      transform: translateY(-2px);
-    }
-
-    /* --- Floating WhatsApp --- */
-    .float-whatsapp {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      width: 58px;
-      height: 58px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .float-whatsapp:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37,211,102,0.6);
-    }
-    .float-whatsapp .wa-pulse {
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 2px solid rgba(37,211,102,0.5);
-      animation: wa-ring 2s ease-out infinite;
-    }
-    @keyframes wa-ring {
-      0% { transform: scale(1); opacity: 0.8; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
-
-    /* --- Back to Top --- */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      left: 28px;
-      z-index: 9998;
-      width: 46px;
-      height: 46px;
-      background: rgba(42, 75, 212,0.15);
-      border: 1px solid rgba(42, 75, 212,0.3);
-      color: #2A4BD4;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s, background 0.2s;
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .back-to-top:hover {
-      background: rgba(42, 75, 212,0.3);
-    }
-
-    /* --- Mobile Sticky Bar --- */
-    .mobile-sticky-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 9990;
-      background: #0d1220;
-      border-top: 1px solid rgba(42, 75, 212,0.2);
-      padding: 10px 16px;
-    }
-    .mobile-sticky-inner {
-      display: flex;
-      gap: 10px;
-    }
-    .msb-btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 11px 8px;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .msb-btn:hover { opacity: 0.85; }
-    .msb-call { background: #2A4BD4; color: #fff; }
-    .msb-wa { background: #25D366; color: #fff; }
-    .msb-email { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); }
-
-    /* --- Navbar (fallback if styles.css absent) --- */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9000;
-      background: rgba(8,12,20,0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(42, 75, 212,0.12);
-      padding: 0 0;
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .nav-logo-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, #2A4BD4 0%, #0d52cc 100%);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1rem;
-    }
-    .nav-logo-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .nav-logo-text span {
-      color: #2A4BD4;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.87rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      padding: 8px 13px;
-      border-radius: 7px;
-      transition: color 0.2s, background 0.2s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #fff;
-      background: rgba(42, 75, 212,0.1);
-    }
-    .nav-links a.active {
-      color: #2A4BD4;
-    }
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #2A4BD4;
-      color: #fff !important;
-      font-weight: 600 !important;
-      padding: 9px 18px !important;
-      border-radius: 8px !important;
-    }
-    .nav-cta:hover {
-      background: #1259d9 !important;
-      color: #fff !important;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 6px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-    .nav-mobile {
-      display: none;
-      flex-direction: column;
-      background: #0d1220;
-      border-top: 1px solid rgba(42, 75, 212,0.12);
-      padding: 16px 24px 20px;
-    }
-    .nav-mobile.open {
-      display: flex;
-    }
-    .nav-mobile a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: color 0.2s;
-    }
-    .nav-mobile a:last-child { border-bottom: none; }
-    .nav-mobile a:hover,
-    .nav-mobile a.active { color: #2A4BD4; }
-
-    /* --- Footer --- */
-    .footer {
-      background: #060911;
-      border-top: 1px solid rgba(42, 75, 212,0.1);
-      padding: 70px 0 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      gap: 50px;
-      padding-bottom: 50px;
-    }
-    .footer-brand {}
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      margin-bottom: 18px;
-    }
-    .footer-logo-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, #2A4BD4 0%, #0d52cc 100%);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .footer-logo-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .footer-logo-text span { color: #2A4BD4; }
-    .footer-tagline {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.65;
-      margin-bottom: 22px;
-    }
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 11px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-    }
-    .footer-contact-item i {
-      color: #2A4BD4;
-      font-size: 0.85rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-    .footer-contact-item a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-contact-item a:hover { color: #2A4BD4; }
-    .footer-col-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
-    }
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-links li {
-      margin-bottom: 9px;
-    }
-    .footer-links a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .footer-links a:hover { color: #2A4BD4; }
-    .footer-links a i {
-      font-size: 0.65rem;
-      color: rgba(42, 75, 212,0.5);
-    }
-    .footer-gst {
-      margin-top: 22px;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(42, 75, 212,0.08);
-      border: 1px solid rgba(42, 75, 212,0.15);
-      padding: 7px 14px;
-      border-radius: 7px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.45);
-    }
-    .footer-gst i { color: #2A4BD4; font-size: 0.8rem; }
-    .footer-gst strong { color: rgba(255,255,255,0.65); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 22px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-copy {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.3);
-    }
-    .footer-copy a {
-      color: rgba(42, 75, 212,0.7);
-      text-decoration: none;
-    }
-    .footer-badges {
-      display: flex;
-      gap: 10px;
-    }
-    .footer-badge {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.73rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 5px;
-    }
-    .footer-badge-gst {
-      background: rgba(42, 75, 212,0.1);
-      border: 1px solid rgba(42, 75, 212,0.2);
-      color: rgba(42, 75, 212,0.8);
-    }
-    .footer-badge-tn {
-      background: rgba(255,107,26,0.08);
-      border: 1px solid rgba(255,107,26,0.2);
-      color: rgba(255,107,26,0.7);
-    }
-
-    /* --- Container --- */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* --- Responsive --- */
-    @media (max-width: 1024px) {
-      .industries-intro-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 820px) {
-      .industry-detail-inner {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-      .industry-detail.reverse .industry-detail-inner {
-        direction: ltr;
-      }
-      .industry-detail-img img {
-        height: 280px;
-      }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .mobile-sticky-bar { display: block; }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .float-whatsapp {
-        bottom: 80px;
-      }
-      .back-to-top {
-        bottom: 80px;
-      }
-    }
-    @media (max-width: 520px) {
-      .industries-intro-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .ind-pills { gap: 8px; }
-      .cta-banner-buttons { flex-direction: column; align-items: center; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-  
-  /* ── Light hero text overrides (added during redesign) ── */
-  .page-hero { color: var(--color-text-body); }
-  .page-hero h1, .page-hero h2, .page-hero-title { color: var(--color-text-dark) !important; }
-  .page-hero-subtitle, .page-hero p { color: var(--color-text-body) !important; }
-  .breadcrumb { color: var(--color-text-light) !important; }
-  .breadcrumb a { color: var(--color-blue-primary) !important; }
-  .breadcrumb span, .breadcrumb .sep { color: var(--color-text-light) !important; }
-  .page-hero-badge, .hero-badge { background: var(--color-blue-light) !important; color: var(--color-blue-primary) !important; border: none !important; }
-  .page-hero .hero-kicker, .page-hero-kicker { color: var(--color-text-light) !important; }
-  .page-hero .intro-stat-num { color: var(--color-blue-primary) !important; }
-  .page-hero .intro-stat-lbl { color: var(--color-text-light) !important; }
-</style>
 </head>
 <body>
 
   <!-- =========================================================
        NAVIGATION
        ========================================================= -->
-  <nav class="navbar" id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="nav-logo-text">GEN<span>SETS</span></div>
+  <header class="site-header" id="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link active">Industries</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
       </a>
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
+    </div>
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li></li>
-        <li><a href="industries.html" class="active">Industries</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="nav-cta"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
-      </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-
-    <div class="nav-mobile" id="navMobile">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="industries.html" class="active">Industries</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact Us</a>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link active">Industries</a>
+      <a href="contact.html" class="drawer-link">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
     </div>
-  </nav>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+</header>
 
-
-  <!-- =========================================================
-       PAGE HERO
-       ========================================================= -->
-  <section class="page-hero">
+<section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
         <div class="page-hero-badge">
@@ -1089,7 +144,7 @@
         <a href="#hospitality" class="ind-pill"><i class="fa-solid fa-hotel"></i> Hotels</a>
         <a href="#datacenter" class="ind-pill"><i class="fa-solid fa-server"></i> Data Centers</a>
         <a href="#commercial" class="ind-pill"><i class="fa-solid fa-building"></i> Commercial Buildings</a>
-        <a href="#construction" class="ind-pill"><i class="fa-solid fa-hard-hat"></i> Construction</a>
+        <a href="#construction" class="ind-pill"><i class="fa-solid fa-helmet-safety"></i> Construction</a>
         <a href="#education" class="ind-pill"><i class="fa-solid fa-graduation-cap"></i> Education</a>
         <a href="#government" class="ind-pill"><i class="fa-solid fa-building-columns"></i> Government</a>
       </div>
@@ -1098,7 +153,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 1 â€” MANUFACTURING PLANTS
+       INDUSTRY 1 — MANUFACTURING PLANTS
        text left / image right / no .alt
        ========================================================= -->
   <section class="industry-detail" id="manufacturing">
@@ -1120,7 +175,7 @@
 
           <div class="industry-block">
             <p class="industry-block-title"><i class="fa-solid fa-circle-check"></i> How GENSETS Helps</p>
-            <p>We supply generator controllers, AVRs, actuators, and engine parts specifically matched to the heavy-duty generator sets used in manufacturing â€” ensuring rapid spare parts availability and minimal production disruption.</p>
+            <p>We supply generator controllers, AVRs, actuators, and engine parts specifically matched to the heavy-duty generator sets used in manufacturing — ensuring rapid spare parts availability and minimal production disruption.</p>
           </div>
 
           <div class="rec-products">
@@ -1165,7 +220,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 2 â€” HOSPITALS & HEALTHCARE
+       INDUSTRY 2 — HOSPITALS & HEALTHCARE
        image left / text right / .alt
        ========================================================= -->
   <section class="industry-detail alt reverse" id="healthcare">
@@ -1232,7 +287,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 3 â€” HOTELS & HOSPITALITY
+       INDUSTRY 3 — HOTELS & HOSPITALITY
        text left / image right / no .alt
        ========================================================= -->
   <section class="industry-detail" id="hospitality">
@@ -1299,7 +354,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 4 â€” DATA CENTERS
+       INDUSTRY 4 — DATA CENTERS
        image left / text right / .alt
        ========================================================= -->
   <section class="industry-detail alt reverse" id="datacenter">
@@ -1366,7 +421,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 5 â€” COMMERCIAL BUILDINGS
+       INDUSTRY 5 — COMMERCIAL BUILDINGS
        text left / image right / no .alt
        ========================================================= -->
   <section class="industry-detail" id="commercial">
@@ -1388,7 +443,7 @@
 
           <div class="industry-block">
             <p class="industry-block-title"><i class="fa-solid fa-circle-check"></i> How GENSETS Helps</p>
-            <p>GENSETS supplies generator spare parts for commercial backup power systems â€” from relay cards and control panels to battery chargers and fuel gauges â€” ensuring your backup systems are always ready.</p>
+            <p>GENSETS supplies generator spare parts for commercial backup power systems — from relay cards and control panels to battery chargers and fuel gauges — ensuring your backup systems are always ready.</p>
           </div>
 
           <div class="rec-products">
@@ -1433,7 +488,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 6 â€” CONSTRUCTION SITES
+       INDUSTRY 6 — CONSTRUCTION SITES
        image left / text right / .alt
        ========================================================= -->
   <section class="industry-detail alt reverse" id="construction">
@@ -1443,7 +498,7 @@
         <!-- Text Side -->
         <div class="industry-detail-text">
           <div class="industry-icon-large">
-            <i class="fa-solid fa-hard-hat"></i>
+            <i class="fa-solid fa-helmet-safety"></i>
           </div>
           <p class="industry-num">Industry 06</p>
           <h2 class="industry-name">Construction Sites</h2>
@@ -1455,7 +510,7 @@
 
           <div class="industry-block">
             <p class="industry-block-title"><i class="fa-solid fa-circle-check"></i> How GENSETS Helps</p>
-            <p>We supply heavy-duty generator spare parts for construction-grade generator sets â€” including piston kits, connecting rods, rocker arms, and radiators needed for generators working in demanding field conditions.</p>
+            <p>We supply heavy-duty generator spare parts for construction-grade generator sets — including piston kits, connecting rods, rocker arms, and radiators needed for generators working in demanding field conditions.</p>
           </div>
 
           <div class="rec-products">
@@ -1488,7 +543,7 @@
             loading="lazy"
           />
           <div class="industry-img-overlay">
-            <span class="industry-img-tag"><i class="fa-solid fa-hard-hat"></i> Construction Sites</span>
+            <span class="industry-img-tag"><i class="fa-solid fa-helmet-safety"></i> Construction Sites</span>
           </div>
         </div>
 
@@ -1500,7 +555,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 7 â€” EDUCATIONAL INSTITUTIONS
+       INDUSTRY 7 — EDUCATIONAL INSTITUTIONS
        text left / image right / no .alt
        ========================================================= -->
   <section class="industry-detail" id="education">
@@ -1567,7 +622,7 @@
 
 
   <!-- =========================================================
-       INDUSTRY 8 â€” GOVERNMENT FACILITIES
+       INDUSTRY 8 — GOVERNMENT FACILITIES
        image left / text right / .alt
        ========================================================= -->
   <section class="industry-detail alt reverse" id="government">
@@ -1657,269 +712,14 @@
   <!-- =========================================================
        FOOTER
        ========================================================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand Column -->
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo">
-            <div class="footer-logo-icon"><i class="fa-solid fa-bolt"></i></div>
-            <div class="footer-logo-text">GEN<span>SETS</span></div>
-          </a>
-          <p class="footer-tagline">Coimbatore's trusted supplier of generator spare parts â€” controllers, AVRs, actuators, engine parts, and more for all major brands.</p>
-
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+919363208579">+91 98765 43210</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fa-brands fa-whatsapp"></i>
-            <a href="https://wa.me/919363208579" target="_blank" rel="noopener">WhatsApp: 91 98765 43210</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:info@gensets.in">info@gensets.in</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>Ganapathy, Coimbatore - 641006, Tamil Nadu, India</span>
-          </div>
-
-          <div class="footer-gst">
-            <i class="fa-solid fa-file-invoice"></i>
-            GST: <strong>33XXXXX0000X1ZX</strong>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h4 class="footer-col-title">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
-            <li><a href="products.html"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
-            <li><a href="brands.html"><i class="fa-solid fa-chevron-right"></i> Brands</a></li>
-            <li><a href="industries.html"><i class="fa-solid fa-chevron-right"></i> Industries</a></li>
-            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Industries -->
-        <div>
-          <h4 class="footer-col-title">Industries</h4>
-          <ul class="footer-links">
-            <li><a href="#manufacturing"><i class="fa-solid fa-chevron-right"></i> Manufacturing</a></li>
-            <li><a href="#healthcare"><i class="fa-solid fa-chevron-right"></i> Hospitals</a></li>
-            <li><a href="#hospitality"><i class="fa-solid fa-chevron-right"></i> Hotels</a></li>
-            <li><a href="#datacenter"><i class="fa-solid fa-chevron-right"></i> Data Centers</a></li>
-            <li><a href="#commercial"><i class="fa-solid fa-chevron-right"></i> Commercial</a></li>
-            <li><a href="#construction"><i class="fa-solid fa-chevron-right"></i> Construction</a></li>
-            <li><a href="#education"><i class="fa-solid fa-chevron-right"></i> Education</a></li>
-            <li><a href="#government"><i class="fa-solid fa-chevron-right"></i> Government</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h4 class="footer-col-title">Business Hours</h4>
-          <ul class="footer-links">
-            <li><a href="#"><i class="fa-regular fa-clock"></i> Monâ€“Sat: 9:00 AM â€“ 7:00 PM</a></li>
-            <li><a href="#"><i class="fa-regular fa-clock"></i> Sunday: Closed</a></li>
-            <li><a href="#"><i class="fa-solid fa-bolt"></i> Emergency: 24/7 Available</a></li>
-          </ul>
-          <br />
-          <h4 class="footer-col-title">Popular Parts</h4>
-          <ul class="footer-links">
-            <li><a href="products.html#controllers"><i class="fa-solid fa-chevron-right"></i> DSE Controllers</a></li>
-            <li><a href="products.html#avr"><i class="fa-solid fa-chevron-right"></i> AVRs</a></li>
-            <li><a href="products.html#actuators"><i class="fa-solid fa-chevron-right"></i> Actuators</a></li>
-            <li><a href="products.html#engine"><i class="fa-solid fa-chevron-right"></i> Engine Parts</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <p class="footer-copy">
-          &copy; 2024 GENSETS, Coimbatore. All rights reserved. |
-          <a href="privacy.html">Privacy Policy</a> |
-          <a href="terms.html">Terms</a>
-        </p>
-        <div class="footer-badges">
-          <span class="footer-badge footer-badge-gst">GST Registered</span>
-          <span class="footer-badge footer-badge-tn">Tamil Nadu</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- =========================================================
-       FLOATING WHATSAPP BUTTON
-       ========================================================= -->
-  <a
-    href="https://wa.me/919363208579?text=Hi%20GENSETS%2C%20I%20need%20generator%20spare%20parts.%20Please%20assist."
-    class="float-whatsapp"
-    target="_blank"
-    rel="noopener"
-    aria-label="Chat on WhatsApp"
-  >
-    <span class="wa-pulse"></span>
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-
-  <!-- =========================================================
-       BACK TO TOP BUTTON
-       ========================================================= -->
-  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <i class="fa-solid fa-chevron-up"></i>
-  </a>
-
-
-  <!-- =========================================================
-       MOBILE STICKY BAR
-       ========================================================= -->
-  <div class="mobile-sticky-bar">
-    <div class="mobile-sticky-inner">
-      <a href="tel:+919363208579" class="msb-btn msb-call">
-        <i class="fa-solid fa-phone"></i> Call Now
-      </a>
-      <a href="https://wa.me/919363208579?text=Hi%20GENSETS%2C%20I%20need%20generator%20spare%20parts." target="_blank" rel="noopener" class="msb-btn msb-wa">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="mailto:info@gensets.in" class="msb-btn msb-email">
-        <i class="fa-solid fa-envelope"></i> Email
-      </a>
-    </div>
-  </div>
-
-
-  <!-- =========================================================
-       IMAGE REPLACEMENT COMMENT BLOCK
-       To replace Unsplash images with your own photos:
-       Find the img tag with data-replace="[key]" and update
-       the src attribute to your own image path.
-
-       Keys and recommended sizes (800x420px, 16:9 ratio):
-         industry-manufacturing  â€” CNC machines / factory floor
-         industry-hospital       â€” Hospital building / ICU corridor
-         industry-hotel          â€” Hotel lobby / exterior
-         industry-datacenter     â€” Server racks / data hall
-         industry-commercial     â€” Office tower / mall exterior
-         industry-construction   â€” Construction site / crane
-         industry-education      â€” College campus / classroom block
-         industry-government     â€” Government building / secretariat
-
-       Example replacement:
-         <img data-replace="industry-manufacturing"
-              src="images/industries/manufacturing.jpg"
-              alt="Manufacturing plant" />
-       ========================================================= -->
-
-
-  <!-- Main JS -->
-  <script src="main.js"></script>
-
-  <script>
-    // --- Hamburger Menu Toggle ---
-    (function () {
-      var ham = document.getElementById('hamburger');
-      var mob = document.getElementById('navMobile');
-      if (ham && mob) {
-        ham.addEventListener('click', function () {
-          ham.classList.toggle('open');
-          mob.classList.toggle('open');
-        });
-      }
-    })();
-
-    // --- Navbar scroll shrink ---
-    (function () {
-      var nav = document.getElementById('mainNav');
-      if (!nav) return;
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-          nav.style.background = 'rgba(6,9,17,0.98)';
-        } else {
-          nav.style.background = 'rgba(8,12,20,0.95)';
-        }
-      });
-    })();
-
-    // --- Back to Top visibility ---
-    (function () {
-      var btn = document.getElementById('backToTop');
-      if (!btn) return;
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) {
-          btn.classList.add('visible');
-        } else {
-          btn.classList.remove('visible');
-        }
-      });
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
-
-    // --- Smooth scroll for anchor links ---
-    (function () {
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-          var href = this.getAttribute('href');
-          if (href === '#') return;
-          var target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            var offset = 80;
-            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top: top, behavior: 'smooth' });
-          }
-        });
-      });
-    })();
-
-    // --- Intersection Observer: fade-in on scroll ---
-    (function () {
-      var style = document.createElement('style');
-      style.textContent = [
-        '.fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }',
-        '.fade-in-up.visible { opacity: 1; transform: translateY(0); }'
-      ].join('');
-      document.head.appendChild(style);
-
-      var targets = document.querySelectorAll(
-        '.industry-detail-text, .industry-detail-img, .intro-stat, .ind-pill'
-      );
-      targets.forEach(function (el) { el.classList.add('fade-in-up'); });
-
-      if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-        targets.forEach(function (el) { observer.observe(el); });
-      } else {
-        targets.forEach(function (el) { el.classList.add('visible'); });
-      }
-    })();
-  </script>
-
-<!-- FOOTER -->
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><i class="fa-solid fa-bolt logo-bolt"></i>GENSETS</a>
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="logo-text">GENSETS</span>
+        </a>
         <p>Coimbatore's trusted partner for generator spare parts, industrial power solutions, and engineering services. Supplying quality parts to factories, hospitals, hotels, and industries across Tamil Nadu and India.</p>
         <div class="footer-social">
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1957,19 +757,31 @@
       </div>
       <div class="footer-col">
         <h4>Contact Us</h4>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>GENSETS Industrial Solutions, Ganapathy, Coimbatore - 641006, Tamil Nadu, India</span></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+919363208579">+91 98765 43210</a></div>
-        <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/919363208579" target="_blank">WhatsApp: +91 98765 43210</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@gensets.in">info@gensets.in</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Monâ€“Sat: 9:00 AM â€“ 7:00 PM<br><span style="color:var(--color-orange)">24/7 Emergency Support</span></span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i>
+          <div>
+            <a href="tel:+919363208579">+91 93632 08579</a><br>
+            <a href="tel:+916383991815">+91 63839 91815</a><br>
+            <span style="color:var(--color-text-light);font-size:0.8rem;">
+              Office: <a href="tel:+918903152279">+91 89031 52279</a>
+            </span>
+          </div>
+        </div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Shop No 5, HM Complex, Addis Street,<br>Grey Town, Near Nehru Stadium,<br>Coimbatore - 641018, Tamil Nadu</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 7:00 PM<br>
+          <strong style="color:var(--color-orange);">24/7 Emergency Support</strong>
+        </span></div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>Â© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
-      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html" style="color:var(--color-blue-primary)">Contact Us</a></p>
+      <p>© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
+      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html">Contact Us</a></p>
     </div>
   </div>
 </footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
 <!-- Mobile Sticky Bottom Bar -->
 <div class="mobile-bar" role="navigation" aria-label="Quick contact">
@@ -1977,7 +789,7 @@
     <i class="fa-solid fa-phone"></i>
     <span>Call Now</span>
   </a>
-  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
     <span>WhatsApp</span>
   </a>
@@ -1987,45 +799,7 @@
   </a>
 </div>
 
-<!--
-========================================
-IMAGE REPLACEMENT GUIDE â€” INDUSTRIES.HTML
-========================================
-data-replace="industry-manufacturing"
-  â†’ Replace with: Manufacturing plant interior, production line, or factory floor photo
-  â†’ Current: Unsplash placeholder
+<script src="main.js"></script>
 
-data-replace="industry-hospital"
-  â†’ Replace with: Hospital exterior or interior with medical equipment
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-hotel"
-  â†’ Replace with: Hotel lobby or exterior photo
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-datacenter"
-  â†’ Replace with: Data center server room with rows of servers
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-commercial"
-  â†’ Replace with: Commercial office building or shopping complex exterior
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-construction"
-  â†’ Replace with: Active construction site with heavy equipment
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-education"
-  â†’ Replace with: School or college campus building exterior
-  â†’ Current: Unsplash placeholder
-
-data-replace="industry-government"
-  â†’ Replace with: Government building or public facility exterior
-  â†’ Current: Unsplash placeholder
-========================================
--->
 </body>
 </html>
-
-
-

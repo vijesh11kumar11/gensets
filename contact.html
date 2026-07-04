@@ -13,991 +13,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome 6.5.0 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjn08UkLxPU6/+I+IZBHHobw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <style>
-        /* â”€â”€ Contact page local overrides â”€â”€ */
-
-        /* Hero */
-        .page-hero {
-            background: radial-gradient(120% 120% at 50% 0%, #F7F6F3 0%, #FFFFFF 60%);
-            padding: 80px 0 60px;
-            border-bottom: 1px solid rgba(42, 75, 212, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 340px;
-            height: 340px;
-            background: radial-gradient(circle, rgba(42, 75, 212,0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -40px;
-            left: 10%;
-            width: 220px;
-            height: 220px;
-            background: radial-gradient(circle, rgba(255,107,26,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .page-hero-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            position: relative;
-            z-index: 1;
-        }
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            font-family: 'Inter', sans-serif;
-        }
-        .breadcrumb a {
-            color: rgba(255,255,255,0.55);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .breadcrumb a:hover { color: #2A4BD4; }
-        .breadcrumb-sep { color: var(--color-text-light); font-size: 11px; }
-        .breadcrumb-current { color: #2A4BD4; font-weight: 500; }
-        .page-hero-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-            letter-spacing: -0.5px;
-            margin: 0 0 16px;
-        }
-        .page-hero-title span { color: #2A4BD4; }
-        .page-hero-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            color: rgba(255,255,255,0.6);
-            max-width: 580px;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Contact layout */
-        .contact-section {
-            background: #15171C;
-            padding: 72px 0;
-        }
-        .contact-section-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        /* Contact cards */
-        .contact-cards-col {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .contact-card {
-            background: #111520;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 14px;
-            padding: 22px 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-        }
-        .contact-card.border-blue  { border-left: 3px solid #2A4BD4; }
-        .contact-card.border-green { border-left: 3px solid #25D366; }
-        .contact-card.border-gray  { border-left: 3px solid #555e70; }
-        .contact-card.border-orange{ border-left: 3px solid #B26B3E; }
-        .contact-card.border-blue:hover  { border-color: #2A4BD4; box-shadow: 0 8px 32px rgba(42, 75, 212,0.12); }
-        .contact-card.border-green:hover { border-color: #25D366; box-shadow: 0 8px 32px rgba(37,211,102,0.12); }
-        .contact-card.border-orange:hover{ border-color: #B26B3E; box-shadow: 0 8px 32px rgba(255,107,26,0.12); }
-
-        .contact-card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-        .contact-card-icon.blue   { background: rgba(42, 75, 212,0.15); color: #2A4BD4; }
-        .contact-card-icon.green  { background: rgba(37,211,102,0.15); color: #25D366; }
-        .contact-card-icon.gray   { background: rgba(100,116,139,0.15); color: #94a3b8; }
-        .contact-card-icon.orange { background: rgba(255,107,26,0.15);  color: #B26B3E; }
-
-        .contact-card-info { flex: 1; min-width: 0; }
-        .contact-card-info h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.55);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin: 0 0 4px;
-        }
-        .contact-card-info .card-value {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #fff;
-            margin: 0 0 4px;
-            line-height: 1.4;
-        }
-        .contact-card-info .card-note {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.45);
-            margin: 0 0 12px;
-        }
-        .contact-card-info .card-address {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.55;
-            margin: 0 0 10px;
-        }
-        .working-hours {
-            margin-top: 6px;
-        }
-        .working-hours .wh-row {
-            display: flex;
-            justify-content: space-between;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.55);
-            padding: 3px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .working-hours .wh-row:last-child { border-bottom: none; }
-        .working-hours .wh-row span:last-child { color: rgba(255,255,255,0.75); font-weight: 500; }
-        .wh-open { color: #4ade80 !important; }
-        .card-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 18px;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.15s;
-        }
-        .card-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-        .card-btn.btn-blue   { background: #2A4BD4; color: #fff; }
-        .card-btn.btn-green  { background: #25D366; color: #fff; }
-        .card-btn.btn-orange { background: #B26B3E; color: #fff; }
-
-        /* Map placeholder */
-        .map-placeholder {
-            background: #111520;
-            border: 1px dashed rgba(42, 75, 212,0.3);
-            border-radius: 14px;
-            padding: 32px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: border-color 0.25s, background 0.25s;
-            margin-top: 8px;
-            text-decoration: none;
-            display: block;
-        }
-        .map-placeholder:hover {
-            border-color: #2A4BD4;
-            background: rgba(42, 75, 212,0.04);
-        }
-        .map-placeholder .map-icon {
-            font-size: 2.6rem;
-            color: #2A4BD4;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .map-placeholder .map-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #fff;
-            margin: 0 0 4px;
-        }
-        .map-placeholder .map-addr {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.86rem;
-            color: rgba(255,255,255,0.5);
-            margin: 0 0 10px;
-        }
-        .map-placeholder .map-link-hint {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            color: #2A4BD4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        /* Contact form column */
-        .contact-form-col {}
-        .form-card {
-            background: #111520;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 18px;
-            padding: 36px 32px;
-        }
-        .form-card h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.85rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 0 0 6px;
-        }
-        .form-card .form-subhead {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.45);
-            margin: 0 0 28px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .form-label {
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 6px;
-            letter-spacing: 0.02em;
-        }
-        .form-label .req { color: #2A4BD4; margin-left: 2px; }
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            background: #15171C;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 9px;
-            padding: 11px 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: #fff;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            box-sizing: border-box;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        .form-input::placeholder,
-        .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            border-color: #2A4BD4;
-            box-shadow: 0 0 0 3px rgba(42, 75, 212,0.15);
-        }
-        .form-select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A6FFF' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            padding-right: 36px;
-            cursor: pointer;
-        }
-        .form-select option { background: #111520; color: #fff; }
-        .form-textarea {
-            resize: vertical;
-            min-height: 110px;
-            line-height: 1.55;
-        }
-        .field-error {
-            display: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.78rem;
-            color: #f87171;
-            margin-top: 4px;
-        }
-        .field-error.visible { display: block; }
-        .form-input.error,
-        .form-select.error,
-        .form-textarea.error {
-            border-color: #f87171;
-        }
-        .submit-btn {
-            width: 100%;
-            background: #2A4BD4;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            padding: 14px 24px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .submit-btn:hover {
-            background: #1557d4;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 24px rgba(42, 75, 212,0.35);
-        }
-        .submit-btn:active { transform: translateY(0); }
-        .submit-btn .btn-spinner { display: none; }
-        .submit-btn.loading .btn-text { display: none; }
-        .submit-btn.loading .btn-spinner { display: inline-block; }
-
-        /* Success box */
-        #contact-success { display: none; margin-top: 20px; }
-        .success-box {
-            background: rgba(74,222,128,0.08);
-            border: 1px solid rgba(74,222,128,0.25);
-            border-radius: 14px;
-            padding: 28px 24px;
-            text-align: center;
-        }
-        .success-box .success-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(74,222,128,0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 1.5rem;
-            color: #4ade80;
-        }
-        .success-box h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #4ade80;
-            margin: 0 0 10px;
-        }
-        .success-box p {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.55;
-            margin: 0 0 20px;
-        }
-        .success-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .success-actions a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.87rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: opacity 0.2s, transform 0.15s;
-        }
-        .success-actions a:hover { opacity: 0.88; transform: translateY(-1px); }
-        .success-actions .btn-call { background: #2A4BD4; color: #fff; }
-        .success-actions .btn-wa   { background: #25D366; color: #fff; }
-
-        /* CTA banner */
-        .cta-section {
-            background: linear-gradient(135deg, #15171C 0%, #FFFFFF 50%, #1a0f05 100%);
-            border-top: 1px solid rgba(42, 75, 212,0.12);
-            border-bottom: 1px solid rgba(255,107,26,0.08);
-            padding: 64px 0;
-        }
-        .cta-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-            text-align: center;
-        }
-        .cta-inner h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 900;
-            color: #fff;
-            margin: 0 0 10px;
-            line-height: 1;
-        }
-        .cta-inner h2 span { color: #B26B3E; }
-        .cta-inner p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.55);
-            margin: 0 0 32px;
-            max-width: 520px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-buttons {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 13px 26px;
-            border-radius: 9px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-        }
-        .cta-btn:hover { transform: translateY(-2px); opacity: 0.9; }
-        .cta-btn.primary { background: #2A4BD4; color: #fff; box-shadow: 0 4px 20px rgba(42, 75, 212,0.35); }
-        .cta-btn.secondary { background: #25D366; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.25); }
-        .cta-btn.tertiary { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
-        .cta-btn.tertiary:hover { border-color: rgba(255,255,255,0.5); }
-
-        /* â”€â”€ Footer â”€â”€ */
-        .site-footer {
-            background: #080a0e;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 60px 0 0;
-        }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-            gap: 40px;
-            padding-bottom: 48px;
-        }
-        .footer-brand .footer-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #fff;
-            letter-spacing: 0.04em;
-            margin: 0 0 6px;
-            display: block;
-        }
-        .footer-brand .footer-logo span { color: #2A4BD4; }
-        .footer-brand .footer-tagline {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.35);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin: 0 0 16px;
-        }
-        .footer-brand p {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.45);
-            line-height: 1.65;
-            margin: 0 0 20px;
-        }
-        .footer-social {
-            display: flex;
-            gap: 10px;
-        }
-        .footer-social a {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background 0.2s, color 0.2s;
-        }
-        .footer-social a:hover { background: #2A4BD4; color: #fff; }
-        .footer-col h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            margin: 0 0 16px;
-        }
-        .footer-col ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .footer-col ul li { margin-bottom: 9px; }
-        .footer-col ul li a {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.87rem;
-            color: rgba(255,255,255,0.45);
-            text-decoration: none;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .footer-col ul li a:hover { color: #2A4BD4; }
-        .footer-col ul li a i { font-size: 0.72rem; color: #2A4BD4; }
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 11px;
-            margin-bottom: 13px;
-        }
-        .footer-contact-item i {
-            color: #2A4BD4;
-            font-size: 0.9rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-        .footer-contact-item span {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.87rem;
-            color: rgba(255,255,255,0.45);
-            line-height: 1.5;
-        }
-        .footer-contact-item a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-contact-item a:hover { color: #2A4BD4; }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .footer-bottom p {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.3);
-            margin: 0;
-        }
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-        .footer-bottom-links a {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.3);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-bottom-links a:hover { color: #2A4BD4; }
-
-        /* â”€â”€ Floating WhatsApp â”€â”€ */
-        .float-wa {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 999;
-            width: 56px;
-            height: 56px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 6px 24px rgba(37,211,102,0.45);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .float-wa:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 30px rgba(37,211,102,0.55);
-        }
-        .float-wa i { font-size: 1.6rem; color: #fff; }
-        .float-wa-badge {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background: #B26B3E;
-            color: #fff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 2px 5px;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
-            white-space: nowrap;
-        }
-
-        /* â”€â”€ Back to top â”€â”€ */
-        #back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            z-index: 998;
-            width: 42px;
-            height: 42px;
-            background: rgba(42, 75, 212,0.15);
-            border: 1px solid rgba(42, 75, 212,0.3);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2A4BD4;
-            text-decoration: none;
-            font-size: 1rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s, background 0.2s;
-        }
-        #back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #back-to-top:hover { background: rgba(42, 75, 212,0.3); }
-
-        /* â”€â”€ Mobile action bar â”€â”€ */
-        .mobile-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: #111520;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding: 8px 0 env(safe-area-inset-bottom, 8px);
-        }
-        .mobile-bar-inner {
-            display: flex;
-            justify-content: space-around;
-        }
-        .mobile-bar-btn {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3px;
-            padding: 6px 4px;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.5);
-            transition: color 0.2s;
-        }
-        .mobile-bar-btn i { font-size: 1.15rem; }
-        .mobile-bar-btn.call  { color: #2A4BD4; }
-        .mobile-bar-btn.wa    { color: #25D366; }
-        .mobile-bar-btn.email { color: rgba(255,255,255,0.55); }
-        .mobile-bar-btn.quote { color: #B26B3E; }
-        .mobile-bar-btn:hover { color: #fff; }
-
-        /* â”€â”€ Navigation (standalone styles for this page) â”€â”€ */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 900;
-            background: rgba(13,15,20,0.97);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-        .nav-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.7rem;
-            font-weight: 900;
-            color: #fff;
-            text-decoration: none;
-            letter-spacing: 0.04em;
-            flex-shrink: 0;
-        }
-        .nav-logo span { color: #2A4BD4; }
-        .nav-logo small {
-            display: block;
-            font-size: 0.6rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.35);
-            letter-spacing: 0.12em;
-            margin-top: -4px;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-links li a {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 7px;
-            transition: color 0.2s, background 0.2s;
-            white-space: nowrap;
-        }
-        .nav-links li a:hover { color: #fff; background: rgba(255,255,255,0.07); }
-        .nav-links li a.active { color: #2A4BD4; background: rgba(42, 75, 212,0.1); }
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-shrink: 0;
-        }
-        .nav-call {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.83rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            padding: 7px 14px;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 8px;
-            transition: border-color 0.2s, color 0.2s;
-        }
-        .nav-call:hover { border-color: #2A4BD4; color: #2A4BD4; }
-        .nav-cta {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #fff;
-            background: #2A4BD4;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            text-transform: uppercase;
-            transition: background 0.2s, transform 0.15s;
-        }
-        .nav-cta:hover { background: #1557d4; transform: translateY(-1px); }
-        .nav-hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 6px;
-            color: rgba(255,255,255,0.7);
-            font-size: 1.3rem;
-        }
-
-        /* â”€â”€ Responsive â”€â”€ */
-        @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 900px) {
-            .contact-layout { grid-template-columns: 1fr; }
-            .contact-form-col { order: -1; }
-            .nav-links, .nav-call { display: none; }
-            .nav-hamburger { display: flex; }
-        }
-        @media (max-width: 640px) {
-            .form-card { padding: 24px 18px; }
-            .form-row { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; }
-            .mobile-bar { display: block; }
-            body { padding-bottom: 72px; }
-            .float-wa { bottom: 90px; }
-            #back-to-top { bottom: 158px; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-        }
-
-        /* â”€â”€ Mobile Nav Drawer â”€â”€ */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 68px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 899;
-            background: rgba(13,15,20,0.99);
-            backdrop-filter: blur(12px);
-            flex-direction: column;
-            padding: 24px;
-            overflow-y: auto;
-        }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav ul {
-            list-style: none;
-            margin: 0 0 24px;
-            padding: 0;
-        }
-        .mobile-nav ul li { border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .mobile-nav ul li a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.7);
-            padding: 14px 4px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .mobile-nav ul li a.active { color: #2A4BD4; }
-        .mobile-nav ul li a:hover { color: #fff; }
-        .mobile-nav-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .mobile-nav-actions a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 13px;
-            border-radius: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        .mobile-nav-actions a:hover { opacity: 0.88; }
-        .mobile-nav-actions .m-call { background: #2A4BD4; color: #fff; }
-        .mobile-nav-actions .m-wa   { background: #25D366; color: #fff; }
-    
-  /* ── Light hero text overrides (added during redesign) ── */
-  .page-hero { color: var(--color-text-body); }
-  .page-hero h1, .page-hero h2, .page-hero-title { color: var(--color-text-dark) !important; }
-  .page-hero-subtitle, .page-hero p { color: var(--color-text-body) !important; }
-  .breadcrumb { color: var(--color-text-light) !important; }
-  .breadcrumb a { color: var(--color-blue-primary) !important; }
-  .breadcrumb span, .breadcrumb .sep { color: var(--color-text-light) !important; }
-  .page-hero-badge, .hero-badge { background: var(--color-blue-light) !important; color: var(--color-blue-primary) !important; border: none !important; }
-  .page-hero .hero-kicker, .page-hero-kicker { color: var(--color-text-light) !important; }
-  .page-hero .intro-stat-num { color: var(--color-blue-primary) !important; }
-  .page-hero .intro-stat-lbl { color: var(--color-text-light) !important; }
-</style>
 </head>
 <body>
 
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      NAVIGATION
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<header class="site-header">
-    <nav class="nav-inner" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav-logo">
-            GEN<span>SETS</span>
-            <small>Generator Spare Parts</small>
-        </a>
+<header class="site-header" id="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="logo-text">GENSETS</span>
+    </a>
 
-        <ul class="nav-links" role="list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-
-        <div class="nav-actions">
-            <a href="tel:+919363208579" class="nav-call" aria-label="Call us">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                +91 98765 43210
-            </a>
-            <a href="contact.html#contact-form" class="nav-cta">
-                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                Get Quote
-            </a>
-            <button class="nav-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-                <i class="fa-solid fa-bars" id="hamburger-icon" aria-hidden="true"></i>
-            </button>
-        </div>
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="industries.html" class="nav-link">Industries</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </nav>
+
+    <div class="nav-actions">
+      <a href="tel:+919363208579" class="nav-phone">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 93632 08579 / +91 63839 91815</span>
+      </a>
+      <a href="enquiry.html" class="btn btn-primary btn-nav">Request Quote</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span class="logo-text">GENSETS</span>
+      </a>
+      <button class="drawer-close" id="drawer-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="drawer-link">Home</a>
+      <a href="about.html" class="drawer-link">About Us</a>
+      <a href="products.html" class="drawer-link">Products</a>
+      <a href="services.html" class="drawer-link">Services</a>
+      <a href="industries.html" class="drawer-link">Industries</a>
+      <a href="contact.html" class="drawer-link active">Contact</a>
+      <a href="enquiry.html" class="drawer-link">Request a Quote</a>
+    </nav>
+    <div class="drawer-cta">
+      <a href="tel:+919363208579" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </a>
+      <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="btn btn-whatsapp btn-full" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
 </header>
 
-<!-- Mobile nav drawer -->
-<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <ul role="list">
-        <li><a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a></li>
-        <li><a href="products.html"><i class="fa-solid fa-gears" aria-hidden="true"></i> Products</a></li>
-        <li><a href="brands.html"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Brands</a></li>
-        <li><a href="services.html"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Services</a></li>
-        <li><a href="about.html"><i class="fa-solid fa-building" aria-hidden="true"></i> About</a></li>
-        <li><a href="contact.html" class="active"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contact</a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-        <a href="tel:+919363208579" class="m-call"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call +91 98765 43210</a>
-        <a href="https://wa.me/919363208579" class="m-wa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
-    </div>
-</nav>
-
-
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     PAGE HERO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <section class="page-hero" aria-label="Page hero">
     <div class="page-hero-inner">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -1014,305 +102,45 @@
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      CONTACT SECTION (Two-column layout)
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<!-- NOTE: No images are used on this page. All visual elements use CSS, Font Awesome icons, and color styling only. Replace icons or add <img> tags here if product/team images are added in the future. -->
+<section class="section" aria-label="Contact GENSETS" style="text-align:center; padding: 80px 24px;">
+    <div class="container" style="max-width:700px; margin:0 auto;">
 
-<section class="contact-section" aria-label="Contact information and form">
-    <div class="contact-section-inner">
-        <div class="contact-layout">
+        <p style="font-family:var(--font-body); font-size:0.85rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--color-orange); margin-bottom:12px;">Get In Touch</p>
+        <h2 style="font-family:var(--font-display); font-size:clamp(2rem,5vw,3rem); font-weight:700; color:var(--color-text-dark); margin:0 0 16px;">Talk to Our Team</h2>
+        <p style="font-family:var(--font-body); font-size:1.05rem; color:var(--color-text-body); margin:0 0 48px; line-height:1.7;">Call or WhatsApp us directly — our technical experts are available Mon–Sat 9AM–7PM and for emergencies 24/7.</p>
 
-            <!-- â”€â”€ LEFT COLUMN: Contact cards + map â”€â”€ -->
-            <div class="contact-cards-col">
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
+            <a href="tel:+919363208579"
+               style="display:inline-flex; align-items:center; gap:10px; background:var(--color-blue-primary); color:#fff; font-family:var(--font-body); font-size:1.05rem; font-weight:600; padding:16px 36px; border-radius:var(--radius-lg); text-decoration:none; transition:opacity .2s;"
+               onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now
+            </a>
+            <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts."
+               target="_blank" rel="noopener noreferrer"
+               style="display:inline-flex; align-items:center; gap:10px; background:var(--color-whatsapp); color:#fff; font-family:var(--font-body); font-size:1.05rem; font-weight:600; padding:16px 36px; border-radius:var(--radius-lg); text-decoration:none; transition:opacity .2s;"
+               onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+            </a>
+        </div>
 
-                <!-- Card 1: Phone -->
-                <div class="contact-card border-blue" role="region" aria-label="Phone contact">
-                    <div class="contact-card-icon blue" aria-hidden="true">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>Call Us</h3>
-                        <p class="card-value">+91 98765 43210</p>
-                        <p class="card-note">Monâ€“Sat &nbsp;9AMâ€“7PM</p>
-                        <a href="tel:+919363208579" class="card-btn btn-blue">
-                            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now
-                        </a>
-                    </div>
+        <div style="display:flex; gap:32px; justify-content:center; flex-wrap:wrap;">
+            <div style="font-family:var(--font-body); font-size:0.95rem; color:var(--color-text-body); display:flex; align-items:flex-start; gap:10px; text-align:left;">
+                <i class="fa-solid fa-phone" style="color:var(--color-blue-primary); margin-top:3px;"></i>
+                <div>
+                    <a href="tel:+919363208579" style="color:var(--color-text-dark); text-decoration:none; font-weight:600; display:block;">+91 93632 08579</a>
+                    <a href="tel:+916383991815" style="color:var(--color-text-dark); text-decoration:none; font-weight:600; display:block;">+91 63839 91815</a>
                 </div>
+            </div>
+            <div style="font-family:var(--font-body); font-size:0.95rem; color:var(--color-text-body); display:flex; align-items:flex-start; gap:10px; text-align:left;">
+                <i class="fa-solid fa-location-dot" style="color:var(--color-orange); margin-top:3px;"></i>
+                <div>Shop No 5, HM Complex, Addis Street,<br>Grey Town, Coimbatore – 641018</div>
+            </div>
+            <div style="font-family:var(--font-body); font-size:0.95rem; color:var(--color-text-body); display:flex; align-items:flex-start; gap:10px; text-align:left;">
+                <i class="fa-solid fa-clock" style="color:var(--color-blue-primary); margin-top:3px;"></i>
+                <div>Mon–Sat: 9AM – 7PM<br><strong style="color:var(--color-orange);">24/7 Emergency Support</strong></div>
+            </div>
+        </div>
 
-                <!-- Card 2: WhatsApp -->
-                <div class="contact-card border-green" role="region" aria-label="WhatsApp contact">
-                    <div class="contact-card-icon green" aria-hidden="true">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>WhatsApp</h3>
-                        <p class="card-value">+91 98765 43210</p>
-                        <p class="card-note">Instant Response</p>
-                        <a href="https://wa.me/919363208579" class="card-btn btn-green" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Now
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Email -->
-                <div class="contact-card border-blue" role="region" aria-label="Email contact">
-                    <div class="contact-card-icon blue" aria-hidden="true">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>Email Us</h3>
-                        <p class="card-value">info@gensets.in</p>
-                        <p class="card-note">Response within 4 hours</p>
-                        <a href="mailto:info@gensets.in" class="card-btn btn-blue">
-                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Email
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Address -->
-                <div class="contact-card border-gray" role="region" aria-label="Address and working hours">
-                    <div class="contact-card-icon gray" aria-hidden="true">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>Visit Us</h3>
-                        <p class="card-address">GENSETS Industrial Solutions,<br>Ganapathy, Coimbatore - 641006,<br>Tamil Nadu, India</p>
-                        <div class="working-hours" aria-label="Working hours">
-                            <div class="wh-row">
-                                <span>Monday â€“ Friday</span>
-                                <span class="wh-open">9:00 AM â€“ 7:00 PM</span>
-                            </div>
-                            <div class="wh-row">
-                                <span>Saturday</span>
-                                <span class="wh-open">9:00 AM â€“ 7:00 PM</span>
-                            </div>
-                            <div class="wh-row">
-                                <span>Sunday</span>
-                                <span>Closed (Emergency Only)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Emergency -->
-                <div class="contact-card border-orange" role="region" aria-label="Emergency support">
-                    <div class="contact-card-icon orange" aria-hidden="true">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                    <div class="contact-card-info">
-                        <h3>Emergency Support</h3>
-                        <p class="card-value">24/7 Emergency Parts Support Available</p>
-                        <p class="card-note">Call any time for critical breakdowns</p>
-                        <a href="tel:+919363208579" class="card-btn btn-orange">
-                            <i class="fa-solid fa-phone-volume" aria-hidden="true"></i> Emergency Call
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Map placeholder -->
-                <a href="https://www.google.com/maps/search/Ganapathy+Coimbatore+641006" target="_blank" rel="noopener noreferrer" class="map-placeholder" aria-label="View GENSETS location on Google Maps">
-                    <span class="map-icon" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></span>
-                    <p class="map-name">GENSETS Industrial Solutions</p>
-                    <p class="map-addr">Ganapathy, Coimbatore - 641006</p>
-                    <span class="map-link-hint">
-                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        Click to view on Google Maps
-                    </span>
-                </a>
-
-            </div><!-- /contact-cards-col -->
-
-
-            <!-- â”€â”€ RIGHT COLUMN: Contact form â”€â”€ -->
-            <div class="contact-form-col">
-                <div class="form-card">
-                    <h2>Send Us a Message</h2>
-                    <p class="form-subhead">Fill in the details below and our team will get back to you within 4 business hours.</p>
-
-                    <form id="contact-form" novalidate aria-label="Contact enquiry form">
-
-                        <!-- Row 1: Full Name + Company Name -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="full-name">Full Name <span class="req" aria-hidden="true">*</span></label>
-                                <input
-                                    class="form-input"
-                                    type="text"
-                                    id="full-name"
-                                    name="full_name"
-                                    placeholder="Your full name"
-                                    required
-                                    autocomplete="name"
-                                    aria-required="true"
-                                    aria-describedby="full-name-error"
-                                >
-                                <span class="field-error" id="full-name-error" role="alert">Please enter your full name.</span>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="company-name">Company Name <span class="req" aria-hidden="true">*</span></label>
-                                <input
-                                    class="form-input"
-                                    type="text"
-                                    id="company-name"
-                                    name="company_name"
-                                    placeholder="Your company / organisation"
-                                    required
-                                    autocomplete="organization"
-                                    aria-required="true"
-                                    aria-describedby="company-name-error"
-                                >
-                                <span class="field-error" id="company-name-error" role="alert">Please enter your company name.</span>
-                            </div>
-                        </div>
-
-                        <!-- Row 2: Phone + Email -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
-                                <input
-                                    class="form-input"
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="+91 XXXXX XXXXX"
-                                    required
-                                    autocomplete="tel"
-                                    aria-required="true"
-                                    aria-describedby="phone-error"
-                                >
-                                <span class="field-error" id="phone-error" role="alert">Please enter a valid phone number.</span>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="email">Email</label>
-                                <input
-                                    class="form-input"
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="your@email.com"
-                                    autocomplete="email"
-                                    aria-describedby="email-error"
-                                >
-                                <span class="field-error" id="email-error" role="alert">Please enter a valid email address.</span>
-                            </div>
-                        </div>
-
-                        <!-- Row 3: City + Enquiry Type -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="city">City</label>
-                                <input
-                                    class="form-input"
-                                    type="text"
-                                    id="city"
-                                    name="city"
-                                    placeholder="Your city"
-                                    autocomplete="address-level2"
-                                >
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="enquiry-type">Enquiry Type <span class="req" aria-hidden="true">*</span></label>
-                                <select
-                                    class="form-select"
-                                    id="enquiry-type"
-                                    name="enquiry_type"
-                                    required
-                                    aria-required="true"
-                                    aria-describedby="enquiry-type-error"
-                                >
-                                    <option value="" disabled selected>Select enquiry type</option>
-                                    <option value="request-quote">Request Quote</option>
-                                    <option value="technical-support">Technical Support</option>
-                                    <option value="product-information">Product Information</option>
-                                    <option value="emergency-support">Emergency Support</option>
-                                    <option value="annual-maintenance-contract">Annual Maintenance Contract</option>
-                                    <option value="general-enquiry">General Enquiry</option>
-                                </select>
-                                <span class="field-error" id="enquiry-type-error" role="alert">Please select an enquiry type.</span>
-                            </div>
-                        </div>
-
-                        <!-- Row 4: Generator Brand + kVA Rating -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label" for="generator-brand">Generator Brand</label>
-                                <input
-                                    class="form-input"
-                                    type="text"
-                                    id="generator-brand"
-                                    name="generator_brand"
-                                    placeholder="e.g. Kirloskar, Cummins, Mahindra"
-                                >
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="kva-rating">kVA Rating</label>
-                                <input
-                                    class="form-input"
-                                    type="text"
-                                    id="kva-rating"
-                                    name="kva_rating"
-                                    placeholder="e.g. 62.5 kVA, 125 kVA"
-                                >
-                            </div>
-                        </div>
-
-                        <!-- Message -->
-                        <div class="form-group">
-                            <label class="form-label" for="message">Your Message / Description <span class="req" aria-hidden="true">*</span></label>
-                            <textarea
-                                class="form-textarea"
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="Describe your requirement, part number, issue, or any other details..."
-                                required
-                                aria-required="true"
-                                aria-describedby="message-error"
-                            ></textarea>
-                            <span class="field-error" id="message-error" role="alert">Please enter your message or requirement.</span>
-                        </div>
-
-                        <!-- GST note -->
-                        <p style="font-family:'Inter',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.3);margin:0 0 16px;line-height:1.5;">
-                            <i class="fa-solid fa-shield-halved" style="color:#2A4BD4;margin-right:5px;" aria-hidden="true"></i>
-                            GST Invoice available &nbsp;Â·&nbsp; GST: 33XXXXX0000X1ZX &nbsp;Â·&nbsp; Your information is kept confidential.
-                        </p>
-
-                        <!-- Submit -->
-                        <button type="submit" class="submit-btn" id="submit-btn">
-                            <span class="btn-text">
-                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                                Send Message
-                            </span>
-                            <span class="btn-spinner" aria-hidden="true">
-                                <i class="fa-solid fa-circle-notch fa-spin"></i>&nbsp; Sending...
-                            </span>
-                        </button>
-
-                    </form>
-
-                    <!-- Success state -->
-                    <div id="contact-success" aria-live="polite" aria-atomic="true">
-                        <div class="success-box" role="status">
-                            <div class="success-icon" aria-hidden="true">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-                            <h3>Thank you! Your message has been received.</h3>
-                            <p>Our team will contact you within 4 business hours. For urgent requirements, please call or WhatsApp directly.</p>
-                            <div class="success-actions">
-                                <a href="tel:+919363208579" class="btn-call">
-                                    <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Us Now
-                                </a>
-                                <a href="https://wa.me/919363208579" class="btn-wa" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp for Faster Response
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- /form-card -->
-            </div><!-- /contact-form-col -->
-
-        </div><!-- /contact-layout -->
     </div>
 </section>
 
@@ -1342,281 +170,75 @@
 <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      FOOTER
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<footer class="site-footer" aria-label="Site footer">
-    <div class="footer-inner">
-        <div class="footer-grid">
-
-            <!-- Brand col -->
-            <div class="footer-brand">
-                <span class="footer-logo">GEN<span>SETS</span></span>
-                <p class="footer-tagline">Generator Spare Parts &amp; Solutions</p>
-                <p>Your trusted partner for genuine generator spare parts in Coimbatore and across Tamil Nadu. Expert support for all major DG set brands.</p>
-                <div class="footer-social" aria-label="Social media links">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="https://wa.me/919363208579" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-                    <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <!-- Quick links -->
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul role="list">
-                    <li><a href="index.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="products.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> All Products</a></li>
-                    <li><a href="brands.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Brands We Serve</a></li>
-                    <li><a href="services.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Services</a></li>
-                    <li><a href="about.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Products -->
-            <div class="footer-col">
-                <h4>Products</h4>
-                <ul role="list">
-                    <li><a href="products.html#alternators"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Alternators</a></li>
-                    <li><a href="products.html#avr"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> AVR &amp; Controllers</a></li>
-                    <li><a href="products.html#filters"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Filters &amp; Belts</a></li>
-                    <li><a href="products.html#cooling"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Cooling System Parts</a></li>
-                    <li><a href="products.html#electrical"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Electrical Components</a></li>
-                    <li><a href="products.html#engine"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i> Engine Parts</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact info -->
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <address style="font-style:normal;">
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        <span>GENSETS Industrial Solutions,<br>Ganapathy, Coimbatore - 641006,<br>Tamil Nadu, India</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                        <span><a href="tel:+919363208579">+91 98765 43210</a></span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                        <span><a href="https://wa.me/919363208579" target="_blank" rel="noopener noreferrer">+91 98765 43210</a></span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        <span><a href="mailto:info@gensets.in">info@gensets.in</a></span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-clock" aria-hidden="true"></i>
-                        <span>Monâ€“Sat: 9AMâ€“7PM<br><span style="color:#B26B3E;font-weight:600;">24/7 Emergency Support</span></span>
-                    </div>
-                </address>
-            </div>
-
-        </div><!-- /footer-grid -->
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 GENSETS Industrial Solutions. All rights reserved. &nbsp;|&nbsp; GST: 33XXXXX0000X1ZX</p>
-            <nav class="footer-bottom-links" aria-label="Footer legal links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Sitemap</a>
-            </nav>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span class="logo-text">GENSETS</span>
+        </a>
+        <p>Coimbatore's trusted partner for generator spare parts, industrial power solutions, and engineering services. Supplying quality parts to factories, hospitals, hotels, and industries across Tamil Nadu and India.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="enquiry.html">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Product Categories</h4>
+        <ul>
+          <li><a href="products.html">Generator Controllers</a></li>
+          <li><a href="products.html">Automatic Voltage Regulators</a></li>
+          <li><a href="products.html">Actuators</a></li>
+          <li><a href="products.html">Engine Sensors</a></li>
+          <li><a href="products.html">Cummins Parts</a></li>
+          <li><a href="products.html">Deep Sea Controllers</a></li>
+          <li><a href="products.html">Radiators</a></li>
+          <li><a href="products.html">Piston Kits</a></li>
+          <li><a href="products.html">JCB Spare Parts</a></li>
+          <li><a href="products.html">Battery Chargers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i>
+          <div>
+            <a href="tel:+919363208579">+91 93632 08579</a><br>
+            <a href="tel:+916383991815">+91 63839 91815</a><br>
+            <span style="color:var(--color-text-light);font-size:0.8rem;">
+              Office: <a href="tel:+918903152279">+91 89031 52279</a>
+            </span>
+          </div>
+        </div>
+        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>Shop No 5, HM Complex, Addis Street,<br>Grey Town, Near Nehru Stadium,<br>Coimbatore - 641018, Tamil Nadu</span></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 7:00 PM<br>
+          <strong style="color:var(--color-orange);">24/7 Emergency Support</strong>
+        </span></div>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>© 2024 GENSETS Industrial Solutions. All Rights Reserved. | Coimbatore, Tamil Nadu, India</p>
+      <p>GST: 33XXXXX0000X1ZX | <a href="contact.html">Contact Us</a></p>
+    </div>
+  </div>
 </footer>
-
-
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     FLOATING WHATSAPP BUTTON
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<a href="https://wa.me/919363208579" class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    <span class="float-wa-badge" aria-hidden="true">24/7</span>
-</a>
-
-
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     BACK TO TOP
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<a href="#" id="back-to-top" aria-label="Back to top">
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-</a>
-
-
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MOBILE ACTION BAR
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
-    <div class="mobile-bar-inner">
-        <a href="tel:+919363208579" class="mobile-bar-btn call" aria-label="Call us">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            <span>Call</span>
-        </a>
-        <a href="https://wa.me/919363208579" class="mobile-bar-btn wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="mailto:info@gensets.in" class="mobile-bar-btn email" aria-label="Email us">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <span>Email</span>
-        </a>
-        <a href="#contact-form" class="mobile-bar-btn quote" aria-label="Get a quote">
-            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
-            <span>Quote</span>
-        </a>
-    </div>
-</div>
-
-
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SCRIPTS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-<script src="main.js" defer></script>
-
-<script>
-(function () {
-    'use strict';
-
-    /* â”€â”€ Back to top â”€â”€ */
-    var btt = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) {
-            btt.classList.add('visible');
-        } else {
-            btt.classList.remove('visible');
-        }
-    }, { passive: true });
-    btt.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    /* â”€â”€ Mobile hamburger â”€â”€ */
-    var hamburgerBtn  = document.getElementById('hamburger-btn');
-    var hamburgerIcon = document.getElementById('hamburger-icon');
-    var mobileNav     = document.getElementById('mobile-nav');
-    hamburgerBtn.addEventListener('click', function () {
-        var isOpen = mobileNav.classList.toggle('open');
-        hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        hamburgerIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    /* Close mobile nav on link click */
-    mobileNav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            mobileNav.classList.remove('open');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            hamburgerIcon.className = 'fa-solid fa-bars';
-            document.body.style.overflow = '';
-        });
-    });
-
-    /* â”€â”€ Contact form validation & submission â”€â”€ */
-    var form        = document.getElementById('contact-form');
-    var successBox  = document.getElementById('contact-success');
-    var submitBtn   = document.getElementById('submit-btn');
-
-    function showError(inputId, errorId) {
-        var input = document.getElementById(inputId);
-        var error = document.getElementById(errorId);
-        if (input)  { input.classList.add('error'); }
-        if (error)  { error.classList.add('visible'); }
-    }
-
-    function clearError(inputId, errorId) {
-        var input = document.getElementById(inputId);
-        var error = document.getElementById(errorId);
-        if (input)  { input.classList.remove('error'); }
-        if (error)  { error.classList.remove('visible'); }
-    }
-
-    function validateEmail(val) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
-    }
-
-    function validatePhone(val) {
-        return /^[\d\s\+\-\(\)]{7,15}$/.test(val.trim());
-    }
-
-    /* Live clear on input */
-    ['full-name', 'company-name', 'phone', 'email', 'enquiry-type', 'message'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (!el) { return; }
-        el.addEventListener('input', function () {
-            el.classList.remove('error');
-            var errEl = document.getElementById(id + '-error');
-            if (errEl) { errEl.classList.remove('visible'); }
-        });
-    });
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        var valid = true;
-
-        /* Full name */
-        var fullName = document.getElementById('full-name').value.trim();
-        if (!fullName) { showError('full-name', 'full-name-error'); valid = false; }
-        else           { clearError('full-name', 'full-name-error'); }
-
-        /* Company name */
-        var companyName = document.getElementById('company-name').value.trim();
-        if (!companyName) { showError('company-name', 'company-name-error'); valid = false; }
-        else              { clearError('company-name', 'company-name-error'); }
-
-        /* Phone */
-        var phone = document.getElementById('phone').value.trim();
-        if (!phone || !validatePhone(phone)) { showError('phone', 'phone-error'); valid = false; }
-        else                                 { clearError('phone', 'phone-error'); }
-
-        /* Email (optional but validated if filled) */
-        var email = document.getElementById('email').value.trim();
-        if (email && !validateEmail(email)) { showError('email', 'email-error'); valid = false; }
-        else                                { clearError('email', 'email-error'); }
-
-        /* Enquiry type */
-        var enquiryType = document.getElementById('enquiry-type').value;
-        if (!enquiryType) { showError('enquiry-type', 'enquiry-type-error'); valid = false; }
-        else              { clearError('enquiry-type', 'enquiry-type-error'); }
-
-        /* Message */
-        var message = document.getElementById('message').value.trim();
-        if (!message) { showError('message', 'message-error'); valid = false; }
-        else          { clearError('message', 'message-error'); }
-
-        if (!valid) {
-            /* Scroll to first error */
-            var firstErr = form.querySelector('.error');
-            if (firstErr) {
-                firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            return;
-        }
-
-        /* Simulate async submission */
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
-        setTimeout(function () {
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-            form.reset();
-            form.style.display = 'none';
-            successBox.style.display = 'block';
-            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1400);
-    });
-
-})();
-</script>
-
 
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-
-<!-- Back to Top -->
 <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
 
 <!-- Mobile Sticky Bottom Bar -->
@@ -1625,7 +247,7 @@
     <i class="fa-solid fa-phone"></i>
     <span>Call Now</span>
   </a>
-  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/919363208579?text=Hello%20GENSETS%2C%20I%20need%20a%20quote%20for%20generator%20spare%20parts." class="mbar-btn mbar-wa" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
     <span>WhatsApp</span>
   </a>
@@ -1635,17 +257,7 @@
   </a>
 </div>
 
-<!--
-========================================
-IMAGE REPLACEMENT GUIDE â€” CONTACT.HTML
-========================================
-This page contains no product or section images.
-All contact information is text-based.
-To add a company photo or map screenshot in future,
-use the .img-wrapper structure with a data-replace attribute.
-========================================
--->
+<script src="main.js"></script>
+
 </body>
 </html>
-
-
